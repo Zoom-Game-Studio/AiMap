@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using KleinEngine;
+
 namespace AppLogic
 {
     public class DownloadManager : MonoBehaviour
@@ -35,6 +36,7 @@ namespace AppLogic
                 {
                     Directory.CreateDirectory(folderPath);
                 }
+
                 string filePath = folderPath + "/" + poiInfoInUnity.id + ".png";
                 if (!File.Exists(filePath))
                     File.WriteAllBytes(filePath, bytes);
@@ -43,6 +45,5 @@ namespace AppLogic
                     image.sprite = sprite;
             }
         }
-
     }
 }

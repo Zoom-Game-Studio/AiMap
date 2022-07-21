@@ -1,0 +1,23 @@
+Log：日志记录开始时间: 2022/7/21 11:57:11, 版本: 2020.3.2f1c1.
+Windows 10  (10.0.19044) 64bit Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz 12 存储容量:16279 图形设备: NVIDIA GeForce GTX 1660 SUPER 供应商: NVIDIA 存储容量: 5991 Direct3D 11.0 [level 11.1]
+
+Log：~KleinEngine Start
+
+Log：PhoneMethodForUnityInitComplete...
+
+Log：PhoneMethodForUnityInitComplete====
+
+Log：ControlMediator...
+
+Log：loading mediator init...
+
+Log：InitModule...
+
+Log：BulletScreenCommand...
+
+Warning：No active UnityEngine.XR.ARSubsystems.XRPlaneSubsystem is available. Please ensure that a valid loader configuration exists in the XR project settings.
+UnityEngine.GameObject:AddComponent<UnityEngine.XR.ARFoundation.ARPlaneManager> ()
+ARLocation.GroundHeight:Start () (at Assets/3rdParty/ARLocation/Scripts/Components/GroundHeight.cs:85)
+
+Log：~KleinEngine ShutDown
+

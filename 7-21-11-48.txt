@@ -1,0 +1,105 @@
+Log：日志记录开始时间: 2022/7/21 11:48:11, 版本: 2020.3.2f1c1.
+Windows 10  (10.0.19044) 64bit Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz 12 存储容量:16279 图形设备: NVIDIA GeForce GTX 1660 SUPER 供应商: NVIDIA 存储容量: 5991 Direct3D 11.0 [level 11.1]
+
+Log：~KleinEngine Start
+
+Log：PhoneMethodForUnityInitComplete...
+
+Log：PhoneMethodForUnityInitComplete====
+
+Log：ControlMediator...
+
+Log：loading mediator init...
+
+Log：InitModule...
+
+Log：BulletScreenCommand...
+
+Warning：No active UnityEngine.XR.ARSubsystems.XRPlaneSubsystem is available. Please ensure that a valid loader configuration exists in the XR project settings.
+UnityEngine.GameObject:AddComponent<UnityEngine.XR.ARFoundation.ARPlaneManager> ()
+ARLocation.GroundHeight:Start () (at Assets/3rdParty/ARLocation/Scripts/Components/GroundHeight.cs:85)
+
+Log：~KleinEngine ShutDown
+
+Exception：ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+Parameter name: startIndex
+System.String.Insert (System.Int32 startIndex, System.String value) (at <eae584ce26bc40229c1b1aa476bfa589>:0)
+UnityEngine.TextEditor.MoveSelectionToAltCursor () (at <501533d98a6049c6bc053f7df6eab1f3>:0)
+UnityEditor.EditorGUI.DoTextField (UnityEditor.EditorGUI+RecycledTextEditor editor, System.Int32 id, UnityEngine.Rect position, System.String text, UnityEngine.GUIStyle style, System.String allowedletters, System.Boolean& changed, System.Boolean reset, System.Boolean multiline, System.Boolean passwordField) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.EditorGUI.ToolbarSearchField (System.Int32 id, UnityEngine.Rect position, System.String text, System.Boolean showWithPopupArrow) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.SearchField () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.TopToolbar () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.OnGUI () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.HostView.InvokeOnGUI (UnityEngine.Rect onGUIPosition, UnityEngine.Rect viewRect) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.DockArea.DrawView (UnityEngine.Rect viewRect, UnityEngine.Rect dockAreaRect) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.DockArea.OldOnGUI () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEngine.UIElements.IMGUIContainer.DoOnGUI (UnityEngine.Event evt, UnityEngine.Matrix4x4 parentTransform, UnityEngine.Rect clippingRect, System.Boolean isComputingLayout, UnityEngine.Rect layoutSize, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, UnityEngine.Matrix4x4 worldTransform, UnityEngine.Rect clippingRect, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.SendEventToIMGUIRaw (UnityEngine.UIElements.EventBase evt, System.Boolean canAffectFocus, System.Boolean verifyBounds) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.SendEventToIMGUI (UnityEngine.UIElements.EventBase evt, System.Boolean canAffectFocus, System.Boolean verifyBounds) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleEvent (UnityEngine.UIElements.EventBase evt) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.CallbackEventHandler.HandleEventAtTargetPhase (UnityEngine.UIElements.EventBase evt) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.MouseCaptureDispatchingStrategy.DispatchEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ApplyDispatchingStrategies (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, System.Boolean imguiEventIsInitiallyUsed) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEventQueue () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.OpenGate () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcherGate.Dispose () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIElementsUtility.DoDispatch (UnityEngine.UIElements.BaseVisualElementPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIElementsUtility.UnityEngine.UIElements.IUIElementsUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& eventHandled) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIEventRegistration.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIEventRegistration+<>c.<.cctor>b__1_2 (System.Int32 i, System.IntPtr ptr) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.GUIUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& result) (at <501533d98a6049c6bc053f7df6eab1f3>:0)
+
+Exception：ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+Parameter name: startIndex
+System.String.Insert (System.Int32 startIndex, System.String value) (at <eae584ce26bc40229c1b1aa476bfa589>:0)
+UnityEngine.TextEditor.MoveSelectionToAltCursor () (at <501533d98a6049c6bc053f7df6eab1f3>:0)
+UnityEditor.EditorGUI.DoTextField (UnityEditor.EditorGUI+RecycledTextEditor editor, System.Int32 id, UnityEngine.Rect position, System.String text, UnityEngine.GUIStyle style, System.String allowedletters, System.Boolean& changed, System.Boolean reset, System.Boolean multiline, System.Boolean passwordField) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.EditorGUI.ToolbarSearchField (System.Int32 id, UnityEngine.Rect position, System.String text, System.Boolean showWithPopupArrow) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.SearchField () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.TopToolbar () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.ProjectBrowser.OnGUI () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.HostView.InvokeOnGUI (UnityEngine.Rect onGUIPosition, UnityEngine.Rect viewRect) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.DockArea.DrawView (UnityEngine.Rect viewRect, UnityEngine.Rect dockAreaRect) (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEditor.DockArea.OldOnGUI () (at <a5fdc7e75f6d4630a4503d091a36206b>:0)
+UnityEngine.UIElements.IMGUIContainer.DoOnGUI (UnityEngine.Event evt, UnityEngine.Matrix4x4 parentTransform, UnityEngine.Rect clippingRect, System.Boolean isComputingLayout, UnityEngine.Rect layoutSize, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, UnityEngine.Matrix4x4 worldTransform, UnityEngine.Rect clippingRect, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, System.Action onGUIHandler, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleIMGUIEvent (UnityEngine.Event e, System.Boolean canAffectFocus) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.SendEventToIMGUIRaw (UnityEngine.UIElements.EventBase evt, System.Boolean canAffectFocus, System.Boolean verifyBounds) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.SendEventToIMGUI (UnityEngine.UIElements.EventBase evt, System.Boolean canAffectFocus, System.Boolean verifyBounds) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.IMGUIContainer.HandleEvent (UnityEngine.UIElements.EventBase evt) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.CallbackEventHandler.HandleEventAtTargetPhase (UnityEngine.UIElements.EventBase evt) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.MouseCaptureDispatchingStrategy.DispatchEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ApplyDispatchingStrategies (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, System.Boolean imguiEventIsInitiallyUsed) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEventQueue () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.OpenGate () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcherGate.Dispose () (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.ProcessEvent (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.EventDispatcher.Dispatch (UnityEngine.UIElements.EventBase evt, UnityEngine.UIElements.IPanel panel, UnityEngine.UIElements.DispatchMode dispatchMode) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.BaseVisualElementPanel.SendEvent (UnityEngine.UIElements.EventBase e, UnityEngine.UIElements.DispatchMode dispatchMode) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIElementsUtility.DoDispatch (UnityEngine.UIElements.BaseVisualElementPanel panel) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIElementsUtility.UnityEngine.UIElements.IUIElementsUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& eventHandled) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIEventRegistration.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.UIElements.UIEventRegistration+<>c.<.cctor>b__1_2 (System.Int32 i, System.IntPtr ptr) (at <c456c05d553242d2abad30834c12defa>:0)
+UnityEngine.GUIUtility.ProcessEvent (System.Int32 instanceID, System.IntPtr nativeEventPtr, System.Boolean& result) (at <501533d98a6049c6bc053f7df6eab1f3>:0)
+
+Error：Component GUI Text in UI Description for Scene Assets/3rdParty/HighlightingSystemDemo/Scenes/Welcome.unity is no longer available.
+It will be removed after you edit this GameObject and save the Scene.
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Error：Component GUI Layer in Main Camera for Scene Assets/3rdParty/HighlightingSystemDemo/Scenes/Welcome.unity is no longer available.
+It will be removed after you edit this GameObject and save the Scene.
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Error：Component GUI Text in UI Title for Scene Assets/3rdParty/HighlightingSystemDemo/Scenes/Welcome.unity is no longer available.
+It will be removed after you edit this GameObject and save the Scene.
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
