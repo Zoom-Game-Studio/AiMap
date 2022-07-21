@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<config>
+  <!--    <item id="Main" abName="main" layer="1" />-->
+  <item id="Loading" limitBack="1"/>
+  <!--<item id="ModelScene" limitBack="1" />-->
+  <item id="Preview" abName="preview" layer="1" />
+  <item id="Homepage" abName="homepage" layer="1" />
+  <item id="ModeSwitch" abName="modeswitch" layer="1" />
+  <item id="TakePhoto" abName="takephoto" layer="1" />
+  <!--<item id="Localize" abName="localize" layer="1" />-->
+  <item id="Localize" limitBack="1" />
+
+  <item id="LocalizationTool" abName="localizationtool" layer="1" />
+  <item id="AIMapScene" limitBack="1" />
+</config>

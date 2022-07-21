@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<config>
+    <item id="1" name="录制中" icon="recording"/>
+    <item id="2" name="录制完成" icon="default"/>
+</config>

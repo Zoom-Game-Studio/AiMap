@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<config>
+    <item id="1" name="one" remark="清晨" />
+    <item id="2" name="two" remark="白天" />
+    <item id="3" name="three" remark="夜晚" />
+</config>

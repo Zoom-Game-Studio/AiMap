@@ -1,0 +1,13 @@
+/Library
+/Logs
+/obj
+/Temp
+/*.sln
+/*.csproj
+/*.DS_Store
+/*_.DS_Store
+/*.vsconfig
+/.vs
+/Assets/Scenes
+/Assets/Common/EIF/*.eif
+/Assets/Common/EIF

@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4030900025486180532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4030900025486180529}
+  - component: {fileID: 4030900025486180530}
+  - component: {fileID: 4030900025486180531}
+  m_Layer: 0
+  m_Name: BulletChat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4030900025486180529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030900025486180532}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 6795954778473729257}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &4030900025486180530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030900025486180532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd62f6590a0f1f4c9cadda0a42cebfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameter:
+    m_depth: 0.48
+    m_bevel: 0.035
+    m_needTangents: 1
+    m_backface: 1
+    m_crease: 35
+    m_quality: 88
+    m_fontname: YaHei.ttf
+    m_shadowCastMode: 1
+    m_receiveShadows: 1
+    m_useLightProbes: 0
+  layout:
+    m_horizontal: 1
+    m_major: 2
+    m_minor: 0
+    m_size: 1
+    m_spacing: 1
+    m_glyphSpacing: 0
+    m_curveXZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_curveXY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_orientXZ: 0
+    m_orientXY: 0
+    m_isCircular: 0
+    m_startRadius: 0
+    m_endRadius: 180
+    m_circleRadius: 10
+    m_animateRadius: 0
+    m_curveRadius:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  Physics:
+    _colliderType: 0
+    _colliderMaterial: {fileID: 0}
+    _colliderIsTrigger: 0
+    _colliderIsConvex: 0
+    _createRigidBody: 0
+    _rigidbodyMass: 1
+    _rigidbodyDrag: 0
+    _rigidbodyAngularDrag: 0.05
+    _rigidbodyUseGravity: 0
+    _rigidbodyIsKinematic: 0
+  AdditionalComponents:
+    _additionalComponentsObject: {fileID: 0}
+  RenderText: 
+  materials:
+  - {fileID: 2100000, guid: 716f92ebea825be4fa36b709ac446e56, type: 2}
+  - {fileID: 2100000, guid: 23932a073e1a65440976322adf474395, type: 2}
+  - {fileID: 2100000, guid: 36868aa4d3c708949a8f69dfcd8e7165, type: 2}
+  usedMaterials:
+  - {fileID: 2100000, guid: 716f92ebea825be4fa36b709ac446e56, type: 2}
+  - {fileID: 2100000, guid: 23932a073e1a65440976322adf474395, type: 2}
+  - {fileID: 2100000, guid: 36868aa4d3c708949a8f69dfcd8e7165, type: 2}
+--- !u!114 &4030900025486180531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030900025486180532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab1b3ee6f04f5d419530f05441e6e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Amplitude: 0.015
+  FrequencyFactor: 1
+--- !u!1 &6274054868687664478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6795954778473729257}
+  - component: {fileID: 4559667981756619274}
+  m_Layer: 0
+  m_Name: BulletChat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6795954778473729257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274054868687664478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4030900025486180529}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4559667981756619274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274054868687664478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed58020bcdba40d5a16462d1946fb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToLookAt: {fileID: 0}
+  selectXYZ: 1
