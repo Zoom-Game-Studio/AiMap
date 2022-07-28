@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 1695357332
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: data
+      Dependencies: {}
+    Info_1:
+      Name: ui/loading
+      Dependencies: {}
+    Info_2:
+      Name: ui/homepage
+      Dependencies: {}
+    Info_3:
+      Name: ui/modeswitch
+      Dependencies: {}
+    Info_4:
+      Name: ui/localize
+      Dependencies: {}
+    Info_5:
+      Name: ui/localizationtool
+      Dependencies: {}
+    Info_6:
+      Name: model/buildinginfo
+      Dependencies: {}
+    Info_7:
+      Name: model/9l2_color
+      Dependencies: {}

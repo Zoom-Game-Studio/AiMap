@@ -1,0 +1,12 @@
+{
+  "name": "com.lty.developerkit",
+  "displayName": "Unity Developer Kit",
+  "description": "开发工具",
+  "version": "1.0.2",
+  "unity": "2021.3",
+  "author": "lty",
+  "keywords": [
+    "扩展"
+  ]
+}
+

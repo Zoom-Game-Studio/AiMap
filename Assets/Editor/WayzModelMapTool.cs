@@ -39,7 +39,7 @@ public class WayzModelMapTool : EditorWindow
             pointCloudObj.transform.SetParent(modelParent.transform, false);
         }
     }
-    [MenuItem("GameObject/生成预制体", priority = 0)]
+    // [MenuItem("GameObject/生成预制体", priority = 0)]
     public static void CreatePrefab()
     {
         string folderPath = "Assets/Common/TempPrefabs";

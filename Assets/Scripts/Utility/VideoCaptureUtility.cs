@@ -46,7 +46,7 @@ public class VideoCaptureUtility : MonoBehaviour
             renderTexture = source.texture as RenderTexture;
             if (videoFrameTexture.width != renderTexture.width || videoFrameTexture.height != renderTexture.height)
             {
-                videoFrameTexture.Resize(renderTexture.width, renderTexture.height);
+                videoFrameTexture.Reinitialize(renderTexture.width, renderTexture.height);
             }
 
             RenderTexture.active = renderTexture;

@@ -41,7 +41,7 @@ namespace NatCorder.Readback {
             }
             // State checking
             if (framebuffer.width != frame.width || framebuffer.height != frame.height)
-                framebuffer.Resize(frame.width, frame.height);
+                framebuffer.Reinitialize(frame.width, frame.height);
             // Readback
             var currentRT = RenderTexture.active;
             RenderTexture.active = frame;
