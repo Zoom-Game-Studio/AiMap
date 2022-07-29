@@ -25,6 +25,8 @@ namespace Architecture.Command
                 {
                     var pose = LocalizationConvert.LocationToUnityPose(location);
                     LocalizationConvert.CoordinatesAlignWithView(pose, transform);
+                    var o = LocalizationConvert.Origin;
+                    Console.Warning($"{o.position},{o.eulerAngles}");
                 }
 
                 this.SendEvent(new PlayAudioEvent()

@@ -39,8 +39,10 @@ namespace Architecture
                     // UUID = "cf0cbc56-a3c9-4807-a125-796faf91c7ff"
                 };
                 var dataValue = DataMapper.ToJson(bodyData);
+                Console.Warning(dataValue);
                 RequestLocation(Url, Token, dataValue, base64Image, (r, p) =>
                 {
+                    Console.Warning($"response data :{p.DataAsText}");
                     var requestStates = r?.State ?? HTTPRequestStates.Error;
                     onFinishRequest?.Invoke(requestStates, p?.DataAsText);
                 });
@@ -70,6 +72,13 @@ namespace Architecture
             RequestLocation(Url, Token, dataValue, image, (r, p) =>
             {
                 var requestStates = r?.State ?? HTTPRequestStates.Error;
+                if(requestStates == HTTPRequestStates.Error)
+                {
+                    var msg = r.Exception?.Message;
+                    var errTrack = r.Exception?.StackTrace;
+                    Debug.LogError(msg);
+                    Debug.LogError(errTrack);
+                }
                 onFinishRequest?.Invoke(requestStates, p?.DataAsText);
             });
         }

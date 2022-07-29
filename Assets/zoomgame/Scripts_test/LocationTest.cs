@@ -121,7 +121,6 @@ namespace C_ScriptsTest
                 location.RequestLocation(image, Float4.intrinsic, gpsInfo,(int)orientation, (s, d) =>
                 {
                     OnFinish(s,d);
-                    
                     this.GetArchitecture().SendEvent(new LocationResponseEvent()
                     {
                         data = d,
@@ -140,7 +139,7 @@ namespace C_ScriptsTest
             Debug.Log(state);
             Debug.Log(data);
 
-            if (state == HTTPRequestStates.Finished && data.Contains("succeed"))
+            if (state == HTTPRequestStates.Finished && !string.IsNullOrEmpty(data) && data.Contains("succeed"))
             {
                 var locationInfo = DataMapper.ToLocation(data);
                 var pose = LocalizationConvert.LocationToUnityPose(locationInfo);

@@ -77,34 +77,42 @@ namespace Architecture
         /// <param name="tileName">地块的名字</param>
         public static void Instantiate(string tileName)
         {
-            string url = null;
-            if (ModelRootConfig.Instance.Chengdu_indoor.tileName.Equals(tileName))
+            try
             {
-                url = ModelRootConfig.Instance.Chengdu_indoor.abUrl;
-            }
-            else if (ModelRootConfig.Instance.ShangHai.tileName.Equals(tileName))
-            {
-                url = ModelRootConfig.Instance.ShangHai.abUrl;
-            }
-
-            if (!string.IsNullOrEmpty(url))
-            {
-                if (!TileLoader.instance.resCache.ContainsKey(url))
+                string url = null;
+                if (ModelRootConfig.Instance.Chengdu_indoor.tileName.Equals(tileName))
                 {
-                    var tile = TileLoader.instance.LoadTile(url);
-                    Instantiate(tileName, tile);
+                    url = ModelRootConfig.Instance.Chengdu_indoor.abUrl;
+                }
+                else if (ModelRootConfig.Instance.ShangHai.tileName.Equals(tileName))
+                {
+                    url = ModelRootConfig.Instance.ShangHai.abUrl;
+                }
+
+                if (!string.IsNullOrEmpty(url))
+                {
+                    if (!TileLoader.instance.resCache.ContainsKey(url))
+                    {
+                        var tile = TileLoader.instance.LoadTile(url);
+                        Instantiate(tileName, tile);
+                    }
+                    else
+                    {
+                        Console.Warning(tileName + " build has done");
+                    }
+
                 }
                 else
                 {
-                    Console.Warning(tileName +" build has done");
+                    Console.Error("不能从ModelRootConfig获取到url：" + tileName);
                 }
-
             }
-            else
+            catch (System.Exception e)
             {
-                Console.Error("不能从ModelRootConfig获取到url："+ tileName);
+                Console.Error(tileName+ "can not load!");
+                Console.Error(e.Message);
+                Console.Error(e.StackTrace);
             }
-
         }
     }
 }

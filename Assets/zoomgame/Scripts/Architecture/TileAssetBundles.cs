@@ -120,6 +120,11 @@ namespace Architecture
                 main = AssetBundle.LoadFromFile(fullPath);
             }
 
+            if(main == null)
+            {
+                Console.Error("加载ab包失败：" + fullPath);
+                return;
+            }
             var manifest = main.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             var all = manifest.GetAllAssetBundles();
             foreach (var name in all)

@@ -40,7 +40,7 @@ namespace WeiXiang
             if (obj.isFinish && obj.isSuccess)
             {
                 var response = Newtonsoft.Json.JsonConvert.DeserializeObject<LocationResponse>(obj.data);
-                this.SendCommand(new LoadAssetBundleModelCommand(response.maptile_name));
+                //this.SendCommand(new LoadAssetBundleModelCommand(response.maptile_name));
             }
             else
             {
@@ -52,18 +52,18 @@ namespace WeiXiang
         {
             if (obj.success)
             {
-                AudioSource.PlayClipAtPoint(success,Vector3.zero);
+                AudioSource.PlayClipAtPoint(success,Camera.main.transform.position);
             }
             else
             {
-                AudioSource.PlayClipAtPoint(fail,Vector3.zero);
+                AudioSource.PlayClipAtPoint(hit, Camera.main.transform.position);
             }
         }
         
 
         void OnInterval(long _)
         {
-            AudioSource.PlayClipAtPoint(hit,Vector3.zero);
+            AudioSource.PlayClipAtPoint(fail,Vector3.zero);
             // 抽帧定位
             this.SendCommand<CaptureAndLocationCommand>();
         }
