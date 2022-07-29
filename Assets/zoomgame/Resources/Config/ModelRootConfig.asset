@@ -15,7 +15,7 @@ MonoBehaviour:
   ShangHai:
     abUrl: shanghai
     tileName: shanghai
-    localPostion: {x: 31.15, y: 24.91, z: 35.79}
+    localPostion: {x: 31.15, y: 24.91, z: 0}
     localEuler: {x: 47, y: -90, z: 47}
   Chengdu_indoor:
     abUrl: chengdu_indoor

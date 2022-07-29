@@ -11,6 +11,7 @@ namespace Architecture.Command
     public class CaptureAndLocationCommand : AbstractCommand
     {
         private ICanCapturePhoto _capturePhoto;
+
         protected override void OnExecute()
         {
             _capturePhoto = this.GetUtility<ICanCapturePhoto>();
@@ -24,6 +25,7 @@ namespace Architecture.Command
                 Console.Error("CaptureAndLocation :  Capture photo fail!");
                 return;
             }
+
             try
             {
                 if (data != null)
@@ -33,10 +35,13 @@ namespace Architecture.Command
                     //记录截图时的相机姿态
                     var capturePose = new GameObject().AddComponent<CapturePoseNode>();
                     var main = Camera.main.transform;
-                    capturePose.transform.position = main.position;
+                    var offset = this.GetModel<ICameraOffset>();
+                    capturePose.transform.position = main.position + main.forward * offset.Z + main.right * offset.X +
+                                                     main.up * offset.Y;
                     capturePose.transform.rotation = main.rotation;
+                    //todo 修改相机的位移适配相机的的物理参数，因为拿不到物理参数
                     capturePose.ticks = now;
-                    location.RequestLocation(Convert.ToBase64String(data),(state,dataStr)=>
+                    location.RequestLocation(Convert.ToBase64String(data), (state, dataStr) =>
                     {
                         this.SendEvent(new LocationResponseEvent()
                         {

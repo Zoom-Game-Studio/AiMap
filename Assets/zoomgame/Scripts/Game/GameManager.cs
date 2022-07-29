@@ -1,3 +1,4 @@
+using System;
 using Architecture;
 using Architecture.Command;
 using Architecture.TypeEvent;
@@ -5,19 +6,19 @@ using HttpData;
 using NRKernal;
 using QFramework;
 using Sirenix.OdinInspector;
+using UniRx;
 using UnityEngine;
 
 namespace WeiXiang
 {
     public class GameManager : AbstractMonoController
     {
-
-        [SerializeField] private Transform debugAlign;
-
         [SerializeField] private AudioClip success, fail,hit;
 
         private void Start()
         {
+            Console.Warning("Console init complete");
+
             this.SendCommand<StartLocationCommand>();
             this.RegisterEvent<LocationResponseEvent>(OnFinishRequest).UnRegisterWhenGameObjectDestroyed(gameObject);
 
@@ -26,6 +27,8 @@ namespace WeiXiang
             var origin = LocalizationConvert.Origin;
 
             this.RegisterEvent<PlayAudioEvent>(OnFinish);
+
+            Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
         }
 
         /// <summary>
@@ -41,7 +44,7 @@ namespace WeiXiang
             }
             else
             {
-                Console.Error("cant get LocationResponseEvent");
+                Console.Error("Cant get LocationResponseEvent or location fail");
             }
         }
 
@@ -57,15 +60,12 @@ namespace WeiXiang
             }
         }
         
-        private void Update()
-        {
-            if (NRInput.GetButtonDown(ControllerButton.TRIGGER))
-            {
-                AudioSource.PlayClipAtPoint(hit,Vector3.zero);
 
-                // 抽帧定位
-                this.SendCommand<CaptureAndLocationCommand>();
-            }
+        void OnInterval(long _)
+        {
+            AudioSource.PlayClipAtPoint(hit,Vector3.zero);
+            // 抽帧定位
+            this.SendCommand<CaptureAndLocationCommand>();
         }
 
         [Button]
