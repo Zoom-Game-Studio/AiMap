@@ -79,18 +79,6 @@ namespace Architecture
             }
         }
 
-
-        public void LogXml(string name)
-        {
-            var asset = LazyLoad(name);
-            if (asset)
-            {
-                XmlConvert.LogJson(asset.text);
-            }
-            else
-                Debug.Log(name +" is null");
-        }
-
         TextAsset LazyLoad(string name)
         {
             if (map.TryGetValue("data", out var assetBundle))

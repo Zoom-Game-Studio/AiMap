@@ -14,7 +14,10 @@ namespace Architecture
     public class VisionLocation : ICanLocation
     {
         public const string Token = "5bc251ab113f1510e3e1509b2442d52b";
-        public const string Url = "https://hdmap.newayz.com/wayzoom/v1/vps/single";
+        public string Url => Interface2;
+        public const string Interface1 = @"https://hdmap.newayz.com/wayzoom/v1/vps/single";
+        public const string Interface2 = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
+
         public HTTPFormUsage formUsage = HTTPFormUsage.Multipart;
 
         public void RequestLocation(string base64Image, Action<HTTPRequestStates, string> onFinishRequest)
@@ -40,12 +43,8 @@ namespace Architecture
                 };
                 var dataValue = DataMapper.ToJson(bodyData);
                 Console.Warning(dataValue);
-                RequestLocation(Url, Token, dataValue, base64Image, (r, p) =>
-                {
-                    Console.Warning($"response data :{p.DataAsText}");
-                    var requestStates = r?.State ?? HTTPRequestStates.Error;
-                    onFinishRequest?.Invoke(requestStates, p?.DataAsText);
-                });
+                RequestLocation(Url, Token, dataValue, base64Image,
+                    (r, p) => { OnFinishRequest(r, p, onFinishRequest); });
             }
             catch (Exception e)
             {
@@ -54,7 +53,7 @@ namespace Architecture
             }
         }
 
-        public void RequestLocation(string image, Float4 intrinsic, PriorTranslation gps,int orientation,
+        public void RequestLocation(string image, Float4 intrinsic, PriorTranslation gps, int orientation,
             Action<HTTPRequestStates, string> onFinishRequest)
         {
             var bodyData = new BodyData()
@@ -69,18 +68,7 @@ namespace Architecture
                 // UUID = "cf0cbc56-a3c9-4807-a125-796faf91c7ff"
             };
             var dataValue = DataMapper.ToJson(bodyData);
-            RequestLocation(Url, Token, dataValue, image, (r, p) =>
-            {
-                var requestStates = r?.State ?? HTTPRequestStates.Error;
-                if(requestStates == HTTPRequestStates.Error)
-                {
-                    var msg = r.Exception?.Message;
-                    var errTrack = r.Exception?.StackTrace;
-                    Debug.LogError(msg);
-                    Debug.LogError(errTrack);
-                }
-                onFinishRequest?.Invoke(requestStates, p?.DataAsText);
-            });
+            RequestLocation(Url, Token, dataValue, image, (r, p) => { OnFinishRequest(r, p, onFinishRequest); });
         }
 
         public void RequestLocation(string url, string token, string data, string image,
@@ -96,9 +84,12 @@ namespace Architecture
         }
 
 
-        public void OnFinishRequest(HTTPRequest request, HTTPResponse response)
+        public void OnFinishRequest(HTTPRequest request, HTTPResponse response,
+            Action<HTTPRequestStates, string> callback)
         {
-            Debug.Log($"location callback : {request?.State},{response?.DataAsText}");
+            Debug.LogWarning($"{request?.State}: {response?.DataAsText}");
+            var requestStates = request?.State ?? HTTPRequestStates.Error;
+            callback?.Invoke(requestStates, response?.DataAsText);
         }
     }
 
@@ -130,7 +121,7 @@ namespace Architecture
         /// <param name="gps">gps</param>
         /// <param name="orientation">手机朝向</param>
         /// <param name="onFinishRequest"></param>
-        void RequestLocation(string image, Float4 intrinsic, PriorTranslation gps,int orientation,
+        void RequestLocation(string image, Float4 intrinsic, PriorTranslation gps, int orientation,
             Action<HTTPRequestStates, string> onFinishRequest);
 
         /// <summary>
@@ -138,6 +129,7 @@ namespace Architecture
         /// </summary>
         /// <param name="request"></param>
         /// <param name="response"></param>
-        void OnFinishRequest(HTTPRequest request, HTTPResponse response);
+        /// <param name="callback"></param>
+        void OnFinishRequest(HTTPRequest request, HTTPResponse response, Action<HTTPRequestStates, string> callback);
     }
 }

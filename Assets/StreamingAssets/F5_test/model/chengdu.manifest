@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 3560525465
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f8b34811ca5e13abb3184b65e3f027b6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ae74ea1074563791801486a84403f43f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 111
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Common/Prefabs/Model/chengdu/chengdu_001.prefab
+Dependencies: []

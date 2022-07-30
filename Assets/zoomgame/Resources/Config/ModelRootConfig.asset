@@ -15,10 +15,10 @@ MonoBehaviour:
   ShangHai:
     abUrl: shanghai
     tileName: shanghai
-    localPostion: {x: 31.15, y: 24.91, z: 0}
-    localEuler: {x: 47, y: -90, z: 47}
+    localPostion: {x: 0, y: 0, z: 0}
+    localEuler: {x: 0, y: -21, z: -137}
   Chengdu_indoor:
     abUrl: chengdu_indoor
     tileName: chengdu_indoor
-    localPostion: {x: -9.23, y: -41.21, z: 36.18}
-    localEuler: {x: -88.582, y: 90.001, z: 133}
+    localPostion: {x: 1.05, y: 4.5, z: -19.97}
+    localEuler: {x: 0, y: -21, z: -137}

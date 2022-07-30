@@ -104,60 +104,14 @@ namespace WeiXiang
                     {
                         _origin = new GameObject("坐标原点").transform;
                         _origin.gameObject.tag = "Origin";
-                        _origin.transform.localEulerAngles = new Vector3(90, 0, 0);
+                        _origin.transform.localEulerAngles = new Vector3(-90, 0, 0);
+                        _origin.transform.localScale = new Vector3(1, -1, 1);
                         _origin.transform.position = Vector3.zero;
                     }
                 }
                 return _origin;
             }
         }
-
-        #region 模型的根节点姿态
-
-        private static Transform _floor9;
-        /// <summary>
-        /// 9L基准点
-        /// </summary>
-        public static Transform ShangHai
-        {
-            get
-            {
-                if (!_floor9)
-                {
-                    var data = ModelRootConfig.Instance.ShangHai;
-                    _floor9 = new GameObject(data.tileName).transform;
-                    _floor9.SetParent(Origin);
-                    _floor9.localPosition = data.localPostion;
-                    _floor9.localEulerAngles = data.localEuler;
-                }
-
-                return _floor9;
-            }
-        }
-        
-        private static Transform _chengDuwayz;
-
-        /// <summary>
-        /// 9L基准点
-        /// </summary>
-        public static Transform ChengDu_indoor
-        {
-            get
-            {
-                if (!_chengDuwayz)
-                {
-                    var data = ModelRootConfig.Instance.Chengdu_indoor;
-                    _chengDuwayz = new GameObject(data.tileName).transform;
-                    _chengDuwayz.SetParent(Origin);
-                    _chengDuwayz.localPosition = data.localPostion;
-                    _chengDuwayz.localEulerAngles = data.localEuler;
-                }
-
-                return _chengDuwayz;
-            }
-        }
-        
-        #endregion
 
 
         /// <summary>
@@ -170,7 +124,7 @@ namespace WeiXiang
             var view = new GameObject(locationInfo.maptile_name+locationInfo.translation).transform;
             view.SetParent(Origin);
             view.localPosition = locationInfo.translation;
-            view.rotation = Origin.rotation * locationInfo.rotation;
+            view.localEulerAngles = locationInfo.rotation.eulerAngles;
             var pose = new Pose()
             {
                 rot = view.rotation,
@@ -179,11 +133,12 @@ namespace WeiXiang
             Object.Destroy(view.gameObject);
             return pose;
         }
-        
+
         /// <summary>
         /// 把模型得到的姿态和camera view匹配，对齐坐标系
         /// </summary>
-        /// <param name="locationPose"></param>
+        /// <param name="locationPose">定位返回姿态</param>
+        /// <param name="cameraPose">相机在截图时的姿态</param>
         public static void CoordinatesAlignWithView(Pose locationPose,Transform cameraPose)
         {
             if (!cameraPose)
@@ -224,24 +179,6 @@ namespace WeiXiang
                 pos = locationPose.position,
             };
             CoordinatesAlignWithView(pose,cameraPose);
-        }
-
-        /// <summary>
-        /// 获取模型的根节点
-        /// </summary>
-        /// <param name="tileName"></param>
-        /// <returns></returns>
-        public static Transform GetModelRoot(string tileName)
-        {
-            if (tileName.Equals(ModelRootConfig.Instance.ShangHai.tileName))
-            {
-                return ShangHai;
-            }
-            else if (tileName.Equals(ModelRootConfig.Instance.Chengdu_indoor.tileName))
-            {
-                return ChengDu_indoor;
-            }
-            return Origin;
         }
     }
 }

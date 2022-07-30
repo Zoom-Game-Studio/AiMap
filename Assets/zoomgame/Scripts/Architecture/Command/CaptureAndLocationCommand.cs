@@ -39,7 +39,6 @@ namespace Architecture.Command
                     capturePose.transform.position = main.position + main.forward * offset.Z + main.right * offset.X +
                                                      main.up * offset.Y;
                     capturePose.transform.rotation = main.rotation;
-                    //todo 修改相机的位移适配相机的的物理参数，因为拿不到物理参数
                     capturePose.ticks = now;
                     location.RequestLocation(Convert.ToBase64String(data), (state, dataStr) =>
                     {

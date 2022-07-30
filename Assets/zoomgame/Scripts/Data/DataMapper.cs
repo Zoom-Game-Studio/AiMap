@@ -53,7 +53,7 @@ namespace HttpData
             location.maptile_name = response.maptile_name;
             location.ori_qvec = response.ori_qvec;
             location.ori_tvec = response.ori_tvec;
-            location.success = response.description.Equals("succeed");
+            location.description = response.description;
             location.translation = ToVector3(response.translation);
             location.rotation = ToQuaternion(response.rotation);
             return location;

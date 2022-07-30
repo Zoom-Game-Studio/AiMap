@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="utf-8" ?> -->
+<config>
+    <!--//9L-->
+    <!--<item id="001" name="01" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-0.010832,0.848653,40.937294" rot="0,0,0,1" remarks="高精办公室福字"/>
+    <item id="002" name="02" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="1.397307,-0.576106,41.8144532" rot="0,0,0,1" remarks="高精办公室一排灯管"/>
+    <item id="003" name="03" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="3.507495,1.889157,41.790298" rot="0,0,0,1" remarks="高精办公室二排灯管"/>
+    <item id="004" name="04" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="4.563025,4.476993,41.719692" rot="0,0,0,1" remarks="高精办公室三排红旗"/>
+    <item id="005" name="05" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="3.528766,1.592609,40.218037" rot="0,0,0,1" remarks="高精办公室二排桌面"/>
+    <item id="006" name="06" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-3.459766,4.008884,41.655811" rot="0,0,0,1" remarks="大厅左边电视机"/>
+    <item id="007" name="07" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-5.064247,5.150674,41.504074" rot="0,0,0,1" remarks="大厅右边电视机"/>
+    <item id="008" name="08" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-8.198250,12.315837,41.235424" rot="0,0,0,1" remarks="大厅正中电视机"/>
+    <item id="009" name="09" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-2.344892,10.565307,40.658680" rot="0,0,0,1" remarks="大厅墙壁"/>
+    <item id="010" name="10" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="1.748463,5.251034,40.704838" rot="0,0,0,1" remarks="大厅前台"/>
+    <item id="011" name="11" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-2.138696,6.804762,41.767807" rot="0,0,0,1" remarks="大厅正中间"/>
+    <item id="012" name="12" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-9.057941,7.686300,40.997486" rot="0,0,0,1" remarks="电梯玻璃门"/>
+    <item id="013" name="13" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-11.321406,6.395872,40.930363" rot="0,0,0,1" remarks="电梯WAYZlogo"/>
+    <item id="014" name="14" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-9.271643,9.059695,40.735062" rot="0,0,0,1" remarks="电梯树"/>
+    <item id="015" name="15" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-15.772599,-1.505972,41.107159" rot="0,0,0,1" remarks="电梯左侧玻璃门"/>
+    <item id="016" name="16" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-26.830000,5.910000,41.549999" rot="0,0,0,1" remarks="VIP大屏幕"/>
+    <item id="017" name="17" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-25.840000,7.520000,40.770000" rot="0,0,0,1" remarks="VIP会议桌"/>
+    <item id="018" name="18" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-24.469999,4.670000,41.139999" rot="0,0,0,1" remarks="VIP大门"/>
+    <item id="019" name="19" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-25.237396,7.528093,42.074947" rot="0,0,0,1" remarks="VIP灯管"/>
+    <item id="020" name="20" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-28.410000,9.580000,41.560001" rot="0,0,0,1" remarks="VIP黑板"/>
+    <item id="021" name="21" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-22.123554,4.880470,41.189137" rot="0,0,0,1" remarks="vip走廊壁纸1"/>
+    <item id="022" name="22" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-21.510870,5.573328,41.122986" rot="0,0,0,1" remarks="vip走廊壁纸2"/>
+    <item id="023" name="23" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-20.874588,6.281631,41.217117" rot="0,0,0,1" remarks="vip走廊壁纸3"/>
+    <item id="024" name="24" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-15.950694,11.741442,41.206940" rot="0,0,0,1" remarks="vip走廊壁纸4"/>
+    <item id="025" name="25" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-15.088408,14.711878,40.202812" rot="0,0,0,1" remarks="vip走廊树"/>
+    <item id="026" name="26" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-12.578935,11.505207,41.170456" rot="0,0,0,1" remarks="厕所壁纸"/>
+    <item id="027" name="27" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-12.288313,23.206982,40.449612" rot="0,0,0,1" remarks="VT办公室会议桌"/>
+    <item id="028" name="28" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-11.156517,27.448549,40.479355" rot="0,0,0,1" remarks="VT办公桌"/>
+    <item id="029" name="29" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-5.565616,-3.367186,40.543373" rot="0,0,0,1" remarks="走廊白板"/>
+    <item id="030" name="30" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-8.760519,-6.396800,39.979752" rot="0,0,0,1" remarks="走廊出口提示"/>
+    <item id="031" name="31" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-11.597525,-8.077580,41.184875" rot="0,0,0,1" remarks="走廊壁纸1"/>
+    <item id="032" name="32" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-13.225693,-6.638182,41.190369" rot="0,0,0,1" remarks="走廊壁纸2"/>
+    <item id="033" name="33" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="2.288474,10.368468,41.745483" rot="0,0,0,1" remarks="行政灯管"/>
+    <item id="034" name="34" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-3.307503,14.291374,41.819534" rot="0,0,0,1" remarks="行政灯管2"/>
+    <item id="035" name="35" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="3.157127,8.957811,41.202648" rot="0,0,0,1" remarks="行政墙壁"/>
+    <item id="036" name="36" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-4.470000,21.040001,40.509998" rot="0,0,0,1" remarks="行政桌子"/>
+    <item id="037" name="37" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-7.150000,22.340000,40.119999" rot="0,0,0,1" remarks="行政桌子2"/>
+    <item id="038" name="38" abName="text3d_text" scale="0,0,0" eulerangle="0,0,0" pos="-7.500000,20.709999,40.990002" rot="0,0,0,1" remarks="行政打印机室"/>-->
+    <!--//车库-->
+    <!--<item id="001" name="01" abName="text3d_text" pos="-3.580000,1.300000,42.91999" rot="0,0,0,1" remarks="停车场入口"/>
+    <item id="002" name="02" abName="text3d_text" pos="1.397307,-0.576106,41.8144532" rot="0,0,0,1" remarks="二车道货梯出口"/>
+    <item id="003" name="03" abName="text3d_text" pos="21.540001,-4.220000,40.700001" rot="0,0,0,1" remarks="二车道电梯出口木门"/>
+    <item id="004" name="04" abName="text3d_text" pos="38.500000,-1.090000,42.500000" rot="0,0,0,1" remarks="二车道限高横梁"/>
+    <item id="005" name="05" abName="text3d_text" pos="56.892868,1.208548,41.534679" rot="0,0,0,1" remarks="二车道左侧标牌"/>
+    <item id="006" name="06" abName="text3d_text" pos="99.120003,2.470000,41.439999" rot="0,0,0,1" remarks="二车道柱子"/>
+    <item id="007" name="07" abName="text3d_text" pos="10.690000,14.490000,42.380001" rot="0,0,0,1" remarks="一车道标牌"/>
+    <item id="008" name="08" abName="text3d_text" pos="38.410000,15.660000,42.549999" rot="0,0,0,1" remarks="一车道限高"/>
+    <item id="009" name="09" abName="text3d_text" pos="56.248287,11.934581,41.515053" rot="0,0,0,1" remarks="一车道右侧柱子1"/>
+    <item id="010" name="10" abName="text3d_text" pos="73.648979,11.989720,41.921021" rot="0,0,0,1" remarks="一车道右侧柱子2"/>
+    <item id="011" name="11" abName="text3d_text" pos="90.910004,12.070000,41.980000" rot="0,0,0,1" remarks="一车道右侧柱子3"/>
+    <item id="012" name="12" abName="text3d_text" pos="108.110001,12.030000,41.840000" rot="0,0,0,1" remarks="一车道右侧柱子4"/>
+    <item id="013" name="13" abName="text3d_text" pos="112.459999,18.990000,42.299999" rot="0,0,0,1" remarks="出口"/>
+    <item id="014" name="14" abName="text3d_text" pos="90.940002,19.809999,41.660000" rot="0,0,0,1" remarks="一车道左侧柱子"/>
+    <item id="015" name="15" abName="text3d_text" pos="-15.772599,-1.505972,41.107159" rot="0,0,0,1" remarks="三车道左侧柱子1"/>
+    <item id="016" name="16" abName="text3d_text" pos="-26.830000,5.910000,41.549999" rot="0,0,0,1" remarks="三车道右侧柱子1"/>
+    <item id="017" name="17" abName="text3d_text" pos="22.070000,-16.090000,40.599998" rot="0,0,0,1" remarks="电梯右侧出口"/>
+    <item id="018" name="18" abName="text3d_text" pos="38.830002,-18.820000,41.990002" rot="0,0,0,1" remarks="三车道限高梁"/>
+    <item id="019" name="19" abName="text3d_text" pos="47.660000,-22.330000,41.520000" rot="0,0,0,1" remarks="三车道右侧柱子2"/>
+    <item id="020" name="20" abName="text3d_text" pos="65.589996,-22.160000,41.450001" rot="0,0,0,1" remarks="三车道右侧柱子3"/>
+    <item id="021" name="21" abName="text3d_text" pos="82.570000,-22.139999,41.669998" rot="0,0,0,1" remarks="三车道右侧柱子4"/>
+    <item id="022" name="22" abName="text3d_text" pos="91.029999,-22.090000,41.509998" rot="0,0,0,1" remarks="三车道右侧柱子5"/>
+    <item id="023" name="23" abName="text3d_text" pos="99.570000,-22.000000,41.400002" rot="0,0,0,1" remarks="三车道右侧柱子6"/>
+    <item id="024" name="24" abName="text3d_text" pos="107.989998,-21.860001,41.840000" rot="0,0,0,1" remarks="三车道右侧柱子7"/>
+    <item id="025" name="25" abName="text3d_text" pos="13.300000,-31.990000,41.599998" rot="0,0,0,1" remarks="四车道柱子1"/>
+    <item id="026" name="26" abName="text3d_text" pos="21.730000,-31.879999,41.500000" rot="0,0,0,1" remarks="四车道柱子2"/>
+    <item id="027" name="27" abName="text3d_text" pos="30.280001,-31.780001,41.709999" rot="0,0,0,1" remarks="四车道柱子3"/>
+    <item id="028" name="28" abName="text3d_text" pos="38.680000,-31.969999,41.549999" rot="0,0,0,1" remarks="四车道柱子4"/>
+    <item id="029" name="29" abName="text3d_text" pos="47.990002,-32.380001,41.290001" rot="0,0,0,1" remarks="四车道柱子5"/>
+    <item id="030" name="30" abName="text3d_text" pos="56.720001,-31.840000,41.500000" rot="0,0,0,1" remarks="四车道柱子6"/>
+    <item id="031" name="31" abName="text3d_text" pos="65.690002,-31.620001,41.389999" rot="0,0,0,1" remarks="四车道柱子7"/>
+    <item id="032" name="32" abName="text3d_text" pos="74.190002,-31.700001,41.490002" rot="0,0,0,1" remarks="四车道柱子8"/>
+    <item id="033" name="33" abName="text3d_text" pos="82.639999,-31.600000,41.720001" rot="0,0,0,1" remarks="四车道柱子9"/>
+    <item id="034" name="34" abName="text3d_text" pos="91.260002,-31.629999,41.459999" rot="0,0,0,1" remarks="四车道柱子10"/>
+    <item id="035" name="35" abName="text3d_text" pos="99.669998,-31.469999,41.360001" rot="0,0,0,1" remarks="四车道柱子11"/>
+    <item id="036" name="36" abName="text3d_text" pos="108.099998,-31.459999,41.560001" rot="0,0,0,1" remarks="四车道柱子12"/>
+    <item id="037" name="37" abName="text3d_text" pos="13.320000,-39.509998,41.639999" rot="0,0,0,1" remarks="四车道右侧柱子1"/>
+    <item id="038" name="38" abName="text3d_text" pos="21.760000,-39.459999,41.400002" rot="0,0,0,1" remarks="四车道右侧柱子2"/>
+    <item id="039" name="39" abName="text3d_text" pos="30.250000,-39.419998,41.549999" rot="0,0,0,1" remarks="四车道右侧柱子3"/>
+    <item id="040" name="40" abName="text3d_text" pos="38.720001,-39.389999,41.369999" rot="0,0,0,1" remarks="四车道右侧柱子4"/>
+    <item id="041" name="41" abName="text3d_text" pos="48.180000,-39.279999,40.980000" rot="0,0,0,1" remarks="四车道右侧柱子5"/>
+    <item id="042" name="42" abName="text3d_text" pos="56.630001,-39.240002,41.209999" rot="0,0,0,1" remarks="四车道右侧柱子6"/>
+    <item id="043" name="43" abName="text3d_text" pos="85.040001,-39.049999,41.200001" rot="0,0,0,1" remarks="四车道右侧柱子7"/>
+    <item id="044" name="44" abName="text3d_text" pos="91.080002,-39.040001,41.520000" rot="0,0,0,1" remarks="四车道右侧柱子8"/>
+    <item id="045" name="45" abName="text3d_text" pos="99.690002,-38.990002,41.689999" rot="0,0,0,1" remarks="四车道右侧柱子9"/>
+    <item id="046" name="46" abName="text3d_text" pos="108.169998,-38.970001,41.529999" rot="0,0,0,1" remarks="四车道右侧柱子10"/>-->
+
+    <!--<item id="9L_001" name="9L_001" scale="1,1,1" abName="9l/9L_001" eulerangle="47,-90,90" pos="-4.135,9.726,41.766" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_002" name="9L_002" scale="1,1,1" abName="9l/9L_002" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_003" name="9L_003" scale="1,1,1" abName="9l/9L_003" eulerangle="47,-90,90" pos="-1.89,7.64,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_004" name="9L_004" scale="1,1,1" abName="9l/9L_004" eulerangle="-3.575,-88.257,90.983" pos="0.276,8.399,41.407" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_005" name="9L_005" scale="1,1,1" abName="9l/9L_005" eulerangle="132.149,90,-90" pos="-10.705,10.463,41.97" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_006" name="9L_006" scale="1,1,1" abName="9l/9L_006" eulerangle="132.149,90,-90" pos="-10.705,10.463,41.97" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_007" name="9L_007" scale="1,1,1" abName="9l/9L_007" eulerangle="-39.67,-90,90" pos="-6.68,13.92001,39.39301" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_008" name="9L_008" scale="1,1,1" abName="9l/9L_008" eulerangle="224.994,88.87,267.469" pos="-7.337,6.92,41.873" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_009" name="9L_009" scale="1,1,1" abName="9l/9L_009" eulerangle="136.066,-90,90" pos="-8.51,8.07,41.83" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_010" name="9L_010" scale="1,1,1" abName="9l/9L_010" eulerangle="-2.702,-88.611,92.122" pos="1.261856,6.086,39.375" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_0112" name="9L_0112" scale="1,1,1" abName="9l/9L_0112" eulerangle="-2.702,-88.611,92.122" pos="1.261856,6.086,39.375" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_0011" name="9L_0011" scale="1,1,1" abName="9l/9L_0011" eulerangle="227.505,-90,90" pos="-4.10757,9.749439,41.76805" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_0021" name="9L_0021" scale="1,1,1" abName="9l/9L_0021" eulerangle="226.309,-90,90" pos="-3.02026,8.739819,41.49863" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_0031" name="9L_0031" scale="1,1,1" abName="9l/9L_0031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_0031" name="9L_0031" scale="1,1,1" abName="9l/9L_0031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_013" name="9L_013" scale="1,1,1" abName="9l/9L_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_Guide" name="9L_Guide" scale="1,1,1" abName="9l/9L_Guide" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L_WayPoints" name="9L_WayPoints" scale="1,1,1" abName="9l/9L_WayPoints" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>-->
+
+
+
+    <!--<item id="9L2_001" name="9L2_001" scale="1,1,1" abName="9l2/9L2_001" eulerangle="47,-90,90" pos="-4.135,9.726,41.766" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_002" name="9L2_002" scale="1,1,1" abName="9l2/9L2_002" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_003" name="9L2_003" scale="1,1,1" abName="9l2/9L2_003" eulerangle="47,-90,90" pos="-1.89,7.64,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_004" name="9L2_004" scale="1,1,1" abName="9l2/9L2_004" eulerangle="-3.575,-88.257,90.983" pos="0.276,8.399,41.407" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_005" name="9L2_005" scale="1,1,1" abName="9l2/9L2_005" eulerangle="132.149,90,-90" pos="-10.705,10.463,41.97" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_007" name="9L2_007" scale="1,1,1" abName="9l2/9L2_007" eulerangle="-39.67,-90,90" pos="-6.68,13.92001,39.39301" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_008" name="9L2_008" scale="1,1,1" abName="9l2/9L2_008" eulerangle="224.994,88.87,267.469" pos="-7.337,6.92,41.873" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_009" name="9L2_009" scale="1,1,1" abName="9l2/9L2_009" eulerangle="136.066,-90,90" pos="-8.51,8.07,41.83" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_010" name="9L2_010" scale="1,1,1" abName="9l2/9L2_010" eulerangle="-2.702,-88.611,92.122" pos="1.261856,6.086,39.375" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_0112" name="9L2_0112" scale="1,1,1" abName="9l2/9L2_0112" eulerangle="-2.702,-88.611,92.122" pos="1.261856,6.086,39.375" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_0011" name="9L2_0011" scale="1,1,1" abName="9l2/9L2_0011" eulerangle="227.505,-90,90" pos="-4.10757,9.749439,41.76805" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_0021" name="9L2_0021" scale="1,1,1" abName="9l2/9L2_0021" eulerangle="226.309,-90,90" pos="-3.02026,8.739819,41.49863" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_0031" name="9L2_0031" scale="1,1,1" abName="9l2/9L2_0031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_013" name="9L2_013" scale="1,1,1" abName="9l2/9L2_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_AIMapGroup" name="9L2_AIMapGroup" scale="1,1,1" abName="9l2/9L2_AIMapGroup" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>-->
+
+    <!--   <item id="haiquyuan_001" name="haiquyuan_001" scale="1,1,1" abName="haiquyuan/haiquyuan_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_002" name="haiquyuan_002" scale="1,1,1" abName="haiquyuan/haiquyuan_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_003" name="haiquyuan_003" scale="1,1,1" abName="haiquyuan/haiquyuan_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_004" name="haiquyuan_004" scale="1,1,1" abName="haiquyuan/haiquyuan_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_005" name="haiquyuan_005" scale="1,1,1" abName="haiquyuan/haiquyuan_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_006" name="haiquyuan_006" scale="1,1,1" abName="haiquyuan/haiquyuan_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_007" name="haiquyuan_007" scale="1,1,1" abName="haiquyuan/haiquyuan_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_008" name="haiquyuan_008" scale="1,1,1" abName="haiquyuan/haiquyuan_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_009" name="haiquyuan_009" scale="1,1,1" abName="haiquyuan/haiquyuan_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_010" name="haiquyuan_010" scale="1,1,1" abName="haiquyuan/haiquyuan_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_011" name="haiquyuan_011" scale="1,1,1" abName="haiquyuan/haiquyuan_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_012" name="haiquyuan_012" scale="1,1,1" abName="haiquyuan/haiquyuan_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_013" name="haiquyuan_013" scale="1,1,1" abName="haiquyuan/haiquyuan_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_014" name="haiquyuan_014" scale="1,1,1" abName="haiquyuan/haiquyuan_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_015" name="haiquyuan_015" scale="1,1,1" abName="haiquyuan/haiquyuan_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_016" name="haiquyuan_016" scale="1,1,1" abName="haiquyuan/haiquyuan_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_017" name="haiquyuan_017" scale="1,1,1" abName="haiquyuan/haiquyuan_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_018" name="haiquyuan_018" scale="1,1,1" abName="haiquyuan/haiquyuan_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_019" name="haiquyuan_019" scale="1,1,1" abName="haiquyuan/haiquyuan_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_020" name="haiquyuan_020" scale="1,1,1" abName="haiquyuan/haiquyuan_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_021" name="haiquyuan_021" scale="1,1,1" abName="haiquyuan/haiquyuan_021" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_022" name="haiquyuan_022" scale="1,1,1" abName="haiquyuan/haiquyuan_022" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_023" name="haiquyuan_023" scale="1,1,1" abName="haiquyuan/haiquyuan_023" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_024" name="haiquyuan_024" scale="1,1,1" abName="haiquyuan/haiquyuan_024" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_025" name="haiquyuan_025" scale="1,1,1" abName="haiquyuan/haiquyuan_025" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_026" name="haiquyuan_026" scale="1,1,1" abName="haiquyuan/haiquyuan_026" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_027" name="haiquyuan_027" scale="1,1,1" abName="haiquyuan/haiquyuan_027" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_028" name="haiquyuan_028" scale="1,1,1" abName="haiquyuan/haiquyuan_028" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_029" name="haiquyuan_029" scale="1,1,1" abName="haiquyuan/haiquyuan_029" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_030" name="haiquyuan_030" scale="1,1,1" abName="haiquyuan/haiquyuan_030" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="haiquyuan_031" name="haiquyuan_031" scale="1,1,1" abName="haiquyuan/haiquyuan_031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> -->
+
+    <!-- <item id="rencaigang_001" name="rencaigang_001" scale="1,1,1" abName="rencaigang/rencaigang_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_002" name="rencaigang_002" scale="1,1,1" abName="rencaigang/rencaigang_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_003" name="rencaigang_003" scale="1,1,1" abName="rencaigang/rencaigang_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_004" name="rencaigang_004" scale="1,1,1" abName="rencaigang/rencaigang_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_005" name="rencaigang_005" scale="1,1,1" abName="rencaigang/rencaigang_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_006" name="rencaigang_006" scale="1,1,1" abName="rencaigang/rencaigang_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_007" name="rencaigang_007" scale="1,1,1" abName="rencaigang/rencaigang_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_008" name="rencaigang_008" scale="1,1,1" abName="rencaigang/rencaigang_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_009" name="rencaigang_009" scale="1,1,1" abName="rencaigang/rencaigang_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_010" name="rencaigang_010" scale="1,1,1" abName="rencaigang/rencaigang_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_011" name="rencaigang_011" scale="1,1,1" abName="rencaigang/rencaigang_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_012" name="rencaigang_012" scale="1,1,1" abName="rencaigang/rencaigang_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_013" name="rencaigang_013" scale="1,1,1" abName="rencaigang/rencaigang_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_014" name="rencaigang_014" scale="1,1,1" abName="rencaigang/rencaigang_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_015" name="rencaigang_015" scale="1,1,1" abName="rencaigang/rencaigang_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_016" name="rencaigang_016" scale="1,1,1" abName="rencaigang/rencaigang_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_017" name="rencaigang_017" scale="1,1,1" abName="rencaigang/rencaigang_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_018" name="rencaigang_018" scale="1,1,1" abName="rencaigang/rencaigang_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_019" name="rencaigang_019" scale="1,1,1" abName="rencaigang/rencaigang_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_020" name="rencaigang_020" scale="1,1,1" abName="rencaigang/rencaigang_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_021" name="rencaigang_021" scale="1,1,1" abName="rencaigang/rencaigang_021" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_022" name="rencaigang_022" scale="1,1,1" abName="rencaigang/rencaigang_022" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_023" name="rencaigang_023" scale="1,1,1" abName="rencaigang/rencaigang_023" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_024" name="rencaigang_024" scale="1,1,1" abName="rencaigang/rencaigang_024" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_025" name="rencaigang_025" scale="1,1,1" abName="rencaigang/rencaigang_025" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_026" name="rencaigang_026" scale="1,1,1" abName="rencaigang/rencaigang_026" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_027" name="rencaigang_027" scale="1,1,1" abName="rencaigang/rencaigang_027" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_028" name="rencaigang_028" scale="1,1,1" abName="rencaigang/rencaigang_028" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_029" name="rencaigang_029" scale="1,1,1" abName="rencaigang/rencaigang_029" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_030" name="rencaigang_030" scale="1,1,1" abName="rencaigang/rencaigang_030" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_031" name="rencaigang_031" scale="1,1,1" abName="rencaigang/rencaigang_031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_032" name="rencaigang_032" scale="1,1,1" abName="rencaigang/rencaigang_032" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_033" name="rencaigang_033" scale="1,1,1" abName="rencaigang/rencaigang_033" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_034" name="rencaigang_034" scale="1,1,1" abName="rencaigang/rencaigang_034" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_035" name="rencaigang_035" scale="1,1,1" abName="rencaigang/rencaigang_035" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_036" name="rencaigang_036" scale="1,1,1" abName="rencaigang/rencaigang_036" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_037" name="rencaigang_037" scale="1,1,1" abName="rencaigang/rencaigang_037" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_038" name="rencaigang_038" scale="1,1,1" abName="rencaigang/rencaigang_038" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_039" name="rencaigang_039" scale="1,1,1" abName="rencaigang/rencaigang_039" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_040" name="rencaigang_040" scale="1,1,1" abName="rencaigang/rencaigang_040" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_041" name="rencaigang_041" scale="1,1,1" abName="rencaigang/rencaigang_041" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_042" name="rencaigang_042" scale="1,1,1" abName="rencaigang/rencaigang_042" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_043" name="rencaigang_043" scale="1,1,1" abName="rencaigang/rencaigang_043" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_044" name="rencaigang_044" scale="1,1,1" abName="rencaigang/rencaigang_044" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_045" name="rencaigang_045" scale="1,1,1" abName="rencaigang/rencaigang_045" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_046" name="rencaigang_046" scale="1,1,1" abName="rencaigang/rencaigang_046" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_047" name="rencaigang_047" scale="1,1,1" abName="rencaigang/rencaigang_047" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_048" name="rencaigang_048" scale="1,1,1" abName="rencaigang/rencaigang_048" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_049" name="rencaigang_049" scale="1,1,1" abName="rencaigang/rencaigang_049" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_050" name="rencaigang_050" scale="1,1,1" abName="rencaigang/rencaigang_050" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_051" name="rencaigang_051" scale="1,1,1" abName="rencaigang/rencaigang_051" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_052" name="rencaigang_052" scale="1,1,1" abName="rencaigang/rencaigang_052" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_053" name="rencaigang_053" scale="1,1,1" abName="rencaigang/rencaigang_053" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_054" name="rencaigang_054" scale="1,1,1" abName="rencaigang/rencaigang_054" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_055" name="rencaigang_055" scale="1,1,1" abName="rencaigang/rencaigang_055" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_056" name="rencaigang_056" scale="1,1,1" abName="rencaigang/rencaigang_056" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_057" name="rencaigang_057" scale="1,1,1" abName="rencaigang/rencaigang_057" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_058" name="rencaigang_058" scale="1,1,1" abName="rencaigang/rencaigang_058" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_059" name="rencaigang_059" scale="1,1,1" abName="rencaigang/rencaigang_059" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_060" name="rencaigang_060" scale="1,1,1" abName="rencaigang/rencaigang_060" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_061" name="rencaigang_061" scale="1,1,1" abName="rencaigang/rencaigang_061" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_062" name="rencaigang_062" scale="1,1,1" abName="rencaigang/rencaigang_062" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_063" name="rencaigang_063" scale="1,1,1" abName="rencaigang/rencaigang_063" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_064" name="rencaigang_064" scale="1,1,1" abName="rencaigang/rencaigang_064" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_065" name="rencaigang_065" scale="1,1,1" abName="rencaigang/rencaigang_065" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_066" name="rencaigang_066" scale="1,1,1" abName="rencaigang/rencaigang_066" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_067" name="rencaigang_067" scale="1,1,1" abName="rencaigang/rencaigang_067" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_068" name="rencaigang_068" scale="1,1,1" abName="rencaigang/rencaigang_068" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_069" name="rencaigang_069" scale="1,1,1" abName="rencaigang/rencaigang_069" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_070" name="rencaigang_070" scale="1,1,1" abName="rencaigang/rencaigang_070" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_071" name="rencaigang_071" scale="1,1,1" abName="rencaigang/rencaigang_071" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_072" name="rencaigang_072" scale="1,1,1" abName="rencaigang/rencaigang_072" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_073" name="rencaigang_073" scale="1,1,1" abName="rencaigang/rencaigang_073" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_074" name="rencaigang_074" scale="1,1,1" abName="rencaigang/rencaigang_074" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_075" name="rencaigang_075" scale="1,1,1" abName="rencaigang/rencaigang_075" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_076" name="rencaigang_076" scale="1,1,1" abName="rencaigang/rencaigang_076" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_077" name="rencaigang_077" scale="1,1,1" abName="rencaigang/rencaigang_077" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_078" name="rencaigang_078" scale="1,1,1" abName="rencaigang/rencaigang_078" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_079" name="rencaigang_079" scale="1,1,1" abName="rencaigang/rencaigang_079" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_080" name="rencaigang_080" scale="1,1,1" abName="rencaigang/rencaigang_080" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_081" name="rencaigang_081" scale="1,1,1" abName="rencaigang/rencaigang_081" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_082" name="rencaigang_082" scale="1,1,1" abName="rencaigang/rencaigang_082" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_083" name="rencaigang_083" scale="1,1,1" abName="rencaigang/rencaigang_083" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_084" name="rencaigang_084" scale="1,1,1" abName="rencaigang/rencaigang_084" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+    <item id="rencaigang_085" name="rencaigang_085" scale="1,1,1" abName="rencaigang/rencaigang_085" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> 
+    <item id="rencaigang_086" name="rencaigang_086" scale="1,1,1" abName="rencaigang/rencaigang_086" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> 
+  -->
+    <!--   <item id="kehaidalou_001" name="kehaidalou_001" scale="1,1,1" abName="kehaidalou/kehaidalou_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_002" name="kehaidalou_002" scale="1,1,1" abName="kehaidalou/kehaidalou_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_003" name="kehaidalou_003" scale="1,1,1" abName="kehaidalou/kehaidalou_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_004" name="kehaidalou_004" scale="1,1,1" abName="kehaidalou/kehaidalou_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_005" name="kehaidalou_005" scale="1,1,1" abName="kehaidalou/kehaidalou_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_006" name="kehaidalou_006" scale="1,1,1" abName="kehaidalou/kehaidalou_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_007" name="kehaidalou_007" scale="1,1,1" abName="kehaidalou/kehaidalou_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_008" name="kehaidalou_008" scale="1,1,1" abName="kehaidalou/kehaidalou_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_009" name="kehaidalou_009" scale="1,1,1" abName="kehaidalou/kehaidalou_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_010" name="kehaidalou_010" scale="1,1,1" abName="kehaidalou/kehaidalou_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_011" name="kehaidalou_011" scale="1,1,1" abName="kehaidalou/kehaidalou_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_012" name="kehaidalou_012" scale="1,1,1" abName="kehaidalou/kehaidalou_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_013" name="kehaidalou_013" scale="1,1,1" abName="kehaidalou/kehaidalou_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_014" name="kehaidalou_014" scale="1,1,1" abName="kehaidalou/kehaidalou_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_015" name="kehaidalou_015" scale="1,1,1" abName="kehaidalou/kehaidalou_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_016" name="kehaidalou_016" scale="1,1,1" abName="kehaidalou/kehaidalou_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_017" name="kehaidalou_017" scale="1,1,1" abName="kehaidalou/kehaidalou_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_018" name="kehaidalou_018" scale="1,1,1" abName="kehaidalou/kehaidalou_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_019" name="kehaidalou_019" scale="1,1,1" abName="kehaidalou/kehaidalou_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_020" name="kehaidalou_020" scale="1,1,1" abName="kehaidalou/kehaidalou_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_021" name="kehaidalou_021" scale="1,1,1" abName="kehaidalou/kehaidalou_021" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_022" name="kehaidalou_022" scale="1,1,1" abName="kehaidalou/kehaidalou_022" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_023" name="kehaidalou_023" scale="1,1,1" abName="kehaidalou/kehaidalou_023" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_024" name="kehaidalou_024" scale="1,1,1" abName="kehaidalou/kehaidalou_024" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_025" name="kehaidalou_025" scale="1,1,1" abName="kehaidalou/kehaidalou_025" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_026" name="kehaidalou_026" scale="1,1,1" abName="kehaidalou/kehaidalou_026" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_027" name="kehaidalou_027" scale="1,1,1" abName="kehaidalou/kehaidalou_027" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_028" name="kehaidalou_028" scale="1,1,1" abName="kehaidalou/kehaidalou_028" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_029" name="kehaidalou_029" scale="1,1,1" abName="kehaidalou/kehaidalou_029" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_030" name="kehaidalou_030" scale="1,1,1" abName="kehaidalou/kehaidalou_030" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_031" name="kehaidalou_031" scale="1,1,1" abName="kehaidalou/kehaidalou_031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_032" name="kehaidalou_032" scale="1,1,1" abName="kehaidalou/kehaidalou_032" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_033" name="kehaidalou_033" scale="1,1,1" abName="kehaidalou/kehaidalou_033" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_034" name="kehaidalou_034" scale="1,1,1" abName="kehaidalou/kehaidalou_034" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_035" name="kehaidalou_035" scale="1,1,1" abName="kehaidalou/kehaidalou_035" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_036" name="kehaidalou_036" scale="1,1,1" abName="kehaidalou/kehaidalou_036" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_037" name="kehaidalou_037" scale="1,1,1" abName="kehaidalou/kehaidalou_037" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_038" name="kehaidalou_038" scale="1,1,1" abName="kehaidalou/kehaidalou_038" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_039" name="kehaidalou_039" scale="1,1,1" abName="kehaidalou/kehaidalou_039" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_040" name="kehaidalou_040" scale="1,1,1" abName="kehaidalou/kehaidalou_040" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_041" name="kehaidalou_041" scale="1,1,1" abName="kehaidalou/kehaidalou_041" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_042" name="kehaidalou_042" scale="1,1,1" abName="kehaidalou/kehaidalou_042" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_043" name="kehaidalou_043" scale="1,1,1" abName="kehaidalou/kehaidalou_043" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_044" name="kehaidalou_044" scale="1,1,1" abName="kehaidalou/kehaidalou_044" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_045" name="kehaidalou_045" scale="1,1,1" abName="kehaidalou/kehaidalou_045" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_046" name="kehaidalou_046" scale="1,1,1" abName="kehaidalou/kehaidalou_046" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_047" name="kehaidalou_047" scale="1,1,1" abName="kehaidalou/kehaidalou_047" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_048" name="kehaidalou_048" scale="1,1,1" abName="kehaidalou/kehaidalou_048" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_049" name="kehaidalou_049" scale="1,1,1" abName="kehaidalou/kehaidalou_049" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kehaidalou_050" name="kehaidalou_050" scale="1,1,1" abName="kehaidalou/kehaidalou_050" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> -->
+
+    <!--   <item id="kerong_001" name="kerong_001" scale="1,1,1" abName="kerong/kerong_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_002" name="kerong_002" scale="1,1,1" abName="kerong/kerong_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_003" name="kerong_003" scale="1,1,1" abName="kerong/kerong_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_004" name="kerong_004" scale="1,1,1" abName="kerong/kerong_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_005" name="kerong_005" scale="1,1,1" abName="kerong/kerong_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_006" name="kerong_006" scale="1,1,1" abName="kerong/kerong_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_007" name="kerong_007" scale="1,1,1" abName="kerong/kerong_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_008" name="kerong_008" scale="1,1,1" abName="kerong/kerong_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_009" name="kerong_009" scale="1,1,1" abName="kerong/kerong_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_010" name="kerong_010" scale="1,1,1" abName="kerong/kerong_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_011" name="kerong_011" scale="1,1,1" abName="kerong/kerong_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_012" name="kerong_012" scale="1,1,1" abName="kerong/kerong_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kerong_013" name="kerong_013" scale="1,1,1" abName="kerong/kerong_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_001" name="kexianyuan_001" scale="1,1,1" abName="kexianyuan/kexianyuan_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_002" name="kexianyuan_002" scale="1,1,1" abName="kexianyuan/kexianyuan_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_003" name="kexianyuan_003" scale="1,1,1" abName="kexianyuan/kexianyuan_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_004" name="kexianyuan_004" scale="1,1,1" abName="kexianyuan/kexianyuan_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_005" name="kexianyuan_005" scale="1,1,1" abName="kexianyuan/kexianyuan_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_006" name="kexianyuan_006" scale="1,1,1" abName="kexianyuan/kexianyuan_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_007" name="kexianyuan_007" scale="1,1,1" abName="kexianyuan/kexianyuan_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_008" name="kexianyuan_008" scale="1,1,1" abName="kexianyuan/kexianyuan_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_009" name="kexianyuan_009" scale="1,1,1" abName="kexianyuan/kexianyuan_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="kexianyuan_010" name="kexianyuan_010" scale="1,1,1" abName="kexianyuan/kexianyuan_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> -->
+    <!--   <item id="lvdi_001" name="lvdi_001" scale="1,1,1" abName="lvdi/lvdi_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_002" name="lvdi_002" scale="1,1,1" abName="lvdi/lvdi_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_003" name="lvdi_003" scale="1,1,1" abName="lvdi/lvdi_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_004" name="lvdi_004" scale="1,1,1" abName="lvdi/lvdi_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_005" name="lvdi_005" scale="1,1,1" abName="lvdi/lvdi_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_006" name="lvdi_006" scale="1,1,1" abName="lvdi/lvdi_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_007" name="lvdi_007" scale="1,1,1" abName="lvdi/lvdi_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_008" name="lvdi_008" scale="1,1,1" abName="lvdi/lvdi_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_009" name="lvdi_009" scale="1,1,1" abName="lvdi/lvdi_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_010" name="lvdi_010" scale="1,1,1" abName="lvdi/lvdi_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_011" name="lvdi_011" scale="1,1,1" abName="lvdi/lvdi_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_012" name="lvdi_012" scale="1,1,1" abName="lvdi/lvdi_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_013" name="lvdi_013" scale="1,1,1" abName="lvdi/lvdi_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_014" name="lvdi_014" scale="1,1,1" abName="lvdi/lvdi_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_015" name="lvdi_015" scale="1,1,1" abName="lvdi/lvdi_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_016" name="lvdi_016" scale="1,1,1" abName="lvdi/lvdi_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_017" name="lvdi_017" scale="1,1,1" abName="lvdi/lvdi_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_018" name="lvdi_018" scale="1,1,1" abName="lvdi/lvdi_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_019" name="lvdi_019" scale="1,1,1" abName="lvdi/lvdi_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_020" name="lvdi_020" scale="1,1,1" abName="lvdi/lvdi_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="lvdi_021" name="lvdi_021" scale="1,1,1" abName="lvdi/lvdi_021" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/> -->
+
+    <!--<item id="lvdi_001" name="lvdi_001" scale="1,1,1" abName="lvdi/lvdi_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_002" name="lvdi_002" scale="1,1,1" abName="lvdi/lvdi_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_003" name="lvdi_003" scale="1,1,1" abName="lvdi/lvdi_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_004" name="lvdi_004" scale="1,1,1" abName="lvdi/lvdi_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_005" name="lvdi_005" scale="1,1,1" abName="lvdi/lvdi_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_006" name="lvdi_006" scale="1,1,1" abName="lvdi/lvdi_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_007" name="lvdi_007" scale="1,1,1" abName="lvdi/lvdi_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_008" name="lvdi_008" scale="1,1,1" abName="lvdi/lvdi_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_009" name="lvdi_009" scale="1,1,1" abName="lvdi/lvdi_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_010" name="lvdi_010" scale="1,1,1" abName="lvdi/lvdi_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_011" name="lvdi_011" scale="1,1,1" abName="lvdi/lvdi_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_012" name="lvdi_012" scale="1,1,1" abName="lvdi/lvdi_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_013" name="lvdi_013" scale="1,1,1" abName="lvdi/lvdi_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_014" name="lvdi_014" scale="1,1,1" abName="lvdi/lvdi_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_015" name="lvdi_015" scale="1,1,1" abName="lvdi/lvdi_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_016" name="lvdi_016" scale="1,1,1" abName="lvdi/lvdi_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_017" name="lvdi_017" scale="1,1,1" abName="lvdi/lvdi_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_018" name="lvdi_018" scale="1,1,1" abName="lvdi/lvdi_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_019" name="lvdi_019" scale="1,1,1" abName="lvdi/lvdi_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_020" name="lvdi_020" scale="1,1,1" abName="lvdi/lvdi_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_021" name="lvdi_021" scale="1,1,1" abName="lvdi/lvdi_021" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_022" name="lvdi_022" scale="1,1,1" abName="lvdi/lvdi_022" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_024" name="lvdi_024" scale="1,1,1" abName="lvdi/lvdi_024" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_025" name="lvdi_025" scale="1,1,1" abName="lvdi/lvdi_025" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_026" name="lvdi_026" scale="1,1,1" abName="lvdi/lvdi_026" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_027" name="lvdi_027" scale="1,1,1" abName="lvdi/lvdi_027" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_028" name="lvdi_028" scale="1,1,1" abName="lvdi/lvdi_028" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_029" name="lvdi_029" scale="1,1,1" abName="lvdi/lvdi_029" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_030" name="lvdi_030" scale="1,1,1" abName="lvdi/lvdi_030" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_031" name="lvdi_031" scale="1,1,1" abName="lvdi/lvdi_031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_0112" name="lvdi_0112" scale="1,1,1" abName="lvdi/lvdi_0112" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+ <item id="lvdi_AIMapGroup" name="lvdi_AIMapGroup" scale="1,1,1" abName="lvdi/lvdi_AIMapGroup" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>-->
+
+    <!--   <item id="superdemo_001" name="superdemo_001" scale="1,1,1" abName="superdemo/superdemo_001" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_002" name="superdemo_002" scale="1,1,1" abName="superdemo/superdemo_002" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_003" name="superdemo_003" scale="1,1,1" abName="superdemo/superdemo_003" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_004" name="superdemo_004" scale="1,1,1" abName="superdemo/superdemo_004" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_005" name="superdemo_005" scale="1,1,1" abName="superdemo/superdemo_005" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_006" name="superdemo_006" scale="1,1,1" abName="superdemo/superdemo_006" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_007" name="superdemo_007" scale="1,1,1" abName="superdemo/superdemo_007" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_008" name="superdemo_008" scale="1,1,1" abName="superdemo/superdemo_008" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_009" name="superdemo_009" scale="1,1,1" abName="superdemo/superdemo_009" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_010" name="superdemo_010" scale="1,1,1" abName="superdemo/superdemo_010" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_011" name="superdemo_011" scale="1,1,1" abName="superdemo/superdemo_011" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_012" name="superdemo_012" scale="1,1,1" abName="superdemo/superdemo_012" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_013" name="superdemo_013" scale="1,1,1" abName="superdemo/superdemo_013" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_014" name="superdemo_014" scale="1,1,1" abName="superdemo/superdemo_014" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_015" name="superdemo_015" scale="1,1,1" abName="superdemo/superdemo_015" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_016" name="superdemo_016" scale="1,1,1" abName="superdemo/superdemo_016" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_017" name="superdemo_017" scale="1,1,1" abName="superdemo/superdemo_017" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_018" name="superdemo_018" scale="1,1,1" abName="superdemo/superdemo_018" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_019" name="superdemo_019" scale="1,1,1" abName="superdemo/superdemo_019" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_020" name="superdemo_020" scale="1,1,1" abName="superdemo/superdemo_020" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_029" name="superdemo_029" scale="1,1,1" abName="superdemo/superdemo_029" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_030" name="superdemo_030" scale="1,1,1" abName="superdemo/superdemo_030" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_031" name="superdemo_031" scale="1,1,1" abName="superdemo/superdemo_031" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_032" name="superdemo_032" scale="1,1,1" abName="superdemo/superdemo_032" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_033" name="superdemo_033" scale="1,1,1" abName="superdemo/superdemo_033" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_035" name="superdemo_035" scale="1,1,1" abName="superdemo/superdemo_035" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_036" name="superdemo_036" scale="1,1,1" abName="superdemo/superdemo_036" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_037" name="superdemo_037" scale="1,1,1" abName="superdemo/superdemo_037" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_038" name="superdemo_038" scale="1,1,1" abName="superdemo/superdemo_038" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_039" name="superdemo_039" scale="1,1,1" abName="superdemo/superdemo_039" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_040" name="superdemo_040" scale="1,1,1" abName="superdemo/superdemo_040" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_041" name="superdemo_041" scale="1,1,1" abName="superdemo/superdemo_041" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_042" name="superdemo_042" scale="1,1,1" abName="superdemo/superdemo_042" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_043" name="superdemo_043" scale="1,1,1" abName="superdemo/superdemo_043" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_044" name="superdemo_044" scale="1,1,1" abName="superdemo/superdemo_044" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_045" name="superdemo_045" scale="1,1,1" abName="superdemo/superdemo_045" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_046" name="superdemo_046" scale="1,1,1" abName="superdemo/superdemo_046" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_047" name="superdemo_047" scale="1,1,1" abName="superdemo/superdemo_047" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_048" name="superdemo_048" scale="1,1,1" abName="superdemo/superdemo_048" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_049" name="superdemo_049" scale="1,1,1" abName="superdemo/superdemo_049" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_052" name="superdemo_052" scale="1,1,1" abName="superdemo/superdemo_052" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_053" name="superdemo_053" scale="1,1,1" abName="superdemo/superdemo_053" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_054" name="superdemo_054" scale="1,1,1" abName="superdemo/superdemo_054" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_056" name="superdemo_056" scale="1,1,1" abName="superdemo/superdemo_056" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_057" name="superdemo_057" scale="1,1,1" abName="superdemo/superdemo_057" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_059" name="superdemo_059" scale="1,1,1" abName="superdemo/superdemo_059" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_060" name="superdemo_060" scale="1,1,1" abName="superdemo/superdemo_060" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_061" name="superdemo_061" scale="1,1,1" abName="superdemo/superdemo_061" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_062" name="superdemo_062" scale="1,1,1" abName="superdemo/superdemo_062" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_063" name="superdemo_063" scale="1,1,1" abName="superdemo/superdemo_063" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_067" name="superdemo_067" scale="1,1,1" abName="superdemo/superdemo_067" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_068" name="superdemo_068" scale="1,1,1" abName="superdemo/superdemo_068" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_069" name="superdemo_069" scale="1,1,1" abName="superdemo/superdemo_069" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_070" name="superdemo_070" scale="1,1,1" abName="superdemo/superdemo_070" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_071" name="superdemo_071" scale="1,1,1" abName="superdemo/superdemo_071" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_073" name="superdemo_073" scale="1,1,1" abName="superdemo/superdemo_073" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_074" name="superdemo_074" scale="1,1,1" abName="superdemo/superdemo_074" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_075" name="superdemo_075" scale="1,1,1" abName="superdemo/superdemo_075" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_078" name="superdemo_078" scale="1,1,1" abName="superdemo/superdemo_078" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_079" name="superdemo_079" scale="1,1,1" abName="superdemo/superdemo_079" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_080" name="superdemo_080" scale="1,1,1" abName="superdemo/superdemo_080" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_081" name="superdemo_081" scale="1,1,1" abName="superdemo/superdemo_081" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_082" name="superdemo_082" scale="1,1,1" abName="superdemo/superdemo_082" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_083" name="superdemo_083" scale="1,1,1" abName="superdemo/superdemo_083" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_084" name="superdemo_084" scale="1,1,1" abName="superdemo/superdemo_084" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_Guide" name="superdemo_Guide" scale="1,1,1" abName="superdemo/superdemo_Guide" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_WayPoints" name="superdemo_WayPoints" scale="1,1,1" abName="superdemo/superdemo_WayPoints" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_Mask_lvdi" name="superdemo_Mask_lvdi" scale="1,1,1" abName="superdemo/superdemo_Mask_lvdi" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>
+      <item id="superdemo_Mask_juxin" name="superdemo_Mask_juxin" scale="1,1,1" abName="superdemo/superdemo_Mask_juxin" eulerangle="227.023,-90,90" pos="-1.9,7.668,41.493" rot="0,0,0,1" remarks="1L"/>-->
+
+
+    <item id="9L2_color_01" name="9L2_color_01" scale="1,1,1" abName="9L2_color/9L2_color_01" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_02" name="9L2_color_02" scale="1,1,1" abName="9L2_color/9L2_color_02" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_03" name="9L2_color_03" scale="1,1,1" abName="9L2_color/9L2_color_03" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_04" name="9L2_color_04" scale="1,1,1" abName="9L2_color/9L2_color_04" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_05" name="9L2_color_05" scale="1,1,1" abName="9L2_color/9L2_color_05" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_06" name="9L2_color_06" scale="1,1,1" abName="9L2_color/9L2_color_06" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_07" name="9L2_color_07" scale="1,1,1" abName="9L2_color/9L2_color_07" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_08" name="9L2_color_08" scale="1,1,1" abName="9L2_color/9L2_color_08" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_09" name="9L2_color_09" scale="1,1,1" abName="9L2_color/9L2_color_09" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_010" name="9L2_color_010" scale="1,1,1" abName="9L2_color/9L2_color_010" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_011" name="9L2_color_011" scale="1,1,1" abName="9L2_color/9L2_color_011" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_012" name="9L2_color_012" scale="1,1,1" abName="9L2_color/9L2_color_012" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_013" name="9L2_color_013" scale="1,1,1" abName="9L2_color/9L2_color_013" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_014" name="9L2_color_014" scale="1,1,1" abName="9L2_color/9L2_color_014" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_015" name="9L2_color_015" scale="1,1,1" abName="9L2_color/9L2_color_015" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_016" name="9L2_color_016" scale="1,1,1" abName="9L2_color/9L2_color_016" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_017" name="9L2_color_017" scale="1,1,1" abName="9L2_color/9L2_color_017" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_018" name="9L2_color_018" scale="1,1,1" abName="9L2_color/9L2_color_018" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_019" name="9L2_color_019" scale="1,1,1" abName="9L2_color/9L2_color_019" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_020" name="9L2_color_020" scale="1,1,1" abName="9L2_color/9L2_color_020" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_021" name="9L2_color_021" scale="1,1,1" abName="9L2_color/9L2_color_021" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_022" name="9L2_color_022" scale="1,1,1" abName="9L2_color/9L2_color_022" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_023" name="9L2_color_023" scale="1,1,1" abName="9L2_color/9L2_color_023" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_024" name="9L2_color_024" scale="1,1,1" abName="9L2_color/9L2_color_024" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_025" name="9L2_color_025" scale="1,1,1" abName="9L2_color/9L2_color_025" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_026" name="9L2_color_026" scale="1,1,1" abName="9L2_color/9L2_color_026" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_027" name="9L2_color_027" scale="1,1,1" abName="9L2_color/9L2_color_027" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+    <item id="9L2_color_Mask" name="9L2_color_Mask" scale="1,1,1" abName="9L2_color/9L2_color_Mask" eulerangle="47,-90,90" pos="-3.04,8.72,41.497" rot="0,0,0,1" remarks="1L"/>
+
+</config>
