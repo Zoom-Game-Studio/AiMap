@@ -10,7 +10,7 @@ namespace HttpData
         /// <summary>
         /// 测试示例的相机物理数据
         /// </summary>
-        public static Float4 intrinsic => new Float4(494.4375f, 498.5292f, 319.8089f, 241.4202f);
+        public static Float4 intrinsic => new Float4(494.4375f, 498.5292f, 960f, 540f);
         
         public Float4(float number0 = 0,float number1 = 0,float number2 = 0,float number3 = 0)
         {

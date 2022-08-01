@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 3269042955
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: data
+      Dependencies: {}
+    Info_1:
+      Name: model/chengdu
+      Dependencies: {}

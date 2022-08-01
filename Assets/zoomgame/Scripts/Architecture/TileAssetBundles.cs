@@ -79,18 +79,6 @@ namespace Architecture
             }
         }
 
-
-        public void LogXml(string name)
-        {
-            var asset = LazyLoad(name);
-            if (asset)
-            {
-                XmlConvert.LogJson(asset.text);
-            }
-            else
-                Debug.Log(name +" is null");
-        }
-
         TextAsset LazyLoad(string name)
         {
             if (map.TryGetValue("data", out var assetBundle))
@@ -120,6 +108,11 @@ namespace Architecture
                 main = AssetBundle.LoadFromFile(fullPath);
             }
 
+            if(main == null)
+            {
+                Console.Error("加载ab包失败：" + fullPath);
+                return;
+            }
             var manifest = main.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             var all = manifest.GetAllAssetBundles();
             foreach (var name in all)

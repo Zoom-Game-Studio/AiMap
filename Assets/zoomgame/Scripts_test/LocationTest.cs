@@ -30,9 +30,12 @@ namespace C_ScriptsTest
 
         [TextArea] [SerializeField] private string currentFile;
 
-        [Header("手机参数")]
-        public Gps gps = Gps.ChengDu;
+        [Header("手机参数")] public Gps gps = Gps.ChengDu;
         public Orientation orientation = Orientation.left_h;
+
+        [Header("转换到Unity坐标系")] public bool convertToUnityCoordinate = false;
+        [Header("自动连续测试全部")] [SerializeField] private bool autoTestAll = false;
+
 
         public enum Gps
         {
@@ -46,20 +49,22 @@ namespace C_ScriptsTest
             /// 左横屏
             /// </summary>
             left_h = 1,
+
             /// <summary>
             /// 倒立竖屏
             /// </summary>
-            inverse_v =2,
+            inverse_v = 2,
+
             /// <summary>
             /// 右横屏
             /// </summary>
             right_h = 3,
+
             /// <summary>
             /// 竖屏
             /// </summary>
             v = 4,
         }
-
 
 
         private void Start()
@@ -91,6 +96,23 @@ namespace C_ScriptsTest
             currentFile = obj;
         }
 
+        private int _index = 0;
+
+        [Button("测试下一个"), ButtonGroup("test")]
+        void NextAndTest()
+        {
+            currentFile = allImage[_index].fullPath;
+            _index++;
+            if (_index == allImage.Count)
+            {
+                autoTestAll = false;
+            }
+
+            _index = _index % allImage.Count;
+            Debug.Log($"{_index}:{allImage.Count}:{currentFile}");
+            Location();
+        }
+
         [Button("定位测试"), ButtonGroup("test")]
         void Location()
         {
@@ -109,7 +131,7 @@ namespace C_ScriptsTest
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
-                
+
                 var now = DateTime.Now.Ticks;
                 //记录截图时的相机姿态
                 var capturePose = new GameObject().AddComponent<CapturePoseNode>();
@@ -118,9 +140,9 @@ namespace C_ScriptsTest
                 capturePose.transform.rotation = main.rotation;
                 capturePose.ticks = now;
 
-                location.RequestLocation(image, Float4.intrinsic, gpsInfo,(int)orientation, (s, d) =>
+                location.RequestLocation(image, Float4.intrinsic, gpsInfo, (int)orientation, (s, d) =>
                 {
-                    OnFinish(s,d);
+                    OnFinish(s, d);
                     
                     this.GetArchitecture().SendEvent(new LocationResponseEvent()
                     {
@@ -128,6 +150,11 @@ namespace C_ScriptsTest
                         state = s,
                         ticks = now,
                     });
+
+                    if (autoTestAll)
+                    {
+                        Invoke(nameof(NextAndTest), 0.2f);
+                    }
                 });
             }
             else
@@ -135,22 +162,24 @@ namespace C_ScriptsTest
                 Debug.LogError("进入运行模式才能进行测试");
             }
         }
+
         private void OnFinish(HTTPRequestStates state, string data)
         {
-            Debug.Log(state);
-            Debug.Log(data);
-
-            if (state == HTTPRequestStates.Finished && data.Contains("succeed"))
+            if (state == HTTPRequestStates.Finished && !string.IsNullOrEmpty(data) && data.Contains("succeed"))
             {
+                var pointer = pool.PopItem();
                 var locationInfo = DataMapper.ToLocation(data);
                 var pose = LocalizationConvert.LocationToUnityPose(locationInfo);
-                var pointer = pool.PopItem();
-                pointer.transform.position = pose.pos;
-                pointer.transform.rotation = pose.rot;
+                pointer.transform.SetParent(LocalizationConvert.Origin);
+                pointer.transform.localPosition = locationInfo.translation;
+                pointer.transform.localEulerAngles = locationInfo.rotation.eulerAngles;
+                pointer.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                // pointer.transform.rotation = pose.rot;
+                // pointer.transform.position = pose.pos;
+                // pointer.name = currentFile;
             }
-
-
         }
+
 
         void RunTest()
         {

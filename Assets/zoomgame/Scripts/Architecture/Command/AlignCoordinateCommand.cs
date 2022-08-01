@@ -21,15 +21,17 @@ namespace Architecture.Command
             {
                 var response = Newtonsoft.Json.JsonConvert.DeserializeObject<LocationResponse>(data);
                 var location = DataMapper.ToLocation(response);
-                if (location.success)
+                if (location.IsSuccess)
                 {
                     var pose = LocalizationConvert.LocationToUnityPose(location);
                     LocalizationConvert.CoordinatesAlignWithView(pose, transform);
+                    var o = LocalizationConvert.Origin;
+                    Console.Warning($"{o.position},{o.eulerAngles}");
                 }
-
+                
                 this.SendEvent(new PlayAudioEvent()
                 {
-                    success = location.success,
+                    success = location.IsSuccess,
                 });
             }
             catch (Exception e)

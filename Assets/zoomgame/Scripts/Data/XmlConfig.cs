@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using LitJson;
 using Newtonsoft.Json;
 using QFramework;
 using UnityEngine;
@@ -24,11 +25,7 @@ namespace Data
             sb.Replace("#comment", "comment");
             return sb;
         }
-
-        public static void LogJson(string content)
-        {
-        }
-
+        
         public static Vector3 ConvertToVector3(this string data)
         {
             var self = new Vector3();
@@ -84,7 +81,30 @@ namespace Data
 
         public static LayerXml Convert(string content)
         {
-            return JsonConvert.DeserializeObject<LayerXml>(XmlConvert.GetJson(content).ToString());
+            var json = XmlConvert.GetJson(content).ToString();
+            Debug.Log(json);
+            var jsonData = JsonMapper.ToObject(json);
+            var data = jsonData["item"];
+            var xml = new LayerXml();
+            if (data.IsArray)
+            {
+                var count = data.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    var itemData = data[i];
+                    var item = new LayerXmlItem();
+                    item.id = (string)itemData["id"];
+                    item.name = (string)itemData["name"];
+                    xml.item.Add(item);
+                }
+            }
+            else if (data.IsObject){
+                var item = new LayerXmlItem();
+                item.id = (string)data["id"];
+                item.name = (string)data["name"];
+                xml.item.Add(item);
+            }
+            return xml;
         }
     }
 
@@ -101,7 +121,32 @@ namespace Data
 
         public static IconXml Convert(string content)
         {
-            return JsonConvert.DeserializeObject<IconXml>(XmlConvert.GetJson(content).ToString());
+            var json = XmlConvert.GetJson(content).ToString();
+            Debug.Log(json);
+            var jsonData = JsonMapper.ToObject(json);
+            var data = jsonData["item"];
+            var xml = new IconXml();
+            if (data.IsArray)
+            {
+                var count = data.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    var itemData = data[i];
+                    var item = new IconXmlItem();
+                    item.id = (string)itemData["id"];
+                    item.name = (string)itemData["name"];
+                    item.icon = (string)itemData["icon"];
+                    xml.item.Add(item);
+                }
+            }
+            else if (data.IsObject){
+                var item = new IconXmlItem();
+                item.id = (string)data["id"];
+                item.name = (string)data["name"];
+                item.icon = (string)data["icon"];
+                xml.item.Add(item);
+            }
+            return xml;
         }
     }
 
@@ -122,7 +167,33 @@ namespace Data
         
         public static ModuleXml Convert(string content)
         {
-            return JsonConvert.DeserializeObject<ModuleXml>(XmlConvert.GetJson(content).ToString());
+            // return JsonConvert.DeserializeObject<ModuleXml>(XmlConvert.GetJson(content).ToString());
+            var json = XmlConvert.GetJson(content).ToString();
+            Debug.Log(json);
+            var jsonData = JsonMapper.ToObject(json);
+            var data = jsonData["item"];
+            var xml = new ModuleXml();
+            if (data.IsArray)
+            {
+                var count = data.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    var itemData = data[i];
+                    var item = new ModuleXmlItem();
+                    item.id = (string)itemData["id"];
+                    item.layer = (string)itemData["layer"];
+                    item.limitBack = (string)itemData["limitBack"];
+                    xml.item.Add(item);
+                }
+            }
+            else if (data.IsObject){
+                var item = new ModuleXmlItem();
+                item.id = (string)data["id"];
+                item.layer = (string)data["layer"];
+                item.limitBack = (string)data["limitBack"];
+                xml.item.Add(item);
+            }
+            return xml;
         }
     }
 
@@ -173,7 +244,41 @@ namespace Data
         {
             var json = XmlConvert.GetJson(content).ToString();
             Debug.Log(json);
-            return JsonConvert.DeserializeObject<ModelXml>(json);
+            var jsonData = JsonMapper.ToObject(json);
+            var data = jsonData["item"];
+            ModelXml xml = new ModelXml();
+            if (data.IsArray)
+            {
+                var count = data.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    var itemData = data[i];
+                    var item = new ModelXmlItem();
+                    item.id = (string)itemData["id"];
+                    item.name = (string)itemData["name"];
+                    item.scale = (string)itemData["scale"];
+                    item.abName = (string)itemData["abName"];
+                    item.eulerangle = (string)itemData["eulerangle"];
+                    item.pos = (string)itemData["pos"];
+                    item.rot = (string)itemData["rot"];
+                    item.remarks = (string)itemData["remarks"];
+                    xml.item.Add(item);
+                }
+            }
+            else if (data.IsObject)
+            {
+                var item = new ModelXmlItem();
+                item.id = (string)data["id"];
+                item.name = (string)data["name"];
+                item.scale = (string)data["scale"];
+                item.abName = (string)data["abName"];
+                item.eulerangle = (string)data["eulerangle"];
+                item.pos = (string)data["pos"];
+                item.rot = (string)data["rot"];
+                item.remarks = (string)data["remarks"];
+                xml.item.Add(item);
+            }
+            return xml;
         }
 
         public List<ModelXmlItemData> ConvertItemsToData()

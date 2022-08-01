@@ -10,7 +10,7 @@ namespace Architecture
         {
             this.RegisterUtility<ICanCapturePhoto>(new PhotoCapture());
             this.RegisterUtility<ICanLocation>(new VisionLocation());
-            this.RegisterUtility<ITileResLoader>(new TileLoader());
+            this.RegisterUtility<ITileResCache>(new TileCache());
             this.RegisterModel<ICameraOffset>(new CameraOffsetData());
         }
     }

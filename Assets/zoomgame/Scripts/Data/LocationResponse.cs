@@ -54,7 +54,7 @@ namespace HttpData
         /// <summary>
         /// 定位是否成功
         /// </summary>
-        public bool success;
+        public string description;
 
         /// <summary>
         /// 定位返回UTM坐标下位置
@@ -85,5 +85,11 @@ namespace HttpData
         /// 位置和姿态的标准差
         /// </summary>
         public float[] deviation;
+
+        /// <summary>
+        /// 是否定位成功
+        /// </summary>
+        public bool IsSuccess => description.Contains("succeed");
     }
+    
 }
