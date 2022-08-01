@@ -23,8 +23,6 @@ namespace C_ScriptsTest
         [SerializeField] private ComponentPool<LocationPointNode> pool;
 
         [Header("照片路径")] [SerializeField] private string path;
-        [Header("图像类型")] [SerializeField] private string fileType = ".jpg";
-
         [Header("所有图像")] [SerializeField, TableList]
         private List<ImageItem> allImage;
 
@@ -82,7 +80,7 @@ namespace C_ScriptsTest
         [Button("获取全部图像"), ButtonGroup("set")]
         void GetAllPicture()
         {
-            var all = Directory.GetFiles(path).Where(e => e.EndsWith(fileType)).ToList();
+            var all = Directory.GetFiles(path).Where(e => !e.EndsWith(".meta")).ToList();
             foreach (var n in all)
             {
                 var item = new ImageItem();
@@ -202,7 +200,21 @@ namespace C_ScriptsTest
                 });
             });
         }
+        
+        [Button]
+        public void ShowAsImage()
+        {
+            using var fileStream = new FileStream(currentFile, FileMode.Open, FileAccess.Read);
+            var bufferBytes = new byte[fileStream.Length];
+            fileStream.Read(bufferBytes, 0, (int) fileStream.Length);
+            var tex = new Texture2D(640,360);
+            tex.LoadImage(bufferBytes);
+            var render = new GameObject(currentFile).AddComponent<SpriteRenderer>();
+            render.sprite = Sprite.Create(tex,new Rect(0,0,640,360),Vector2.zero);
+        }
     }
+    
+
 
     [System.Serializable]
     public class ImageItem

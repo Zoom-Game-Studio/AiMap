@@ -13,21 +13,38 @@ namespace WeiXiang
 {
     public class GameManager : AbstractMonoController
     {
-        [SerializeField] private AudioClip success, fail,hit;
+        [SerializeField] private AudioClip intervalClip;
+        [SerializeField,TextArea] private string token;
+        [SerializeField,TextArea] private string url;
+        [SerializeField] private CaptureResolution captureResolution;
+        [SerializeField] private Intrinsic intrinsic;
+
+        [System.Serializable]
+        public class Intrinsic
+        {
+            public float px, py, fx, fy;
+        }
+
+        [System.Serializable]
+        public class CaptureResolution
+        {
+            public int width, height;
+        }
 
         private void Start()
         {
-            Console.Warning("Console init complete");
-
+            Console.Warning("[Console] init complete");
+            this.SendCommand(new SetVisLocationModel()
+            {
+                token = token,
+                url = url,
+                intrinsic = intrinsic,
+                captureResolution = captureResolution,
+            });
             this.SendCommand<StartLocationCommand>();
             this.RegisterEvent<LocationResponseEvent>(OnFinishRequest).UnRegisterWhenGameObjectDestroyed(gameObject);
-
             NRInput.SetInputSource(InputSourceEnum.Controller);
-
             var origin = LocalizationConvert.Origin;
-
-            this.RegisterEvent<PlayAudioEvent>(OnFinish);
-
             Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
         }
 
@@ -48,31 +65,20 @@ namespace WeiXiang
             }
         }
 
-        private void OnFinish(PlayAudioEvent obj)
-        {
-            if (obj.success)
-            {
-                AudioSource.PlayClipAtPoint(success,Camera.main.transform.position);
-            }
-            else
-            {
-                AudioSource.PlayClipAtPoint(hit, Camera.main.transform.position);
-            }
-        }
+
         
 
         void OnInterval(long _)
         {
-            AudioSource.PlayClipAtPoint(fail,Vector3.zero);
+            AudioSource.PlayClipAtPoint(intervalClip,Vector3.zero);
             // 抽帧定位
             this.SendCommand<CaptureAndLocationCommand>();
         }
 
-        [Button]
+        [Button("CaptureAndLocationCommand")]
         void TestLocation()
         {
             this.SendCommand<CaptureAndLocationCommand>();
         }
-
     }
 }

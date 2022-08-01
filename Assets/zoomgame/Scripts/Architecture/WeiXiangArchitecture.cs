@@ -8,10 +8,17 @@ namespace Architecture
     {
         protected override void Init()
         {
-            this.RegisterUtility<ICanCapturePhoto>(new PhotoCapture());
-            this.RegisterUtility<ICanLocation>(new VisionLocation());
+            var photoCapture = new PhotoCapture();
+            this.RegisterUtility<ICanCapturePhoto>(photoCapture);
             this.RegisterUtility<ITileResCache>(new TileCache());
             this.RegisterModel<ICameraOffset>(new CameraOffsetData());
+            var locationModel = new LocationModel();
+            this.RegisterModel<ILocationModel>(locationModel);
+            var visionLocation = new VisionLocation();
+            this.RegisterUtility<ICanLocation>(visionLocation);
+            visionLocation.BindData(locationModel);
+            photoCapture.BindData(locationModel);
+
         }
     }
 }
