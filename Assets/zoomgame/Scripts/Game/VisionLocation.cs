@@ -5,6 +5,7 @@ using QFramework;
 using HttpData;
 using UnityEngine;
 using WeiXiang;
+using zoomgame.Scripts.Game;
 using Console = WeiXiang.Console;
 
 namespace Architecture
@@ -34,6 +35,8 @@ namespace Architecture
 
             try
             {
+
+                
                 var bodyData = new BodyData()
                 {
                     timestamp = BodyData.GetUTCTimeStamp(),

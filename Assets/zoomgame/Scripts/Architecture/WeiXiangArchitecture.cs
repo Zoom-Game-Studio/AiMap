@@ -1,4 +1,3 @@
-using System.Threading;
 using QFramework;
 using WeiXiang;
 
@@ -18,7 +17,9 @@ namespace Architecture
             this.RegisterUtility<ICanLocation>(visionLocation);
             visionLocation.BindData(locationModel);
             photoCapture.BindData(locationModel);
-
+            var amapLocation = new AmapLocation();
+            amapLocation.StartLocation();
+            this.RegisterUtility<IAmap>(amapLocation);
         }
     }
 }
