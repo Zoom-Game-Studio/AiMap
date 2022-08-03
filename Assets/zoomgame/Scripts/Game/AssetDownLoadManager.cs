@@ -3,13 +3,14 @@ using Architecture;
 using BestHTTP;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Waku.Module;
 
 namespace WeiXiang
 {
     /// <summary>
     /// 资源管理器
     /// </summary>
-    public class AssetManager : AbstractMonoController
+    public class AssetDownLoadManager : AbstractMonoController
     {
         public string url = @"https://aimap.newayz.com/aimap/ora/v1/scenes?device_type=android";
         public string token = "ade820503cc6069ff507346a6ef7fec3";
@@ -36,5 +37,7 @@ namespace WeiXiang
                 WeiXiang.Console.Error("Request asset config error!");
             }
         }
+
+        public AssetDownloader loader = new AssetDownloader();
     }
 }
