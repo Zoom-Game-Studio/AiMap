@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class LoadAb : MonoBehaviour
 {
-    public string tileName = "9L_国潮风";
+    [TextArea]
+    public string fullPath = "9L_国潮风";
+    [TextArea]
+    [SerializeField] private string infoId;
 
     [SerializeField] private bool loadOnStart = false;
+
     private void Start()
     {
         if (loadOnStart)
@@ -21,7 +25,7 @@ public class LoadAb : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            TileBuilder.Instantiate(tileName);
+            TileBuilder.Instantiate(fullPath,infoId);
         }
     }
 

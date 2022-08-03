@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.IO;
 using Data;
+using ICSharpCode.SharpZipLib.Core;
 using UnityEngine;
 using WeiXiang;
 
@@ -12,7 +14,7 @@ namespace Architecture
     {
         public Dictionary<string, AssetBundle> map = new Dictionary<string, AssetBundle>();
         public AssetBundle main;
-        public readonly string Name;
+        public readonly string assetInfoItemId;
 
         private LayerXml layer;
         private IconXml icon;
@@ -88,24 +90,29 @@ namespace Architecture
             return null;
         }
 
-        public TileAssetBundles(string name)
+        public TileAssetBundles(string assetInfoItemId)
         {
-            Name = name;
+            this.assetInfoItemId = assetInfoItemId;
         }
 
-        void LoadFromMemory()
-        {
-        }
-
+        
         /// <summary>
         /// 从本地加载
         /// </summary>
-        public void LoadFromPath()
+        /// <param name="assetBundleDir">资源包文件夹路径</param>
+        public void LoadFromPath(string assetBundleDir)
         {
-            var fullPath = PathConvert.GetFullPath(Name) + "/StreamingAssets";
+            var fullPath = Path.Combine(assetBundleDir, assetInfoItemId);
+            if (!Directory.Exists(fullPath))
+            {
+                Debug.LogError("资源路径不存在:"+fullPath);
+                return;
+            }
+
+            var mainBundlePath = Path.Combine(fullPath, "StreamingAssets");
             if (!main)
             {
-                main = AssetBundle.LoadFromFile(fullPath);
+                main = AssetBundle.LoadFromFile(mainBundlePath);
             }
 
             if(main == null)
@@ -117,12 +124,11 @@ namespace Architecture
             var all = manifest.GetAllAssetBundles();
             foreach (var name in all)
             {
-                var path = PathConvert.GetPath(Name, name);
+                var path = Path.Combine(fullPath, name);
                 if (!map.TryGetValue(name, out var assetBundle) || !assetBundle)
                 {
                     assetBundle = AssetBundle.LoadFromFile(path);
                 }
-
                 if (map.ContainsKey(name))
                 {
                     map[name] = assetBundle;
@@ -158,12 +164,12 @@ namespace Architecture
         /// <summary>
         /// 根据地块的名字加载地块资源
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="assetDirPath"></param>
         /// <returns></returns>
-        public static TileAssetBundles LoadTileAssetBundles(string name)
+        public static TileAssetBundles LoadTileAssetBundles(string assetDirPath,string id)
         {
-            var tileAssetBundles = new TileAssetBundles(name);
-            tileAssetBundles.LoadFromPath();
+            var tileAssetBundles = new TileAssetBundles(id);
+            tileAssetBundles.LoadFromPath(assetDirPath);
             return tileAssetBundles;
         }
     }

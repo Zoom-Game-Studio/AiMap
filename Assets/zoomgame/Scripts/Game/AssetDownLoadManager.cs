@@ -3,7 +3,6 @@ using Architecture;
 using BestHTTP;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Waku.Module;
 
 namespace WeiXiang
 {
@@ -37,7 +36,5 @@ namespace WeiXiang
                 WeiXiang.Console.Error("Request asset config error!");
             }
         }
-
-        public AssetDownloader loader = new AssetDownloader();
     }
 }

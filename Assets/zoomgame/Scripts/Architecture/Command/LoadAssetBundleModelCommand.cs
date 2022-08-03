@@ -14,7 +14,6 @@ namespace Architecture.Command
 
         protected override void OnExecute()
         {
-            TileBuilder.Instantiate(_tileName);
         }
     }
 }

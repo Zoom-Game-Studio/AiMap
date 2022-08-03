@@ -9,7 +9,7 @@ namespace Architecture
         {
             var photoCapture = new PhotoCapture();
             this.RegisterUtility<ICanCapturePhoto>(photoCapture);
-            this.RegisterUtility<ITileResCache>(new TileCache());
+            this.RegisterUtility<ITileResCache>(new TileBuilder());
             this.RegisterModel<ICameraOffset>(new CameraOffsetData());
             var locationModel = new LocationModel();
             this.RegisterModel<ILocationModel>(locationModel);

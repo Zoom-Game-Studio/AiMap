@@ -29,8 +29,7 @@ namespace Waku.Module
         /// gps坐标
         /// </summary>
         public Coordinate coordinate { get; set; }
-        public Bundary bundary { get; set; }
-        
+        public Boundary boundary { get; set; }
         public string boundaryId { get; set; }
         public string city { get; set; }
         public string township { get; set; }
@@ -46,12 +45,12 @@ namespace Waku.Module
             item.name = name;
             item.description = description;
             item.avatar = avatar;
-            item.type =type;
+            item.type = type;
             item.deviceType = deviceType;
             item.style = style;
             item.place = place;
             item.coordinate = coordinate.Clone();
-            item.bundary = bundary.Clone();
+            item.boundary = boundary.Clone();
             item.boundaryId = boundaryId;
             item.city = city;
             item.township = township;
@@ -62,10 +61,11 @@ namespace Waku.Module
             return item;
         }
 
+        [System.Serializable]
         public class Coordinate
         {
-            float longitude { get; set; }
-            float latitude { get; set; }
+            public float longitude { get; set; }
+            public float latitude { get; set; }
 
             public Coordinate Clone()
             {
@@ -77,22 +77,25 @@ namespace Waku.Module
             }
         }
 
-        public class Bundary
+        [System.Serializable]
+        public class Boundary
         {
             public string type { set; get; }
-            public List<List<float>> coordinates { get; set; }
+            public List<List<List<float>>> coordinates;
 
-            public Bundary Clone()
+            public Boundary Clone()
             {
-                var b = new Bundary();
+                var b = new Boundary();
                 b.type = type;
                 b.coordinates = coordinates;
                 return b;
             }
         }
-        
+
+        [System.Serializable]
         public class Package
         {
+            [System.Serializable]
             public class File
             {
                 public string id { get; set; }
@@ -116,7 +119,7 @@ namespace Waku.Module
                     return f;
                 }
             }
-            
+
             public List<File> files { get; set; }
 
             public Package Clone()
@@ -127,6 +130,8 @@ namespace Waku.Module
                 {
                     p.files.Add(file.Clone());
                 }
+
+                return p;
             }
         }
     }
