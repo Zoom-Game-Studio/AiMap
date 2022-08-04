@@ -189,11 +189,11 @@ namespace WeiXiang
             anchor.transform.localScale = Vector3.one;
             Object.Destroy(anchor.gameObject);
             
-            //计算多次定位的平均值
-            _postionArr.Add(Origin.position);
-            _eularArr.Add(Origin.eulerAngles);
-            Origin.position = GetArrAverage(_postionArr);
-            Origin.eulerAngles = GetArrAverage(_eularArr);
+            // //计算多次定位的平均值
+            // _postionArr.Add(Origin.position);
+            // _eularArr.Add(Origin.eulerAngles);
+            // Origin.position = GetArrAverage(_postionArr);
+            // Origin.eulerAngles = GetArrAverage(_eularArr);
         }
     }
 }

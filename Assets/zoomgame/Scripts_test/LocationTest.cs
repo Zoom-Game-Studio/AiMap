@@ -19,6 +19,21 @@ namespace C_ScriptsTest
     public class LocationTest : AbstractMonoController
     {
         public static LocationTest instance { private set; get; }
+        [Header("测试参数")]
+        [SerializeField, TextArea] private string token ="5bc251ab113f1510e3e1509b2442d52b";
+        [SerializeField, TextArea] private string url = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
+        [SerializeField] private WeiXiang.GameManager.CaptureResolution captureResolution = new WeiXiang.GameManager.CaptureResolution()
+        {
+            width = 640,
+            height = 360,
+        };
+        [SerializeField] private WeiXiang.GameManager.Intrinsic intrinsic = new WeiXiang.GameManager.Intrinsic()
+        {
+            px = 774,
+            py = 774,
+            fx = 320,
+            fy = 180,
+        };
         private ICanLocation location;
         [SerializeField] private ComponentPool<LocationPointNode> pool;
 
@@ -31,7 +46,6 @@ namespace C_ScriptsTest
         [Header("手机参数")] public Gps gps = Gps.ChengDu;
         public Orientation orientation = Orientation.left_h;
 
-        [Header("转换到Unity坐标系")] public bool convertToUnityCoordinate = false;
         [Header("自动连续测试全部")] [SerializeField] private bool autoTestAll = false;
 
 
@@ -68,6 +82,13 @@ namespace C_ScriptsTest
         private void Start()
         {
             instance = this;
+            this.SendCommand(new SetVisLocationModel()
+            {
+                token = token,
+                url = url,
+                intrinsic = intrinsic,
+                captureResolution = captureResolution,
+            });
             this.location = this.GetArchitecture().GetUtility<ICanLocation>();
         }
 

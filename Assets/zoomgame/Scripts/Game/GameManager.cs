@@ -82,6 +82,8 @@ namespace WeiXiang
                 // 抽帧定位
                 this.SendCommand<CaptureAndLocationCommand>();
                 isCaptureComplete = false;
+                var mat = NRFrame.GetRGBCameraIntrinsicMatrix();
+                Debug.Log("GetRGBCameraIntrinsicMatrix" +mat.ToString());
             }
             else
             {
