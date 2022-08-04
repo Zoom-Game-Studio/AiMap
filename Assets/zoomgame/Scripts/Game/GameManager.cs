@@ -14,10 +14,11 @@ namespace WeiXiang
     public class GameManager : AbstractMonoController
     {
         [SerializeField] private AudioClip intervalClip;
-        [SerializeField,TextArea] private string token;
-        [SerializeField,TextArea] private string url;
+        [SerializeField, TextArea] private string token;
+        [SerializeField, TextArea] private string url;
         [SerializeField] private CaptureResolution captureResolution;
         [SerializeField] private Intrinsic intrinsic;
+        [SerializeField] private bool isCaptureComplete = true;
 
         [System.Serializable]
         public class Intrinsic
@@ -43,9 +44,15 @@ namespace WeiXiang
             });
             this.SendCommand<StartLocationCommand>();
             this.RegisterEvent<LocationResponseEvent>(OnFinishRequest).UnRegisterWhenGameObjectDestroyed(gameObject);
+            this.RegisterEvent<CaptureFinishEvent>(OnFinishCapture).UnRegisterWhenGameObjectDestroyed(gameObject);
             NRInput.SetInputSource(InputSourceEnum.Controller);
             var origin = LocalizationConvert.Origin;
             Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
+        }
+
+        private void OnFinishCapture(CaptureFinishEvent obj)
+        {
+            isCaptureComplete = true;
         }
 
         /// <summary>
@@ -66,13 +73,19 @@ namespace WeiXiang
         }
 
 
-        
-
         void OnInterval(long _)
         {
-            AudioSource.PlayClipAtPoint(intervalClip,Vector3.zero);
-            // 抽帧定位
-            this.SendCommand<CaptureAndLocationCommand>();
+            if (isCaptureComplete)
+            {
+                AudioSource.PlayClipAtPoint(intervalClip, Vector3.zero);
+                // 抽帧定位
+                this.SendCommand<CaptureAndLocationCommand>();
+                isCaptureComplete = false;
+            }
+            else
+            {
+                WeiXiang.Console.Warning("Capture not complete!");
+            }
         }
 
         [Button("CaptureAndLocationCommand")]
