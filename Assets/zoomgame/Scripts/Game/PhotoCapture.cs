@@ -52,7 +52,7 @@ namespace WeiXiang
                 {
                     capture.TakePhotoAsync((result, frame) =>
                     {
-                        SavePhoto(frame.Data);
+                        // SavePhoto(frame.Data);
                         callback?.Invoke(result.success, frame.Data);
                         this.Close();
                     });
@@ -62,7 +62,7 @@ namespace WeiXiang
             {
                 _photoCaptureObject.TakePhotoAsync((r, f) =>
                 {
-                    SavePhoto(f.Data);
+                    // SavePhoto(f.Data);
                     callback.Invoke(r.success, f.Data);
                     Close();
                 });
@@ -152,21 +152,21 @@ namespace WeiXiang
             this._locationModel = locationModel;
         }
 
-        void SavePhoto(byte[] data)
-        {
-            var path = Path.Combine(Application.persistentDataPath, "ScreenShot");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            var now = DateTime.Now;
-            var name = $"{now.Year}_{now.Month}_{now.Day}_{now.Hour}_{now.Minute}_{now.Second}_{now.Millisecond}";
-            var fullPath = Path.Combine(path, name);
-            using (var fs = new FileStream(fullPath, FileMode.Create))
-            {
-                fs.Write(data);
-            }
-        }
+        // void SavePhoto(byte[] data)
+        // {
+        //     var path = Path.Combine(Application.persistentDataPath, "ScreenShot");
+        //     if (!Directory.Exists(path))
+        //     {
+        //         Directory.CreateDirectory(path);
+        //     }
+        //
+        //     var now = DateTime.Now;
+        //     var name = $"{now.Year}_{now.Month}_{now.Day}_{now.Hour}_{now.Minute}_{now.Second}_{now.Millisecond}";
+        //     var fullPath = Path.Combine(path, name);
+        //     using (var fs = new FileStream(fullPath, FileMode.Create))
+        //     {
+        //         fs.Write(data);
+        //     }
+        // }
     }
 }

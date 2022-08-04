@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
 using QFramework;
 using UnityEngine;
 using WeiXiang;
+using Console = WeiXiang.Console;
+using Object = UnityEngine.Object;
 
 namespace Architecture
 {
@@ -31,9 +34,7 @@ namespace Architecture
             }
             catch (System.Exception e)
             {
-                Console.Error($"Fail to load, tileName: {assetDirPath}/{assetInfoItemId}");
-                Console.Error(e.Message);
-                Console.Error(e.StackTrace);
+                Console.Error($"Fail to instantiate tile asset: {assetDirPath}/{assetInfoItemId},because {e.Message}");
             }
         }
 
@@ -51,13 +52,20 @@ namespace Architecture
             else
             {
                 var tile = TileAssetBundles.LoadTileAssetBundles(assetDirPath, assetInfoItemId);
-                ResCache.Add(assetInfoItemId, tile);
+                if (tile != null)
+                {
+                    ResCache.Add(assetInfoItemId, tile);
+                }
                 return tile;
             }
         }
 
         public static void Instantiate(TileAssetBundles tileAssetBundles)
         {
+            if (tileAssetBundles == null)
+            {
+                throw new NullReferenceException("TileAssetBundles can not be null,check it is load complete?");
+            }
             var modeData = tileAssetBundles.ModelXml.ConvertItemsToData();
             foreach (var propData in modeData)
             {
