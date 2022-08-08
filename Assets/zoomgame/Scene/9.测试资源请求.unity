@@ -372,3 +372,5 @@ MonoBehaviour:
     fx: 960
     fy: 540
   isCaptureComplete: 1
+  overrideGps: 1
+  overrideGpsPostion: {x: 121.6041, y: 31.1797}

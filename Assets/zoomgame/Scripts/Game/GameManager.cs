@@ -15,6 +15,7 @@ namespace WeiXiang
 {
     public class GameManager : AbstractMonoController
     {
+        [SerializeField] private GameObject infoTip;
         [SerializeField] private AudioClip intervalClip;
         [SerializeField, TextArea] private string token = "5bc251ab113f1510e3e1509b2442d52b";
         [SerializeField, TextArea] private string url = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
@@ -99,11 +100,12 @@ namespace WeiXiang
                 captureCD.Value = false;
                 isCaptureComplete = false;
                 captureCD.Where(v => !v).Throttle(TimeSpan.FromSeconds(5)).Subscribe(_ => captureCD.Value = true);
-                AudioSource.PlayClipAtPoint(intervalClip, Vector3.zero);
+                AudioSource.PlayClipAtPoint(intervalClip, Camera.main ? Camera.main.transform.position : Vector3.zero);
+                infoTip.SetActive(true);
                 // 抽帧定位
                 this.SendCommand<CaptureAndLocationCommand>();
-                var mat = NRFrame.GetRGBCameraIntrinsicMatrix();
-                Debug.Log("GetRGBCameraIntrinsicMatrix" + mat.ToString());
+                // var mat = NRFrame.GetRGBCameraIntrinsicMatrix();
+                // Debug.Log("GetRGBCameraIntrinsicMatrix" + mat.ToString());
             }
             else
             {
@@ -118,7 +120,9 @@ namespace WeiXiang
         void DownloadAssetBundleAndBuild()
         {
             var gps = overrideGps ? overrideGpsPostion : this.SendQuery(new QueryGpsCommand());
-            if (AssetDownloader.Instance)
+            var amap = this.GetArchitecture().GetUtility<IAmap>();
+            Debug.Log($"Gps {amap.IsRunning},定位为：" + gps);
+            if (AssetDownloader.Instance && (amap.IsRunning || overrideGps))
             {
                 var success = AssetDownloader.Instance.TryBuildAssetByGps(gps);
                 if (!success)

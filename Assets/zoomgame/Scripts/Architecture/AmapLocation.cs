@@ -9,6 +9,7 @@ namespace WeiXiang
     /// </summary>
     public interface IAmap : IUtility
     {
+        bool IsRunning { get; }
         /// <summary>
         /// 经度 104
         /// </summary>
@@ -17,6 +18,8 @@ namespace WeiXiang
         /// 纬度 30
         /// </summary>
         float Latitude { get; }
+
+        int ErrorCode { get; set; }
     }
     /// <summary>
     /// 高德定位
@@ -33,12 +36,12 @@ namespace WeiXiang
         /// <summary>
         /// 经度
         /// </summary>
-        private double longitude = 104.067607;
+        private double longitude = 0;
 
         /// <summary>
         /// 纬度
         /// </summary>
-        private double latitude = 30.551928;
+        private double latitude = 0;
 
         private string errorMessage;
 
@@ -53,6 +56,8 @@ namespace WeiXiang
         /// 纬度
         /// </summary>
         public float Latitude => (float) latitude;
+
+        public int ErrorCode { get; set; }
 
         public AmapLocation()
         {
@@ -109,7 +114,8 @@ namespace WeiXiang
         {
             if (amapLocation != null)
             {
-                if (amapLocation.Call<int>("getErrorCode") == 0)
+                var errorCode = amapLocation.Call<int>("getErrorCode");
+                if ( errorCode == 0)
                 {
                     this.longitude = amapLocation.Call<double>("getLongitude");
                     this.latitude = amapLocation.Call<double>("getLatitude");
@@ -117,6 +123,7 @@ namespace WeiXiang
                 }
                 else
                 {
+                    this.ErrorCode = errorCode;
                     this.errorMessage = amapLocation.Call<string>("getErrorInfo");
                 }
 

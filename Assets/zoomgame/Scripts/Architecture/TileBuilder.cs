@@ -69,19 +69,27 @@ namespace Architecture
             var modeData = tileAssetBundles.ModelXml.ConvertItemsToData();
             foreach (var propData in modeData)
             {
-                var names = propData.abName.Split("/");
-                var ab = names[0].ToLower();
-                var prefab = names[1];
-                var assetBundle = tileAssetBundles.GetAssetBundle(ab);
-                var asset = assetBundle.LoadAsset<GameObject>(prefab);
+                try
+                {
+                    var names = propData.abName.Split("/");
+                    var ab = names[0].ToLower();
+                    var prefab = names[1];
+                    var assetBundle = tileAssetBundles.GetAssetBundle(ab);
+                    var asset = assetBundle.LoadAsset<GameObject>(prefab);
 
-                Transform root = LocalizationConvert.Origin;
-                var go = Object.Instantiate(asset, root);
-                go.name = propData.name;
-                //xxx 写死了相对姿态
-                go.transform.localPosition = propData.pos;
-                go.transform.localEulerAngles = Vector3.zero;
-                go.transform.localScale = new Vector3(1, -1, 1);
+                    Transform root = LocalizationConvert.Origin;
+                    var go = Object.Instantiate(asset, root);
+                    go.name = propData.name;
+                    //xxx 写死了相对姿态
+                    go.transform.localPosition = Vector3.zero;
+                    go.transform.localEulerAngles = Vector3.zero;
+                    go.transform.localScale = new Vector3(1, -1, 1);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"实例化资源失败：{propData?.name},{propData?.abName},{e.Message}");
+                }
+
             }
         }
     }
