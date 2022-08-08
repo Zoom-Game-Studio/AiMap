@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Architecture;
 using BestHTTP;
+using C_ScriptsTest;
 using Newtonsoft.Json;
 using NRKernal;
 using Sirenix.OdinInspector;
@@ -70,6 +71,17 @@ namespace Waku.Module
             {
                 var info = buildList.Dequeue();
                 TileBuilder.Instantiate(fullPath, info.id);
+            }
+        }
+
+        [SerializeField] private string testId;
+        [Button]
+        void DownLoadAssetBundle()
+        {
+            var info = ServerList.Find(e => e.id.Equals(testId));
+            if (info != null)
+            {
+                this.AddToDownloadList(info);
             }
         }
 
@@ -177,6 +189,7 @@ namespace Waku.Module
         private void RequestSeverList()
         {
             var request = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnFinishRequestServerList);
+            request.AddHeader("token",token);
             request.Send();
         }
 
@@ -189,6 +202,7 @@ namespace Waku.Module
                     var data = response.DataAsText;
                     ServerList = JsonConvert.DeserializeObject<AssetList>(data);
                     Debug.Log("Server list load complete");
+                    // RailTest.ShowBoundary(ServerList);
                 }
                 catch (Exception e)
                 {

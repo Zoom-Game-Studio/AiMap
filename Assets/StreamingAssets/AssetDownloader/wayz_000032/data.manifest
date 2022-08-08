@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 993803861
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f9f0217ad11fe3f39a808d6b04d95da8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Common/Config/layer.xml
+- Assets/Common/Config/Icon.xml
+- Assets/Common/Config/model.xml
+- Assets/Common/Config/module.xml
+Dependencies: []

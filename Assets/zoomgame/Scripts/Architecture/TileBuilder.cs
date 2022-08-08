@@ -17,7 +17,7 @@ namespace Architecture
     /// </summary>
     public class TileBuilder : ITileResCache
     {
-        public static Dictionary<string, TileAssetBundles> ResCache = new Dictionary<string, TileAssetBundles>();
+        public static TileAssetBundles ResCache;
         public static readonly string DataName = "data";
 
         /// <summary>
@@ -45,18 +45,26 @@ namespace Architecture
         /// <returns></returns>
         public static TileAssetBundles LoadTile(string assetDirPath, string assetInfoItemId)
         {
-            if (ResCache.ContainsKey(assetInfoItemId))
+            if (ResCache != null && ResCache.assetInfoItemId.Equals(assetInfoItemId))
             {
-                return ResCache[assetInfoItemId];
+                return ResCache;
             }
             else
             {
-                var tile = TileAssetBundles.LoadTileAssetBundles(assetDirPath, assetInfoItemId);
-                if (tile != null)
+                if (ResCache != null)
                 {
-                    ResCache.Add(assetInfoItemId, tile);
+                    var pp = LocalizationConvert.Origin;
+                    for (int i = 0; i < pp.childCount; i++)
+                    {
+                        Object.Destroy(pp.GetChild(i).gameObject);
+                    }
+
+                    AssetBundle.UnloadAllAssetBundles(true);
+                    ResCache = null;
                 }
-                return tile;
+
+                ResCache = TileAssetBundles.LoadTileAssetBundles(assetDirPath, assetInfoItemId);
+                return ResCache;
             }
         }
 
@@ -66,6 +74,7 @@ namespace Architecture
             {
                 throw new NullReferenceException("TileAssetBundles can not be null,check it is load complete?");
             }
+
             var modeData = tileAssetBundles.ModelXml.ConvertItemsToData();
             foreach (var propData in modeData)
             {
@@ -89,7 +98,6 @@ namespace Architecture
                 {
                     Debug.LogError($"实例化资源失败：{propData?.name},{propData?.abName},{e.Message}");
                 }
-
             }
         }
     }
