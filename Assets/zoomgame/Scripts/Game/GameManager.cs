@@ -16,13 +16,15 @@ namespace WeiXiang
     public class GameManager : AbstractMonoController
     {
         [SerializeField] private AudioClip intervalClip;
-        [SerializeField, TextArea] private string token ="5bc251ab113f1510e3e1509b2442d52b";
+        [SerializeField, TextArea] private string token = "5bc251ab113f1510e3e1509b2442d52b";
         [SerializeField, TextArea] private string url = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
+
         [SerializeField] private CaptureResolution captureResolution = new CaptureResolution()
         {
             width = 640,
             height = 360,
         };
+
         [SerializeField] private Intrinsic intrinsic = new Intrinsic()
         {
             px = 774,
@@ -30,12 +32,16 @@ namespace WeiXiang
             fx = 320,
             fy = 180,
         };
+
         [SerializeField] private bool isCaptureComplete = true;
 
+        private BoolReactiveProperty captureCD = new BoolReactiveProperty(true);
+
         [Header("覆盖高德的GPS坐标")] public bool overrideGps = false;
+
         public Vector2 overrideGpsPostion = new Vector2
         {
-            x =121.60449397773354f,
+            x = 121.60449397773354f,
             y = 31.17980398552158f,
         };
 
@@ -65,8 +71,20 @@ namespace WeiXiang
             this.RegisterEvent<CaptureFinishEvent>(OnFinishCapture).UnRegisterWhenGameObjectDestroyed(gameObject);
             NRInput.SetInputSource(InputSourceEnum.Controller);
             var origin = LocalizationConvert.Origin;
-            Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
-            Invoke(nameof(DownloadAssetBundleAndBuild),2);
+            // Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
+            Invoke(nameof(DownloadAssetBundleAndBuild), 2);
+            NRInput.SetInputSource(InputSourceEnum.Controller);
+        }
+
+        /// <summary>
+        ///  按下进行抽帧定位
+        /// </summary>
+        private void Update()
+        {
+            if (NRInput.GetButtonDown(ControllerButton.TRIGGER) || Input.GetKeyDown(KeyCode.Space))
+            {
+                OnInterval(0);
+            }
         }
 
         private void OnFinishCapture(CaptureFinishEvent obj)
@@ -76,18 +94,21 @@ namespace WeiXiang
 
         void OnInterval(long _)
         {
-            if (isCaptureComplete)
+            if (isCaptureComplete && captureCD)
             {
+                captureCD.Value = false;
+                isCaptureComplete = false;
+                captureCD.Where(v => !v).Throttle(TimeSpan.FromSeconds(5)).Subscribe(_ => captureCD.Value = true);
                 AudioSource.PlayClipAtPoint(intervalClip, Vector3.zero);
                 // 抽帧定位
                 this.SendCommand<CaptureAndLocationCommand>();
-                isCaptureComplete = false;
                 var mat = NRFrame.GetRGBCameraIntrinsicMatrix();
-                Debug.Log("GetRGBCameraIntrinsicMatrix" +mat.ToString());
+                Debug.Log("GetRGBCameraIntrinsicMatrix" + mat.ToString());
             }
             else
             {
-                WeiXiang.Console.Warning("Capture has not complete!");
+                WeiXiang.Console.Warning(
+                    $"Capture has not complete! isCaptureComplete:{isCaptureComplete},captureCD{captureCD}");
             }
         }
 
@@ -102,7 +123,7 @@ namespace WeiXiang
                 var success = AssetDownloader.Instance.TryBuildAssetByGps(gps);
                 if (!success)
                 {
-                    Invoke(nameof(DownloadAssetBundleAndBuild),2);
+                    Invoke(nameof(DownloadAssetBundleAndBuild), 2);
                 }
                 else
                 {
@@ -110,6 +131,5 @@ namespace WeiXiang
                 }
             }
         }
-        
     }
 }
