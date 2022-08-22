@@ -535,14 +535,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312422490}
-  m_LocalRotation: {x: -0.6958224, y: -0.12582214, z: -0.12582211, w: 0.6958224}
-  m_LocalPosition: {x: -1.95, y: -0, z: -0.88}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -20.5}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &336688007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1024,37 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: -4216948427090074523, guid: f3b1f571c444e134ba9ca2282fd9b50b,
     type: 3}
+--- !u!1 &605557173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605557174}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &605557174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605557173}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 121.6043, y: 0, z: 31.17969}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2125219379}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676194292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982798731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 120.02636, y: 0, z: 30.271362}
+  m_LocalPosition: {x: 120.02636, y: 0.001107, z: 30.271362}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3153,6 +3184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b647e6c586e143a590fca66d0467c22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeTip: {fileID: 0}
   infoTip: {fileID: 0}
   intervalClip: {fileID: 8300000, guid: 03883e2c65cefd34e8ef1da948e77664, type: 3}
   token: 5bc251ab113f1510e3e1509b2442d52b
@@ -3165,9 +3197,10 @@ MonoBehaviour:
     py: 180
     fx: 960
     fy: 540
-  isCaptureComplete: 1
+  loadByGps: 1
   overrideGps: 1
   overrideGpsPostion: {x: 121.6041, y: 31.1797}
+  constTileInfoId: 
 --- !u!114 &2110927677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3255,6 +3288,7 @@ Transform:
   - {fileID: 1107290624}
   - {fileID: 1876583237}
   - {fileID: 405811232}
+  - {fileID: 605557174}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

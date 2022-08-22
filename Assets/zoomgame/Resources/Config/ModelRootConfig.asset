@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20e0f6cd2d04eeea8fb9c5df70e37ec, type: 3}
   m_Name: ModelRootConfig
   m_EditorClassIdentifier: 
-  ShangHai:
-    abUrl: shanghai
-    tileName: shanghai
-    localPostion: {x: 0, y: 0, z: 0}
-    localEuler: {x: 0, y: -21, z: -137}
-  Chengdu_indoor:
-    abUrl: chengdu_indoor
-    tileName: chengdu_indoor
-    localPostion: {x: 1.05, y: 4.5, z: -19.97}
-    localEuler: {x: 0, y: -21, z: -137}
+  nodeList:
+  - id: wayz_000034
+    localPos: {x: -1.95, y: -0.88, z: 0}
+    localAngle: {x: 0, y: 0, z: 20.5}
+    localScale: {x: 1, y: 1, z: 1}
+  - id: wayz_000036
+    localPos: {x: -1.95, y: -0.88, z: 0}
+    localAngle: {x: 0, y: 0, z: 20.5}
+    localScale: {x: 1, y: 1, z: 1}
+  - id: wayz_000035
+    localPos: {x: -1.95, y: -0.88, z: 0}
+    localAngle: {x: 0, y: 0, z: 20.5}
+    localScale: {x: 1, y: 1, z: 1}
+  - id: wayz_000032
+    localPos: {x: -1.95, y: -0.88, z: 0}
+    localAngle: {x: 0, y: 0, z: 20.5}
+    localScale: {x: 1, y: 1, z: 1}

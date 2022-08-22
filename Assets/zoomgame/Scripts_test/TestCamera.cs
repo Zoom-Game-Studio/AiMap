@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using System.Net;
+using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
@@ -8,27 +11,42 @@ namespace C_ScriptsTest
 {
     public class TestCamera : MonoBehaviour
     {
+        [SerializeField] private string url = "192.168.110.244:8686/logcat.txt";
+        [SerializeField] private string filePath = @"E:\ZoomGameStudio\AIMAP\Assets\StreamingAssets\logcat.txt";
 
-        [SerializeField] private ARCameraManager arCameraManager;
-        private void Start()
+        [Button]
+        void Test()
         {
-            Observable.Interval(TimeSpan.FromSeconds(5f)).Subscribe(OnInterval).AddTo(this);
-        }
-
-        void OnInterval(long _)
-        {
-            // if (!isARInit)
+            var request = HttpWebRequest.Create(url) as HttpWebRequest;
+            request.Method = "GET";
+            using var webResponse = request.GetResponse();
+            foreach (string webResponseHeader in webResponse.Headers)
+            {
+                Debug.Log(webResponseHeader);   
+            }
+            using var stream = webResponse.GetResponseStream();
+            using var sr = new StreamReader(stream);
+            var str = sr.ReadToEnd();
+            Debug.Log(str);
+            // var stream = webResponse.GetResponseStream();
+            // byte[] buffer = new byte[1024];
+            // var fs = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
+            // int length = stream.Read(buffer, 0, buffer.Length);
+            // while (length > 0)
             // {
-            //     //In my case 0=640*480, 1= 1280*720, 2=1920*1080
-            //     arCameraManager.subsystem.currentConfiguration = arCameraManager.GetConfigurations(Allocator.Temp)[1];
-            //     isARInit = true;
+            //     //将内容再写入本地文件中
+            //     fs.Write(buffer, 0, length);
+            //     //类似尾递归
+            //     length = stream.Read(buffer, 0, buffer.Length);
             // }
-            bool isSucc = arCameraManager.TryGetIntrinsics(out XRCameraIntrinsics cameraIntrinsics);
-            var focalLength = cameraIntrinsics.focalLength.x + "," + cameraIntrinsics.focalLength.y;
-            var principalPoint = cameraIntrinsics.principalPoint.x + "," + cameraIntrinsics.principalPoint.y;
-
-            Debug.LogWarning($"focalLength: {focalLength},principalPoint: {principalPoint}");
+            // webResponse.Close();
+            // stream.Dispose();
+            // fs.Dispose();
+            // request.Abort();
+            //server list
+            //client list
+            //break list
+            //download list
         }
-        
     }
 }

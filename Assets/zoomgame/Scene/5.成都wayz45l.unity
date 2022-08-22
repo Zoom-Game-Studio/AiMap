@@ -1381,31 +1381,8 @@ MonoBehaviour:
     content: []
     prefab: {fileID: 7316573128175716445, guid: fa28882f72d285a4c929a0d54d1a7a81,
       type: 3}
-  path: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots"
-  allImage:
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118211422.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118219418.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118227413.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118235507.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118243353.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118250717.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118258821.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118270068.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118277782.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118285377.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118293594.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118301536.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118309736.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118321796.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118332183.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118343384.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118351552.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118365268.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118394028.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118401992.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118566914.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118599894.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\Screenshots\\Nreal_Shot_1659118607839.png"
+  path: "E:\\ZoomGameStudio\\AIMAP\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u6210\u90FD"
+  allImage: []
   currentFile: 
   gps: 1
   orientation: 1

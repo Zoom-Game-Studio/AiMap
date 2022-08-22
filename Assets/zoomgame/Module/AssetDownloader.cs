@@ -1,19 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using Architecture;
 using BestHTTP;
 using C_ScriptsTest;
 using Newtonsoft.Json;
 using NRKernal;
+using QFramework.UI;
 using Sirenix.OdinInspector;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+using WeiXiang;
+using zoomgame.Scripts.Architecture.TypeEvent;
 using AssetList = System.Collections.Generic.List<Waku.Module.AssetInfoItem>;
 
 namespace Waku.Module
 {
-    public class AssetDownloader : MonoBehaviour, IResDownload<AssetList>
+
+    public class AssetDownloader : MonoBehaviour
     {
         public static AssetDownloader Instance { private set; get; }
         public string url = @"https://aimap.newayz.com/aimap/ora/v1/scenes?device_type=android";
@@ -22,12 +28,25 @@ namespace Waku.Module
         private string _fullPath;
 
 
-
         public AssetList ServerList { get; set; }
-        public AssetList ClientList { get; set; }
+        public AssetList ClientList { get; set; } 
         public AssetList DownloadList { get; set; }
 
-        private Queue<AssetInfoItem> buildList = new Queue<AssetInfoItem>();
+        /// <summary>
+        /// 下载完成的列表
+        /// </summary> 
+        private Queue<AssetInfoItem> doneList { get; set; }
+
+        /// <summary>
+        /// 构件目标
+        /// </summary>
+        private AssetInfoItem buildTarget { get; set; }
+        
+        class DownloadItem
+        {
+            public  AssetInfoItem item;
+            public bool isDownload = false;
+        }
 
         private void Awake()
         {
@@ -42,12 +61,10 @@ namespace Waku.Module
         private void Start()
         {
             Init();
-
             Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(OnBuildListHasItem).AddTo(this);
         }
 
-
-        public void Init()
+        void Init()
         {
             var path = fullPath;
             if (!Directory.Exists(path))
@@ -57,7 +74,8 @@ namespace Waku.Module
 
             //读取本地资源列表
             ClientList = LoadListFromPath(nameof(ClientList), path);
-            DownloadList = new AssetList();
+            DownloadList = new  ();
+            doneList = new ();
             RequestSeverList();
         }
 
@@ -67,22 +85,24 @@ namespace Waku.Module
         /// <param name="_"></param>
         void OnBuildListHasItem(long _)
         {
-            if (buildList.Count > 0)
+            if (doneList.Count <= 0)
             {
-                var info = buildList.Dequeue();
-                TileBuilder.Instantiate(fullPath, info.id);
+                return;
             }
-        }
-
-        [SerializeField] private string testId;
-        [Button]
-        void DownLoadAssetBundle()
-        {
-            var info = ServerList.Find(e => e.id.Equals(testId));
-            if (info != null)
+            foreach (var info in doneList)
             {
-                this.AddToDownloadList(info);
+                if (buildTarget!= null && buildTarget.id.Equals(info.id))
+                {
+                    MessageBroker.Default.Publish(new BuildTileEvent()
+                    {
+                        name = info.name,
+                        place = info.place,
+                    });
+                    TileBuilder.Instantiate(fullPath, info.id);
+                    break;
+                }
             }
+            doneList.Clear();
         }
 
         /// <summary>
@@ -93,6 +113,7 @@ namespace Waku.Module
         public bool TryBuildAssetByGps(Vector2 gps)
         {
             var info = FindAssetByGpsInServerList(gps);
+
             if (info != null)
             {
                 this.AddToDownloadList(info);
@@ -101,21 +122,6 @@ namespace Waku.Module
 
             Debug.LogWarning("没有找到Gps所在区域的资源：" + gps);
             return false;
-        }
-
-        AssetInfoItem FindAssetByGpsInClientList(Vector2 gps)
-        {
-            foreach (var info in ClientList)
-            {
-                var list = info.boundary.coordinates[0];
-                var boundary = GetVector3List(list);
-                if (IsPointInPolygon(gps, boundary))
-                {
-                    return info;
-                }
-            }
-
-            return null;
         }
 
         AssetInfoItem FindAssetByGpsInServerList(Vector2 gps)
@@ -189,7 +195,7 @@ namespace Waku.Module
         private void RequestSeverList()
         {
             var request = new HTTPRequest(new Uri(url), HTTPMethods.Get, OnFinishRequestServerList);
-            request.AddHeader("token",token);
+            request.AddHeader("token", token);
             request.Send();
         }
 
@@ -203,6 +209,10 @@ namespace Waku.Module
                     ServerList = JsonConvert.DeserializeObject<AssetList>(data);
                     Debug.Log("Server list load complete");
                     // RailTest.ShowBoundary(ServerList);
+                    MessageBroker.Default.Publish(new UpdateServerListEvent()
+                    {
+                        infoList = ServerList,
+                    });
                 }
                 catch (Exception e)
                 {
@@ -218,43 +228,58 @@ namespace Waku.Module
         /// </summary>
         /// <param name="serverItemInfo"></param>
         /// <param name="callback"></param>
-        void AddToDownloadList(AssetInfoItem serverItemInfo)
+        public void AddToDownloadList(AssetInfoItem serverItemInfo)
         {
-            //需要下载的item
-            var item = serverItemInfo.Clone();
-            Debug.Log("准备加载：" + item.id);
-            //获取本地存在的记录
-            var local = ClientList.Find(e => e.id.Equals(item.id));
-            if (local != null)
+            buildTarget = serverItemInfo;
+            var hasInDownloadList = DownloadList.Find(e=>  e.id.Equals(serverItemInfo.id));
+            if (hasInDownloadList != null)
             {
-                var needUpdate = item.updateTime != local.updateTime;
-                if (!needUpdate)
-                {
-                    Debug.LogWarning("跳过更新，没有变更：" + local.id);
-                    buildList.Enqueue(local); 
-                    return;
-                }
-                else
-                {
-                    Debug.LogWarning("需要更新本地资源："+item.id);
-                }
-
-                //需要更新，删除本地文件
-                DeleteADirectory(Path.Combine(fullPath, local.id));
+                Debug.LogWarning("已经加入下载列表："+serverItemInfo.id);
             }
+            else
+            {
+                //需要下载的item
+                var item = serverItemInfo.Clone();
+                Debug.Log("准备加载：" + item.id);
+                //获取本地存在的记录
+                var local = ClientList.Find(e => e.id.Equals(item.id));
+                if (local != null)
+                {
+                    var needUpdate = item.updateTime != local.updateTime;
+                    if (!needUpdate)
+                    {
+                        Debug.LogWarning("跳过更新，没有变更：" + local.id);
+                        doneList.Enqueue(local);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("需要更新本地资源：" + item.id);
+                    }
 
-            DownloadList.Add(item);
-            StartDownLoad(() => buildList.Enqueue(item));
+                    //需要更新，删除本地文件
+                    DeleteADirectory(Path.Combine(fullPath, local.id));
+                }
+
+                DownloadList.Add(item);
+                StartDownLoad(item, () =>
+                {
+                    var find = DownloadList.Find(e => e.id.Equals(item.id));
+                    if (find != null)
+                    {
+                        DownloadList.Remove(find);
+                    }
+                    doneList.Enqueue(item);
+                });
+            }
         }
 
         /// <summary>
         /// zip保存的路径为fullpath + info.id + file.name;
         /// </summary>
-        void StartDownLoad(Action callback = null)
+        void StartDownLoad(AssetInfoItem info , Action callback = null)
         {
-            var info = DownloadList[0];
-            var file = DownloadList[0].package.files[0];
-
+            var file = info.package.files[0];
             Debug.Log("开始下载:" + file.link);
             var loader = new HttpDownLoad();
             var localFullPath = Path.Combine(fullPath, info.id);
@@ -275,11 +300,16 @@ namespace Waku.Module
                 {
                     ClientList.Remove(localItem);
                 }
+
                 ClientList.Add(info);
                 SaveClientList();
                 callback?.Invoke();
             });
-            DownloadList.Clear();
+            MessageBroker.Default.Publish(new DownloadEvent()
+            {
+                resLoader = loader,
+            });
+
         }
 
         /// <summary>
@@ -290,20 +320,6 @@ namespace Waku.Module
             var str = JsonConvert.SerializeObject(ClientList);
             using var sw = new StreamWriter(Path.Combine(fullPath, nameof(ClientList)));
             sw.Write(str);
-        }
-
-        /// <summary>
-        /// 删除本地的文件夹
-        /// </summary>
-        /// <param name="assetItemInfoId">资源信息id</param>
-        /// <param name="packageFileId">包文件id</param>
-        void TryRemoveFile(string assetItemInfoId, string packageFileId)
-        {
-            var path = Path.Combine(fullPath, assetItemInfoId, packageFileId);
-            if (Directory.Exists(path))
-            {
-                DeleteADirectory(path);
-            }
         }
 
         /// <summary>  

@@ -100,6 +100,8 @@ namespace Architecture
         {
             this.assetInfoItemId = assetInfoItemId;
         }
+        
+
 
 
         /// <summary>

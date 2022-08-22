@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using KleinEngine;
 using LitJson;
 using System;
+using Sirenix.OdinInspector;
 using Random = System.Random;
 
 namespace AppLogic
@@ -78,6 +79,7 @@ namespace AppLogic
         /// <summary>
         /// 获取谜语
         /// </summary>
+        [Button]
         public void ButtonClickLantern()
         {
             Debug.Log("ButtonClickLantern...");
@@ -93,6 +95,7 @@ namespace AppLogic
         /// <summary>
         /// 猜谜
         /// </summary>
+        [Button]
         public void ButtonClickGuess()
         {
             Debug.Log("ButtonClickGuess...");

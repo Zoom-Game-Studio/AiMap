@@ -23,11 +23,11 @@ namespace NRKernal.NRExamples
         /// <summary> The base controller panel. </summary>
         public GameObject baseControllerPanel;
         /// <summary> The color btns. </summary>
-        public Button[] colorBtns;
+        // public Button[] colorBtns;
         /// <summary> The reset control. </summary>
-        public Button resetBtn;
+        // public Button resetBtn;
         /// <summary> The scale slider. </summary>
-        public Slider scaleSlider;
+        // public Slider scaleSlider;
 
         /// <summary> The model control. </summary>
         private TargetModelDisplayCtrl m_ModelCtrl;
@@ -42,22 +42,22 @@ namespace NRKernal.NRExamples
         private void Init()
         {
             m_ModelCtrl = FindObjectOfType<TargetModelDisplayCtrl>();
-            for (int i = 0; i < colorBtns.Length; i++)
-            {
-                int k = i;
-                colorBtns[i].onClick.AddListener(() => { OnColorButtonClick(k); });
-            }
+            // for (int i = 0; i < colorBtns.Length; i++)
+            // {
+            //     int k = i;
+            //     colorBtns[i].onClick.AddListener(() => { OnColorButtonClick(k); });
+            // }
             showBtn.onClick.AddListener(() => { SetBaseControllerEnabled(true); });
             hideBtn.onClick.AddListener(() => { SetBaseControllerEnabled(false); });
-            resetBtn.onClick.AddListener(OnResetButtonClick);
-            scaleSlider.onValueChanged.AddListener(OnScaleSliderValueChanged);
+            // resetBtn.onClick.AddListener(OnResetButtonClick);
+            // scaleSlider.onValueChanged.AddListener(OnScaleSliderValueChanged);
         }
 
         /// <summary> Executes the 'color button click' action. </summary>
         /// <param name="index"> Zero-based index of the.</param>
         private void OnColorButtonClick(int index)
         {
-            m_ModelCtrl.ChangeModelColor(colorBtns[index].image.color);
+            // m_ModelCtrl.ChangeModelColor(colorBtns[index].image.color);
         }
 
         /// <summary> Executes the 'scale slider value changed' action. </summary>
@@ -71,7 +71,7 @@ namespace NRKernal.NRExamples
         private void OnResetButtonClick()
         {
             m_ModelCtrl.ResetModel();
-            scaleSlider.value = 0f;
+            // scaleSlider.value = 0f;
         }
 
         /// <summary> Sets base controller enabled. </summary>

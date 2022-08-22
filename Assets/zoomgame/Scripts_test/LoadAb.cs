@@ -6,10 +6,9 @@ using UnityEngine;
 public class LoadAb : MonoBehaviour
 {
     [TextArea]
-    public string fullPath = "9L_国潮风";
+    public string fullPath ;
     [TextArea]
     [SerializeField] private string infoId;
-
     [SerializeField] private bool loadOnStart = false;
 
     private void Start()
