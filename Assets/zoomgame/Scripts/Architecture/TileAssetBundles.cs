@@ -63,7 +63,8 @@ namespace Architecture
             {
                 if (model == null)
                 {
-                    model = ModelXml.Convert(LazyLoad("model").text);
+                    var textAsset = LazyLoad("model");
+                    model = ModelXml.Convert(textAsset.text);
                 }
 
                 return model;
@@ -90,6 +91,11 @@ namespace Architecture
         {
             if (map.TryGetValue("data", out var assetBundle))
             {
+                var asset = assetBundle.LoadAsset<TextAsset>("module");
+                using (var sw = new StreamWriter(Path.Combine(Application.streamingAssetsPath,"module.xml")))
+                {
+                    sw.WriteLine(asset.text);
+                }
                 return assetBundle.LoadAsset<TextAsset>(name);
             }
 

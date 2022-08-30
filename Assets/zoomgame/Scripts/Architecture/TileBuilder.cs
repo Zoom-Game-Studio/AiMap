@@ -37,6 +37,7 @@ namespace Architecture
             catch (System.Exception e)
             {
                 Console.Error($"Fail to instantiate tile asset: {assetDirPath}/{assetInfoItemId},because {e.Message}");
+                Debug.LogError(e.StackTrace);
             }
         }
 
@@ -104,7 +105,7 @@ namespace Architecture
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        static Transform GetParent(string id)
+        public static Transform GetParent(string id)
         {
             if (!string.IsNullOrEmpty(id))
             {
