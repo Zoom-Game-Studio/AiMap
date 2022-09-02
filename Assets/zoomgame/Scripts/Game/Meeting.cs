@@ -83,48 +83,48 @@ namespace zoomgame
         {
             try
             {
-                // TileBuilder.Instantiate(Application.persistentDataPath, assetId);
-                var main = AssetBundle.LoadFromFile(Path.Combine(Application.persistentDataPath, "World_android",
-                    "StreamingAssets"));
-
-                var manifest = main.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
-                var all = manifest.GetAllAssetBundles();
-                var map = new Dictionary<string, AssetBundle>();
-                foreach (var name in all)
-                {
-                    var path = Path.Combine(Application.persistentDataPath, "World_android", name);
-                    if (!map.TryGetValue(name, out var assetBundle) || !assetBundle)
-                    {
-                        assetBundle = AssetBundle.LoadFromFile(path);
-                    }
-
-                    if (map.ContainsKey(name))
-                    {
-                        map[name] = assetBundle;
-                    }
-                    else
-                    {
-                        map.Add(name, assetBundle);
-                    }
-                }
-                
-                foreach (var kv in map)
-                {
-                    Debug.Log(kv.Key);
-                }
-
-                var kejihiutang = map["kejihiutang"];
-                var kejizhangjiang_topic = kejihiutang.LoadAsset<GameObject>("kejizhangjiang_topic");
-                
-                Transform root =TileBuilder.GetParent("kejihiutang");
-                var go = GameObject.Instantiate(kejizhangjiang_topic, root);
-                go.name = "kejihiutang";
-                //xxx 写死了相对姿态
-                go.transform.localPosition = Vector3.zero;
-                go.transform.localEulerAngles = Vector3.zero;
-                go.transform.localScale = new Vector3(1, -1, 1);
-
-                tooltip.text = "加载成功\n" + DateTime.Now.ToString();
+                TileBuilder.Instantiate(Application.streamingAssetsPath, assetId);
+                // var main = AssetBundle.LoadFromFile(Path.Combine(Application.persistentDataPath, "World_android",
+                //     "StreamingAssets"));
+                //
+                // var manifest = main.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+                // var all = manifest.GetAllAssetBundles();
+                // var map = new Dictionary<string, AssetBundle>();
+                // foreach (var name in all)
+                // {
+                //     var path = Path.Combine(Application.persistentDataPath, "World_android", name);
+                //     if (!map.TryGetValue(name, out var assetBundle) || !assetBundle)
+                //     {
+                //         assetBundle = AssetBundle.LoadFromFile(path);
+                //     }
+                //
+                //     if (map.ContainsKey(name))
+                //     {
+                //         map[name] = assetBundle;
+                //     }
+                //     else
+                //     {
+                //         map.Add(name, assetBundle);
+                //     }
+                // }
+                //
+                // foreach (var kv in map)
+                // {
+                //     Debug.Log(kv.Key);
+                // }
+                //
+                // var kejihiutang = map["kejihiutang"];
+                // var kejizhangjiang_topic = kejihiutang.LoadAsset<GameObject>("kejizhangjiang_topic");
+                //
+                // Transform root =TileBuilder.GetParent("kejihiutang");
+                // var go = GameObject.Instantiate(kejizhangjiang_topic, root);
+                // go.name = "kejihiutang";
+                // //xxx 写死了相对姿态
+                // go.transform.localPosition = Vector3.zero;
+                // go.transform.localEulerAngles = Vector3.zero;
+                // go.transform.localScale = new Vector3(1, -1, 1);
+                //
+                // tooltip.text = "加载成功\n" + DateTime.Now.ToString();
                 // Invoke(nameof(FindFunc),0.1f);
                 // ShowScene();
             }
