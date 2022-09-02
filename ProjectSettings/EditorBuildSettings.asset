@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/zoomgame/Scene/4.\u5B9A\u4F4D\u8F6C\u6362.unity"
-    guid: 5c90779570751074d91ed88efdc72a67
+    path: "Assets/zoomgame/Scene/0.\u4E3B\u573A\u666F.unity"
+    guid: 0d81f6ace4f6fda4086a0fc99f5394b7
+  - enabled: 0
+    path: "Assets/zoomgame/Scene/9.\u6D4B\u8BD5\u8D44\u6E90\u8BF7\u6C42.unity"
+    guid: bd3fd8ae5978d944280989bd4db6bf52
+  - enabled: 0
+    path: "Assets/zoomgame/Scene/\u4F1A\u573A.unity"
+    guid: ae59b2c4dddd207498de8a4dd1c3df54
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1f016921e8ef99341a40efc0bdd4a16d,
       type: 2}

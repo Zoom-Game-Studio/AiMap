@@ -4,6 +4,8 @@ using BestHTTP.Forms;
 using QFramework;
 using HttpData;
 using UnityEngine;
+using WeiXiang;
+using zoomgame.Scripts.Game;
 using Console = WeiXiang.Console;
 
 namespace Architecture
@@ -13,12 +15,15 @@ namespace Architecture
     /// </summary>
     public class VisionLocation : ICanLocation
     {
-        public const string Token = "5bc251ab113f1510e3e1509b2442d52b";
-        public string Url => Interface2;
-        public const string Interface1 = @"https://hdmap.newayz.com/wayzoom/v1/vps/single";
-        public const string Interface2 = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
+        private string Token => _model.Token;
+        private string Url => _model.Url;
+        private ILocationModel _model;
+        private HTTPFormUsage formUsage = HTTPFormUsage.Multipart;
 
-        public HTTPFormUsage formUsage = HTTPFormUsage.Multipart;
+        public void BindData(ILocationModel locationModel)
+        {
+            this._model = locationModel;
+        }
 
         public void RequestLocation(string base64Image, Action<HTTPRequestStates, string> onFinishRequest)
         {
@@ -30,6 +35,8 @@ namespace Architecture
 
             try
             {
+
+                
                 var bodyData = new BodyData()
                 {
                     timestamp = BodyData.GetUTCTimeStamp(),

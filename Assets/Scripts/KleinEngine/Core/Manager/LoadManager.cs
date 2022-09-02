@@ -131,7 +131,10 @@ namespace KleinEngine
 
         public override void onStart()
         {
-            //Unity会自动将下载的AssetBundles缓存在本地存储上。如果下载的AssetBundle是LZMA压缩的，则AssetBundle将以未压缩或重新压缩为LZ4（取决于Caching.compressionEnabled设置）的形式存储在缓存中，以便将来加载更快。如果下载的捆绑包压缩了LZ4，则AssetBundle将被压缩存储。如果缓存填满，Unity将从缓存中删除最近最少使用的AssetBundle。
+            //Unity会自动将下载的AssetBundles缓存在本地存储上。如果下载的AssetBundle是LZMA压缩的，
+            //则AssetBundle将以未压缩或重新压缩为LZ4（取决于Caching.compressionEnabled设置）的形式存储在缓存中，
+            //以便将来加载更快。如果下载的捆绑包压缩了LZ4，
+            //则AssetBundle将被压缩存储。如果缓存填满，Unity将从缓存中删除最近最少使用的AssetBundle。
             //设置超时，若m_webRequest.SendWebRequest()连接超时会返回，且isNetworkError为true
             //webRequest.downloadHandler = new DownloadHandlerAssetBundle(string.Empty,0);
             ////AssetBundle ab = DownloadHandlerAssetBundle.GetContent(assetLoadAsync.webRequest);

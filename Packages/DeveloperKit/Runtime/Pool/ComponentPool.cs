@@ -12,7 +12,7 @@ namespace DeveloperKit.Runtime.Pool
     public class ComponentPool<T> : IHasContent<T>, ICanPopItem<T>, ICanRecycleItem<T>, ICanNewItem<T>,
         IHasPrefabGameObject where T : IHasUseOfState
     {
-        public List<T> content = new List<T>();
+        [SerializeField]private List<T> content = new List<T>();
         [SerializeField] private GameObject prefab;
         
         public IEnumerable<T> Content => content;

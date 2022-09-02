@@ -54,6 +54,8 @@ namespace Architecture.Command
                 {
                     Console.Error("Capture ,but cant get data!");
                 }
+                
+                this.SendEvent<CaptureFinishEvent>();
             }
             catch (Exception e)
             {

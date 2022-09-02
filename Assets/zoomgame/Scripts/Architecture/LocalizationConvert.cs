@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Data;
 using HttpData;
 using QFramework.Config;
@@ -84,6 +85,29 @@ namespace WeiXiang
 
         private static Transform _origin;
 
+        private static List<Vector3> _postionArr = new List<Vector3>();
+        private static List<Vector3> _eularArr = new List<Vector3>();
+
+        static Vector3 GetArrAverage(List<Vector3> arr)
+        {
+            float x = 0;
+            float y = 0;
+            float z = 0;
+            foreach (var v in arr)
+            {
+                x += v.x;
+                y += v.y;
+                z += v.z;
+            }
+
+            return new Vector3()
+            {
+                x = x / arr.Count,
+                y = y / arr.Count,
+                z = z / arr.Count,
+            };
+        }
+
         /// <summary>
         /// 左边原定
         /// localEulerAngles = new Vector3(90, 0, 0);
@@ -164,21 +188,12 @@ namespace WeiXiang
             Origin.transform.SetParent(null);
             anchor.transform.localScale = Vector3.one;
             Object.Destroy(anchor.gameObject);
-        }
-
-        /// <summary>
-        /// 把模型以locationPose为基准，与相机进行匹配
-        /// </summary>
-        /// <param name="locationPose"></param>
-        /// <param name="cameraPose"></param>
-        public static void CoordinatesAlignWithView(Transform locationPose, Transform cameraPose)
-        {
-            var pose = new Pose()
-            {
-                rot = locationPose.rotation,
-                pos = locationPose.position,
-            };
-            CoordinatesAlignWithView(pose,cameraPose);
+            
+            // //计算多次定位的平均值
+            // _postionArr.Add(Origin.position);
+            // _eularArr.Add(Origin.eulerAngles);
+            // Origin.position = GetArrAverage(_postionArr);
+            // Origin.eulerAngles = GetArrAverage(_eularArr);
         }
     }
 }

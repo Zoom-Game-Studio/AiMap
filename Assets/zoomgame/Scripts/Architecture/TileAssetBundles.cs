@@ -1,7 +1,10 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using Data;
+using ICSharpCode.SharpZipLib.Core;
 using UnityEngine;
-using WeiXiang;
+using Console = WeiXiang.Console;
 
 namespace Architecture
 {
@@ -12,7 +15,7 @@ namespace Architecture
     {
         public Dictionary<string, AssetBundle> map = new Dictionary<string, AssetBundle>();
         public AssetBundle main;
-        public readonly string Name;
+        public readonly string assetInfoItemId;
 
         private LayerXml layer;
         private IconXml icon;
@@ -30,10 +33,11 @@ namespace Architecture
                 {
                     layer = LayerXml.Convert(LazyLoad("layer").text);
                 }
+
                 return layer;
             }
         }
-        
+
         /// <summary>
         /// icon 配置表
         /// </summary>
@@ -45,10 +49,11 @@ namespace Architecture
                 {
                     icon = IconXml.Convert(LazyLoad("Icon").text);
                 }
+
                 return icon;
             }
         }
-        
+
         /// <summary>
         /// model 配置表
         /// </summary>
@@ -58,12 +63,14 @@ namespace Architecture
             {
                 if (model == null)
                 {
-                    model = ModelXml.Convert(LazyLoad("model").text);
+                    var textAsset = LazyLoad("model");
+                    model = ModelXml.Convert(textAsset.text);
                 }
+
                 return model;
             }
         }
-        
+
         /// <summary>
         /// model 配置表
         /// </summary>
@@ -75,6 +82,7 @@ namespace Architecture
                 {
                     module = ModuleXml.Convert(LazyLoad("model").text);
                 }
+
                 return module;
             }
         }
@@ -83,41 +91,52 @@ namespace Architecture
         {
             if (map.TryGetValue("data", out var assetBundle))
             {
+                var asset = assetBundle.LoadAsset<TextAsset>("module");
+                using (var sw = new StreamWriter(Path.Combine(Application.streamingAssetsPath,"module.xml")))
+                {
+                    sw.WriteLine(asset.text);
+                }
                 return assetBundle.LoadAsset<TextAsset>(name);
             }
+
             return null;
         }
 
-        public TileAssetBundles(string name)
+        public TileAssetBundles(string assetInfoItemId)
         {
-            Name = name;
+            this.assetInfoItemId = assetInfoItemId;
         }
+        
 
-        void LoadFromMemory()
-        {
-        }
+
 
         /// <summary>
         /// 从本地加载
         /// </summary>
-        public void LoadFromPath()
+        /// <param name="assetBundleDir">资源包文件夹路径</param>
+        public void LoadFromPath(string assetBundleDir)
         {
-            var fullPath = PathConvert.GetFullPath(Name) + "/StreamingAssets";
-            if (!main)
+            var fullPath = Path.Combine(assetBundleDir, assetInfoItemId);
+            if (!Directory.Exists(fullPath))
             {
-                main = AssetBundle.LoadFromFile(fullPath);
+                throw new System.IO.DirectoryNotFoundException("Asset bundle directory do not exist:" + fullPath);
             }
 
-            if(main == null)
+            var mainBundlePath = Path.Combine(fullPath, "StreamingAssets");
+            if (!main)
             {
-                Console.Error("加载ab包失败：" + fullPath);
-                return;
+                main = AssetBundle.LoadFromFile(mainBundlePath);
             }
+            if (main == null)
+            {
+                throw new NullReferenceException("Asset bundle load fail:" + fullPath);
+            }
+
             var manifest = main.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             var all = manifest.GetAllAssetBundles();
             foreach (var name in all)
             {
-                var path = PathConvert.GetPath(Name, name);
+                var path = Path.Combine(fullPath, name);
                 if (!map.TryGetValue(name, out var assetBundle) || !assetBundle)
                 {
                     assetBundle = AssetBundle.LoadFromFile(path);
@@ -152,18 +171,19 @@ namespace Architecture
                     }
                 }
             }
+
             return assetBundle;
         }
 
         /// <summary>
         /// 根据地块的名字加载地块资源
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="assetDirPath"></param>
         /// <returns></returns>
-        public static TileAssetBundles LoadTileAssetBundles(string name)
+        public static TileAssetBundles LoadTileAssetBundles(string assetDirPath, string id)
         {
-            var tileAssetBundles = new TileAssetBundles(name);
-            tileAssetBundles.LoadFromPath();
+            var tileAssetBundles = new TileAssetBundles(id);
+            tileAssetBundles.LoadFromPath(assetDirPath);
             return tileAssetBundles;
         }
     }

@@ -146,7 +146,7 @@ namespace HttpData
         {
             try
             {
-                var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
                 var bufferBytes = new byte[fileStream.Length];
                 fileStream.Read(bufferBytes, 0, (int) fileStream.Length);
                 var base64String = Convert.ToBase64String(bufferBytes);

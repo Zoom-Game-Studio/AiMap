@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace QFramework.Config
 {
@@ -23,18 +25,13 @@ namespace QFramework.Config
         [System.Serializable]
         public class RootData
         {
-            /// <summary>
-            /// asset bundle 的下载url
-            /// </summary>
-            public string abUrl;
-            public string tileName;
-            public Vector3 localPostion;
-            public Vector3 localEuler;
+            public string id;
+            public Vector3 localPos;
+            public Vector3 localAngle;
+            public Vector3 localScale = Vector3.one;
         }
 
-        public RootData ShangHai;
-
-        public RootData Chengdu_indoor;
-
+        [InfoBox("场景特殊节点配置，匹配接口数据中的id后，为ab包实例设定特殊父节点")]
+        public List<RootData> nodeList;
     }
 }

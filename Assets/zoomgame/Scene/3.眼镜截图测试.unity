@@ -205,83 +205,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &721559192
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -364223573239433514, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8980549144392899874, guid: e6e6d5946aa93914f9757d306652fb9c,
-        type: 3}
-      propertyPath: m_Name
-      value: fused_chengduindoor
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: -4216948427090074523, guid: e6e6d5946aa93914f9757d306652fb9c,
-    type: 3}
 --- !u!1 &1794308279
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +299,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2131840686
 GameObject:
@@ -409,35 +334,22 @@ MonoBehaviour:
     content: []
     prefab: {fileID: 7316573128175716445, guid: fa28882f72d285a4c929a0d54d1a7a81,
       type: 3}
-  path: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360"
-  fileType: .png
+  path: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE"
   allImage:
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118211422.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118219418.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118227413.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118235507.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118243353.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118250717.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118258821.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118270068.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118277782.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118285377.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118293594.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118301536.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118309736.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118321796.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118332183.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118343384.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118351552.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118365268.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118394028.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118401992.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118566914.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118599894.png"
-  - fullPath: "E:\\ZoomGAME\\aimap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\640_360\\Nreal_Shot_1659118607839.png"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_31_39_1"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_31_44_68"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_31_49_151"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_31_54_268"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_31_59_336"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_32_14_651"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_32_19_752"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_32_24_838"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_32_4_469"
+  - fullPath: "E:\\AiMap\\Assets\\zoomgame\\\u6D4B\u8BD5\u7D20\u6750\\\u624B\u673A\u622A\u56FE\\2022_8_1_14_32_9_575"
   currentFile: 
   gps: 1
   orientation: 1
+  convertToUnityCoordinate: 0
   autoTestAll: 0
 --- !u!4 &2131840688
 Transform:
@@ -452,5 +364,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

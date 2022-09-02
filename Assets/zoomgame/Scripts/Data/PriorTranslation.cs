@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using WeiXiang;
 using Console = WeiXiang.Console;
 
 namespace HttpData
@@ -43,21 +43,15 @@ namespace HttpData
         {
             try
             {
-                if (Input.location.status == LocationServiceStatus.Running)
+                PriorTranslation gps = new PriorTranslation();
+                gps.lat = AmapLocation.Instance.Latitude;
+                gps.lon = AmapLocation.Instance.Longitude;
+                
+                if (!AmapLocation.Instance.IsRunning)
                 {
-                    var locationInfo = Input.location.lastData;
-                    return new PriorTranslation()
-                    {
-                        alt = locationInfo.altitude,
-                        lat = locationInfo.latitude,
-                        lon = locationInfo.longitude
-                    };
+                    Console.Error("[Amap] 运行异常:"+ AmapLocation.Instance.ErrorMessage);
                 }
-                else
-                {
-                    Console.Warning($"Gps location server not running, return {nameof(ChengDu)} 's gps");
-                    return PriorTranslation.ChengDu;
-                }
+                return gps;
             }
             catch (Exception e)
             {

@@ -19,12 +19,25 @@ namespace C_ScriptsTest
     public class LocationTest : AbstractMonoController
     {
         public static LocationTest instance { private set; get; }
+        [Header("测试参数")]
+        [SerializeField, TextArea] private string token ="5bc251ab113f1510e3e1509b2442d52b";
+        [SerializeField, TextArea] private string url = @"http://dev-hdmap.newayz.com:8800/wayzoom/v1/vps/single";
+        [SerializeField] private WeiXiang.GameManager.CaptureResolution captureResolution = new WeiXiang.GameManager.CaptureResolution()
+        {
+            width = 640,
+            height = 360,
+        };
+        [SerializeField] private WeiXiang.GameManager.Intrinsic intrinsic = new WeiXiang.GameManager.Intrinsic()
+        {
+            px = 774,
+            py = 774,
+            fx = 320,
+            fy = 180,
+        };
         private ICanLocation location;
         [SerializeField] private ComponentPool<LocationPointNode> pool;
 
         [Header("照片路径")] [SerializeField] private string path;
-        [Header("图像类型")] [SerializeField] private string fileType = ".jpg";
-
         [Header("所有图像")] [SerializeField, TableList]
         private List<ImageItem> allImage;
 
@@ -33,7 +46,6 @@ namespace C_ScriptsTest
         [Header("手机参数")] public Gps gps = Gps.ChengDu;
         public Orientation orientation = Orientation.left_h;
 
-        [Header("转换到Unity坐标系")] public bool convertToUnityCoordinate = false;
         [Header("自动连续测试全部")] [SerializeField] private bool autoTestAll = false;
 
 
@@ -70,6 +82,13 @@ namespace C_ScriptsTest
         private void Start()
         {
             instance = this;
+            this.SendCommand(new SetVisLocationModel()
+            {
+                token = token,
+                url = url,
+                intrinsic = intrinsic,
+                captureResolution = captureResolution,
+            });
             this.location = this.GetArchitecture().GetUtility<ICanLocation>();
         }
 
@@ -82,7 +101,7 @@ namespace C_ScriptsTest
         [Button("获取全部图像"), ButtonGroup("set")]
         void GetAllPicture()
         {
-            var all = Directory.GetFiles(path).Where(e => e.EndsWith(fileType)).ToList();
+            var all = Directory.GetFiles(path).Where(e => !e.EndsWith(".meta")).ToList();
             foreach (var n in all)
             {
                 var item = new ImageItem();
@@ -202,7 +221,21 @@ namespace C_ScriptsTest
                 });
             });
         }
+        
+        [Button]
+        public void ShowAsImage()
+        {
+            using var fileStream = new FileStream(currentFile, FileMode.Open, FileAccess.Read);
+            var bufferBytes = new byte[fileStream.Length];
+            fileStream.Read(bufferBytes, 0, (int) fileStream.Length);
+            var tex = new Texture2D(640,360);
+            tex.LoadImage(bufferBytes);
+            var render = new GameObject(currentFile).AddComponent<SpriteRenderer>();
+            render.sprite = Sprite.Create(tex,new Rect(0,0,640,360),Vector2.zero);
+        }
     }
+    
+
 
     [System.Serializable]
     public class ImageItem
