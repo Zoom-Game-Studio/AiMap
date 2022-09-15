@@ -21,3 +21,6 @@ Assets/zoomgame/Art/dianyun/
 *.zip
 Assets/StreamingAssets/AssetDownloader/
 Assets/StreamingAssets/
+Assets/World_android/
+Assets/World_android.meta
+Assets/AssetDownloader/

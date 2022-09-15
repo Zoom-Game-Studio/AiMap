@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using NRKernal;
 using QFramework;
 using QFramework.Config;
 using UnityEngine;
+using UnityEngine.UI;
 using WeiXiang;
 using Console = WeiXiang.Console;
 using Object = UnityEngine.Object;
@@ -150,6 +152,31 @@ namespace Architecture
                 catch (Exception e)
                 {
                     Debug.LogError($"实例化资源失败：{propData?.name},{propData?.abName},{e.Message}");
+                }
+
+                //处理2dui
+                var parent = LocalizationConvert.Origin;
+                Replace2DTo3dUI(parent);
+            }
+        }
+
+        static void Replace2DTo3dUI(Transform parent)
+        {
+            if (parent.TryGetComponent<Canvas>(out var c))
+            {
+                var g = c.GetComponent<GraphicRaycaster>();
+                Object.Destroy(g);
+                c.gameObject.AddComponent<CanvasRaycastTarget>();
+            }
+            else
+            {
+                if (parent.childCount > 0)
+                {
+                    for (int i = 0; i < parent.childCount; i++)
+                    {
+                        var child = parent.GetChild(i);
+                        Replace2DTo3dUI(child);
+                    }
                 }
             }
         }
