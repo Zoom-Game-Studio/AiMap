@@ -65,13 +65,13 @@ namespace Architecture
         /// <returns></returns>
         public static TileAssetBundles LoadTile(string assetDirPath, string assetInfoItemId)
         {
+            UnLoadAssetBundle();
             if (ResCache != null && ResCache.assetInfoItemId.Equals(assetInfoItemId))
             {
                 return ResCache;
             }
             else
             {
-                UnLoadAssetBundle();
                 ResCache = TileAssetBundles.LoadTileAssetBundles(assetDirPath, assetInfoItemId);
                 return ResCache;
             }

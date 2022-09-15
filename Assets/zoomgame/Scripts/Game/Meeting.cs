@@ -83,7 +83,11 @@ namespace zoomgame
         {
             try
             {
-                TileBuilder.Instantiate(Application.streamingAssetsPath, assetId);
+#if UNITY_EDITOR
+                TileBuilder.Instantiate(Application.dataPath, assetId);
+#elif UNITY_ANDROID
+                TileBuilder.Instantiate(Application.persistentDataPath, assetId);
+#endif
                 // var main = AssetBundle.LoadFromFile(Path.Combine(Application.persistentDataPath, "World_android",
                 //     "StreamingAssets"));
                 //
