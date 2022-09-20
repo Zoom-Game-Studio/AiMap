@@ -37,6 +37,7 @@ using Waku.Module;
 using QFramework.UI;
 using UniRx;
 using zoomgame.Scripts.Architecture.TypeEvent;
+using WeiXiang;
 
 // You should modify the namespace to your own or - if you're sure there won't ever be conflicts - remove it altogether
 namespace zoomgame
@@ -51,12 +52,14 @@ namespace zoomgame
 		private FloatReactiveProperty progress = new FloatReactiveProperty();
 		 private Image progressSlider;
 		public SimpleDataHelper<AssestInfoItemModel> Data { get; private set; }
-		UpdateServerListEvent evt1;
+		List<AssetInfoItem> evt1 = new List<AssetInfoItem>();
+		UpdateServerListEvent evtOrigin;
 		bool isFirst;
 
 		#region GridAdapter implementation
-		private void Awake()
+		protected override void Awake()
         {
+			base.Awake();
 			ins = this;
         }
         protected override void Start()
@@ -69,18 +72,19 @@ namespace zoomgame
 			// Retrieve the models from your data source and set the items count
 			
 			MessageBroker.Default.Receive<UpdateServerListEvent>().Subscribe(RetrieveDataAndUpdate).AddTo(this);
+			
 			//MessageBroker.Default.Receive<DownloadEvent>().Subscribe(OnDownload).AddTo(this);
-   //         progress.Subscribe(v =>
-   //         {
-   //             if (progressSlider != null)
-   //             {
+			//         progress.Subscribe(v =>
+			//         {
+			//             if (progressSlider != null)
+			//             {
 			//		Debug.LogWarning("场景下载进度" + progress + "||" + v);
 			//		progressSlider.fillAmount = progress;
-   //             }
+			//             }
 
-   //         });
+			//         });
 
-        }
+		}
 
         // This is called anytime a previously invisible item become visible, or after it's created, 
         // or when anything that requires a refresh happens
@@ -94,7 +98,7 @@ namespace zoomgame
 			
 			AssestInfoItemModel model = Data[newOrRecycled.ItemIndex];
 			newOrRecycled.LoadProcessImgBG.gameObject.SetActive(false);
-			AssesInfoItem item = newOrRecycled.BG.transform.GetComponentInParent<AssesInfoItem>();
+			AssesInfoScorlItem item = newOrRecycled.BG.transform.GetComponent<AssesInfoScorlItem>();
 			item.SetLoader(model.loader, model.progress);
 			item.Init(model.assetInfoItemModel,model.isDownLoadIng, newOrRecycled.ItemIndex);
 			
@@ -142,39 +146,85 @@ namespace zoomgame
 		}
 		#endregion
 
-		
+		public void UpdateView()
+        {
+			//if (evtOrigin != null)
+			//{
+			//	StartCoroutine(IEStartRetrieveDataAndUpdate(evtOrigin));
+			//}
+		}
 		// Here, we're requesting <count> items from the data source
-		void RetrieveDataAndUpdate(UpdateServerListEvent evt)
+		public void RetrieveDataAndUpdate(UpdateServerListEvent evt=null)
 		{
-            if (evt1==null)
-            {
-				evt1 = evt;
-				isFirst = true;
-            }
-            else if (evt1==evt)
-            {
-				isFirst = false;
-            }
-            else
-            {
-				evt1 = evt;
-				isFirst = true;
-            }
-            
+				evtOrigin = evt;
+				StartCoroutine(IEStartRetrieveDataAndUpdate(evt));
 			
-			int count = evt.infoList.Count;
+		}
+		IEnumerator IEStartRetrieveDataAndUpdate(UpdateServerListEvent evt = null)
+		{
+            yield return new WaitUntil(() =>
+            {
+                return AmapLocation.Instance.IsRunning;
+            });
+            //TODO 判断是否在电子围栏里面
+            List<AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();
+			foreach (var item in evt.infoList)
+			{
+				List<Vector2> coordinatList = new List<Vector2>();
+				//Debug.LogError("长度" + item.boundary.coordinates[0].Count);
+				for (int i = 0; i < item.boundary.coordinates[0].Count; i++)
+				{
+					Vector2 vector2;
+					vector2.x = item.boundary.coordinates[0][i][0];
+					vector2.y = item.boundary.coordinates[0][i][1];
+					coordinatList.Add(vector2);
+				}
+				//           foreach (var i in coordinatList)
+				//           {
+				//Debug.LogError("转换的经纬度"+i.x+i.y);
+				//           }
+				//if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(104.067768f, 30.552795f), coordinatList))
+				if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude), coordinatList))
+
+				{
+					inAreaInfoList.Add(item);
+				}
+			}
+			// inAreaInfoList = evt.infoList;
+			//List<AssetInfoItem> inAreaInfoList = evt1;
+
+			if (evt1 == null)
+			{
+				evt1 = inAreaInfoList;
+				isFirst = true;
+			}
+			else if (evt1 == evt.infoList)
+			{
+				isFirst = false;
+			}
+			else
+			{
+				evt1 = inAreaInfoList;
+				isFirst = true;
+			}
+
+
+			int count = evt1.Count;
 			if (count <= 0)
 			{
 				Debug.LogWarning("没有资源信息");
-				return;
-			}
-			Num = count;
-			StartCoroutine(FetchMoreItemsFromDataSourceAndUpdate(evt,count));
-		}
+            }
+            else
+            {
+				Num = count;
 
+				StartCoroutine(FetchMoreItemsFromDataSourceAndUpdate(evt1, count));
+			}
+			yield return null;
+		}
 		// Retrieving <count> models from the data source and calling OnDataRetrieved after.
 		// In a real case scenario, you'd query your server, your database or whatever is your data source and call OnDataRetrieved after
-		IEnumerator FetchMoreItemsFromDataSourceAndUpdate(UpdateServerListEvent evt,int count)
+		IEnumerator FetchMoreItemsFromDataSourceAndUpdate(List<AssetInfoItem> evt,int count)
 		{
 			// Simulating data retrieving delay
 			yield return new WaitForSeconds(.5f);
@@ -183,25 +233,31 @@ namespace zoomgame
 
 			// Retrieve your data here
 			Debug.LogError("总数"+count);
-			for (int i = 0; i < count; ++i)
+			for (int i = 0; i < count; i++)
 			{
 				var model = new AssestInfoItemModel()
 				{
-					assetInfoItemModel = evt.infoList[i],
-
+					assetInfoItemModel = evt[i],
+					isDownLoadIng = false,
+					loader = new HttpDownLoad(),
+					progress = new FloatReactiveProperty(),
+					isComplete = false,
+					
 				};
 				newItems[i] = model;
 			}
-			
-
-			
-			yield return new WaitForSeconds(.1f);
-			if (isFirst)
+            foreach (var item in newItems)
             {
-				OnDataRetrieved(newItems);
-			}
-			
-		}
+				Debug.LogError("驾驶科技的厚爱都爱"+item.isDownLoadIng);
+
+            }
+			OnDataRetrieved(newItems);
+            //if (isFirst)
+            //{
+            //    OnDataRetrieved(newItems);
+            //}
+
+        }
 
 		void OnDataRetrieved(AssestInfoItemModel[] newItems)
 		{
@@ -211,9 +267,34 @@ namespace zoomgame
 			Data.List.AddRange(newItems);
 			Data.NotifyListChangedExternally();
 		}
-		void OnDownload(DownloadEvent evt)
-		{
-			this.loader = evt.resLoader;
+		/// <summary>
+		/// 根据电子围栏进行筛选
+		/// </summary>
+		void SelectInfo(UpdateServerListEvent evt =null)
+        {
+			List<AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();
+			foreach (var item in evt.infoList)
+			{
+				List<Vector2> coordinatList = new List<Vector2>();
+				Debug.LogError("长度" + item.boundary.coordinates[0].Count);
+				for (int i = 0; i < item.boundary.coordinates[0].Count; i++)
+				{
+					Vector2 vector2;
+					vector2.x = item.boundary.coordinates[0][i][0];
+					vector2.y = item.boundary.coordinates[0][i][1];
+					coordinatList.Add(vector2);
+				}
+				//           foreach (var i in coordinatList)
+				//           {
+				//Debug.LogError("转换的经纬度"+i.x+i.y);
+				//           }
+				if (AssetDownloader.Instance.IsPointInPolygon(/*new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude)*/new Vector2(104.067768f, 30.552795f), coordinatList))
+				{
+					inAreaInfoList.Add(item);
+				}
+			}
+			evt1 = inAreaInfoList;
+			RetrieveDataAndUpdate();
 		}
 
 	}
@@ -228,7 +309,8 @@ namespace zoomgame
 		public HttpDownLoad loader;
 		public FloatReactiveProperty progress = new FloatReactiveProperty();
 		public bool isComplete;//是否下载好 
-		
+		public bool isNeedDown = false;
+		public string nameTitle;
 	}
 
 

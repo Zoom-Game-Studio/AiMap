@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3315728440665445842}
   - component: {fileID: 4900461816173319176}
   - component: {fileID: 3937889281968152659}
+  - component: {fileID: 4948678307863140750}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -79,6 +80,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4948678307863140750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3181490336571361374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a81bcdf4edab84fbf06eba5cd38b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: {fileID: 3657699136957785988}
+  btn: {fileID: 3657699136247560886}
+  clip: {fileID: 8300000, guid: a93843f1c48a91d48992ba11913b007c, type: 3}
+  grayMat: {fileID: 2100000, guid: b98997ac1fe67454c9e1f97a46f162e1, type: 2}
+  progressSlider: {fileID: 7207058799653989087}
+  progressText: {fileID: 7207058800655244498}
+  downPart: {fileID: 7207058800080854307}
 --- !u!1 &3657699136247560880
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +230,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3657699136449725421}
   - component: {fileID: 3657699136449725408}
-  - component: {fileID: 708731473076793945}
   - component: {fileID: 4237916966475521240}
   m_Layer: 5
   m_Name: AssestItem
@@ -248,25 +267,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3657699136449725420}
   m_CullTransparentMesh: 1
---- !u!114 &708731473076793945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3657699136449725420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a81bcdf4edab84fbf06eba5cd38b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  info: {fileID: 3657699136957785988}
-  btn: {fileID: 3657699136247560886}
-  clip: {fileID: 8300000, guid: a93843f1c48a91d48992ba11913b007c, type: 3}
-  grayMat: {fileID: 2100000, guid: b98997ac1fe67454c9e1f97a46f162e1, type: 2}
-  progressSlider: {fileID: 7207058799653989087}
-  progressText: {fileID: 7207058800655244498}
-  downPart: {fileID: 7207058800080854307}
 --- !u!114 &4237916966475521240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7207058800080854307
 RectTransform:
   m_ObjectHideFlags: 0
