@@ -52,6 +52,7 @@ namespace zoomgame
 		 private Image progressSlider;
 		public SimpleDataHelper<AssestInfoItemModel> Data { get; private set; }
 		UpdateServerListEvent evt1;
+		bool isFirst;
 
 		#region GridAdapter implementation
 		private void Awake()
@@ -64,7 +65,7 @@ namespace zoomgame
 
 			// Calling this initializes internal data and prepares the adapter to handle item count changes
 			base.Start();
-
+			isFirst = true;
 			// Retrieve the models from your data source and set the items count
 			
 			MessageBroker.Default.Receive<UpdateServerListEvent>().Subscribe(RetrieveDataAndUpdate).AddTo(this);
@@ -92,10 +93,11 @@ namespace zoomgame
 			// to retrieve the model from your data set
 			
 			AssestInfoItemModel model = Data[newOrRecycled.ItemIndex];
-
+			newOrRecycled.LoadProcessImgBG.gameObject.SetActive(false);
 			AssesInfoItem item = newOrRecycled.BG.transform.GetComponentInParent<AssesInfoItem>();
+			item.SetLoader(model.loader, model.progress);
 			item.Init(model.assetInfoItemModel,model.isDownLoadIng, newOrRecycled.ItemIndex);
-			item.SetLoader(model.loader,model.progress);
+			
 			//progressSlider = newOrRecycled.LoadProcessImg;
 			
 		}
@@ -140,15 +142,26 @@ namespace zoomgame
 		}
 		#endregion
 
-		public void UpdateUI()
-        {
-			RetrieveDataAndUpdate(evt1);
-
-		}
+		
 		// Here, we're requesting <count> items from the data source
 		void RetrieveDataAndUpdate(UpdateServerListEvent evt)
 		{
-			evt1 = evt;
+            if (evt1==null)
+            {
+				evt1 = evt;
+				isFirst = true;
+            }
+            else if (evt1==evt)
+            {
+				isFirst = false;
+            }
+            else
+            {
+				evt1 = evt;
+				isFirst = true;
+            }
+            
+			
 			int count = evt.infoList.Count;
 			if (count <= 0)
 			{
@@ -169,7 +182,7 @@ namespace zoomgame
 			var newItems = new AssestInfoItemModel[count];
 
 			// Retrieve your data here
-			
+			Debug.LogError("总数"+count);
 			for (int i = 0; i < count; ++i)
 			{
 				var model = new AssestInfoItemModel()
@@ -181,7 +194,13 @@ namespace zoomgame
 			}
 			
 
-			OnDataRetrieved(newItems);
+			
+			yield return new WaitForSeconds(.1f);
+			if (isFirst)
+            {
+				OnDataRetrieved(newItems);
+			}
+			
 		}
 
 		void OnDataRetrieved(AssestInfoItemModel[] newItems)
@@ -209,6 +228,7 @@ namespace zoomgame
 		public HttpDownLoad loader;
 		public FloatReactiveProperty progress = new FloatReactiveProperty();
 		public bool isComplete;//是否下载好 
+		
 	}
 
 
@@ -222,7 +242,7 @@ namespace zoomgame
 		public Text AssestInfoTxt;//资源title
 		public Image BG;//背景图,未下载需要灰色
 		public Image LoadProcessImg;//下载进度条
-
+		public Transform LoadProcessImgBG;
 
 		// Retrieving the views from the item's root GameObject
 		public override void CollectViews()
@@ -235,7 +255,7 @@ namespace zoomgame
 			views.GetComponentAtPath("AssestInfoTxt", out AssestInfoTxt);
 			views.GetComponentAtPath("BG", out BG);
 			views.GetComponentAtPath("LoadProcessImg", out LoadProcessImg);
-
+			views.GetComponentAtPath("BG/LoadProcessImgBG", out LoadProcessImgBG);
 		}
 		
 		// This is usually the only child of the item's root and it's called "Views". 
