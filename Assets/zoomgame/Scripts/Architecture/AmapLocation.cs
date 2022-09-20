@@ -44,6 +44,12 @@ namespace WeiXiang
         private double latitude = 0;
 
         private string errorMessage;
+        private float accuracy;
+        
+        /// <summary>
+        /// 精度，默认0
+        /// </summary>
+        public float Accuracy => accuracy;
 
         public bool IsRunning => _isRunning;
         public string ErrorMessage => errorMessage;
@@ -119,14 +125,13 @@ namespace WeiXiang
                 {
                     this.longitude = amapLocation.Call<double>("getLongitude");
                     this.latitude = amapLocation.Call<double>("getLatitude");
-                    errorMessage = String.Empty;
+                    this.accuracy = amapLocation.Call<float>("getAccuracy");
                 }
                 else
                 {
                     this.ErrorCode = errorCode;
                     this.errorMessage = amapLocation.Call<string>("getErrorInfo");
                 }
-
             }
         }
     }
