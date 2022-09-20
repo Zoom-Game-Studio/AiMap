@@ -174,7 +174,7 @@ namespace zoomgame
 		{
             yield return new WaitUntil(() =>
             {
-                if (AmapLocation.Instance.IsRunning&&||AmapLocation.Instance.Accuracy<3||AmapLocation.Instance.Longitude!=0|| AmapLocation.Instance.Latitude!=0)
+                if (AmapLocation.Instance.IsRunning|| AmapLocation.Instance.Accuracy<3||AmapLocation.Instance.Longitude!=0|| AmapLocation.Instance.Latitude!=0)
                 {
 					return true;
                 }
