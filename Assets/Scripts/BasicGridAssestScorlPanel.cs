@@ -55,6 +55,7 @@ namespace zoomgame
 		List<AssetInfoItem> evt1 = new List<AssetInfoItem>();
 		UpdateServerListEvent evtOrigin;
 		bool isFirst;
+		public Text text;//测试
 
 		#region GridAdapter implementation
 		protected override void Awake()
@@ -153,6 +154,15 @@ namespace zoomgame
 			//	StartCoroutine(IEStartRetrieveDataAndUpdate(evtOrigin));
 			//}
 		}
+		void showAll()
+        {
+            if (evtOrigin!=null)
+            {
+				RetrieveDataAndUpdate(evtOrigin);
+			}
+			
+
+		}
 		// Here, we're requesting <count> items from the data source
 		public void RetrieveDataAndUpdate(UpdateServerListEvent evt=null)
 		{
@@ -164,8 +174,14 @@ namespace zoomgame
 		{
             yield return new WaitUntil(() =>
             {
-                return AmapLocation.Instance.IsRunning;
+                if (AmapLocation.Instance.IsRunning&&||AmapLocation.Instance.Accuracy<3||AmapLocation.Instance.Longitude!=0|| AmapLocation.Instance.Latitude!=0)
+                {
+					return true;
+                }
+				return false;
+               // return AmapLocation.Instance.IsRunning;
             });
+			text.text ="我的位置" +AmapLocation.Instance.Longitude + AmapLocation.Instance.Latitude;
             //TODO 判断是否在电子围栏里面
             List<AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();
 			foreach (var item in evt.infoList)
@@ -183,7 +199,7 @@ namespace zoomgame
 				//           {
 				//Debug.LogError("转换的经纬度"+i.x+i.y);
 				//           }
-				//if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(104.067768f, 30.552795f), coordinatList))
+				//if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(121.603962f, 31.179835f), coordinatList))
 				if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude), coordinatList))
 
 				{
