@@ -48,14 +48,13 @@ namespace zoomgame
 	{
 		public static BasicGridAssestScorlPanel ins;
 		public int Num;
-		private HttpDownLoad loader;
-		private FloatReactiveProperty progress = new FloatReactiveProperty();
-		 private Image progressSlider;
+		
 		public SimpleDataHelper<AssestInfoItemModel> Data { get; private set; }
 		List<AssetInfoItem> evt1 = new List<AssetInfoItem>();
 		UpdateServerListEvent evtOrigin;
 		bool isFirst;
-		public Text text;//测试
+		//public Text text;//测试
+		public Button textShowAllBtn;
 
 		#region GridAdapter implementation
 		protected override void Awake()
@@ -73,7 +72,7 @@ namespace zoomgame
 			// Retrieve the models from your data source and set the items count
 			
 			MessageBroker.Default.Receive<UpdateServerListEvent>().Subscribe(RetrieveDataAndUpdate).AddTo(this);
-			
+			textShowAllBtn.onClick.AddListener(showAll);
 			//MessageBroker.Default.Receive<DownloadEvent>().Subscribe(OnDownload).AddTo(this);
 			//         progress.Subscribe(v =>
 			//         {
@@ -100,7 +99,7 @@ namespace zoomgame
 			AssestInfoItemModel model = Data[newOrRecycled.ItemIndex];
 			newOrRecycled.LoadProcessImgBG.gameObject.SetActive(false);
 			AssesInfoScorlItem item = newOrRecycled.BG.transform.GetComponent<AssesInfoScorlItem>();
-			item.SetLoader(model.loader, model.progress);
+			//item.SetLoader(model.loader, model.progress);
 			item.Init(model.assetInfoItemModel,model.isDownLoadIng, newOrRecycled.ItemIndex);
 			
 			//progressSlider = newOrRecycled.LoadProcessImg;
@@ -149,16 +148,17 @@ namespace zoomgame
 
 		public void UpdateView()
         {
-			//if (evtOrigin != null)
-			//{
-			//	StartCoroutine(IEStartRetrieveDataAndUpdate(evtOrigin));
-			//}
-		}
+            //if (evtOrigin != null)
+            //{
+            //    StartCoroutine(IEStartRetrieveDataAndUpdate(evtOrigin));
+            //}
+        }
 		void showAll()
         {
             if (evtOrigin!=null)
             {
-				RetrieveDataAndUpdate(evtOrigin);
+				StartCoroutine(FetchMoreItemsFromDataSourceAndUpdate(evtOrigin.infoList, evtOrigin.infoList.Count));
+				textShowAllBtn.gameObject.SetActive(false);
 			}
 			
 
@@ -174,16 +174,21 @@ namespace zoomgame
 		{
             yield return new WaitUntil(() =>
             {
+				return true;
                 if (AmapLocation.Instance.IsRunning|| AmapLocation.Instance.Accuracy<3||AmapLocation.Instance.Longitude!=0|| AmapLocation.Instance.Latitude!=0)
                 {
 					return true;
                 }
 				return false;
-               // return AmapLocation.Instance.IsRunning;
             });
-			text.text ="我的位置" +AmapLocation.Instance.Longitude + AmapLocation.Instance.Latitude;
-            //TODO 判断是否在电子围栏里面
-            List<AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();
+			//当前定位到的位置
+			//Vector2 currentLocation = new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude);
+			Vector2 currentLocation = new Vector2(121.60396f, 31.17983f);
+			//text.text ="我的位置" +AmapLocation.Instance.Longitude + AmapLocation.Instance.Latitude;
+			//TODO 判断是否在电子围栏里面
+			List <AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();//存储在电子围栏里的
+			List<AssestInfoBack> inAreaInfoDistanceList = new List<AssestInfoBack>();
+			
 			foreach (var item in evt.infoList)
 			{
 				List<Vector2> coordinatList = new List<Vector2>();
@@ -195,21 +200,37 @@ namespace zoomgame
 					vector2.y = item.boundary.coordinates[0][i][1];
 					coordinatList.Add(vector2);
 				}
-				//           foreach (var i in coordinatList)
-				//           {
-				//Debug.LogError("转换的经纬度"+i.x+i.y);
-				//           }
-				//if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(121.603962f, 31.179835f), coordinatList))
-				if (AssetDownloader.Instance.IsPointInPolygon(new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude), coordinatList))
-
+                //foreach (var i1 in coordinatList)
+                //{
+                //    Debug.LogError("转换的经纬度" + i1.x.ToString("f6") + i1.y.ToString("f6"));
+                //}
+                if (AssetDownloader.Instance.IsPointInPolygon(currentLocation, coordinatList))
 				{
-					inAreaInfoList.Add(item);
+                    float distance = Vector2.Distance(currentLocation, new Vector2(item.coordinate.longitude, item.coordinate.latitude));
+                    
+					AssestInfoBack assestInfoBack = new AssestInfoBack();
+					assestInfoBack.infoItem = item;
+					assestInfoBack.distance = distance;
+					inAreaInfoDistanceList.Add(assestInfoBack);
+
+					//Debug.LogError("在围栏里面" + item.name + distance);
+                    
 				}
 			}
-			// inAreaInfoList = evt.infoList;
-			//List<AssetInfoItem> inAreaInfoList = evt1;
-
-			if (evt1 == null)
+			//根据位置距离进行排序
+            QuickSort(inAreaInfoDistanceList.ToArray(), 0, inAreaInfoDistanceList.Count - 1);
+            #if UNITY_EDITOR
+            foreach (var item in inAreaInfoDistanceList)
+            {
+                Debug.LogError("排序" + item.distance + "||" + item.infoItem.name);
+            }
+			#endif
+			foreach (var item in inAreaInfoDistanceList)
+            {
+                inAreaInfoList.Add(item.infoItem);
+            }
+          
+            if (evt1 == null)
 			{
 				evt1 = inAreaInfoList;
 				isFirst = true;
@@ -229,11 +250,12 @@ namespace zoomgame
 			if (count <= 0)
 			{
 				Debug.LogWarning("没有资源信息");
+
             }
             else
             {
 				Num = count;
-
+				textShowAllBtn.gameObject.SetActive(false);
 				StartCoroutine(FetchMoreItemsFromDataSourceAndUpdate(evt1, count));
 			}
 			yield return null;
@@ -262,11 +284,11 @@ namespace zoomgame
 				};
 				newItems[i] = model;
 			}
-            foreach (var item in newItems)
-            {
-				Debug.LogError("驾驶科技的厚爱都爱"+item.isDownLoadIng);
+    //        foreach (var item in newItems)
+    //        {
+				//Debug.LogError("驾驶科技的厚爱都爱"+item.isDownLoadIng);
 
-            }
+    //        }
 			OnDataRetrieved(newItems);
             //if (isFirst)
             //{
@@ -279,50 +301,105 @@ namespace zoomgame
 		{
 			//Commented: this only works with Lists. ATM, Insert for Grids only works by manually changing the list and calling NotifyListChangedExternally() after
 			// Data.InsertItemsAtEnd(newItems);
-
+			Data.List.Clear();
 			Data.List.AddRange(newItems);
 			Data.NotifyListChangedExternally();
 		}
 		/// <summary>
-		/// 根据电子围栏进行筛选
+
+		/// 对数组dataArray中索引从left到right之间的数做排序
+
 		/// </summary>
-		void SelectInfo(UpdateServerListEvent evt =null)
+
+		/// <param name="dataArray">要排序的数组</param>
+
+		/// <param name="left">要排序数据的开始索引</param>
+
+		/// <param name="right">要排序数据的结束索引</param>
+		void QuickSort(AssestInfoBack[] dataArray, int left, int right)
         {
-			List<AssetInfoItem> inAreaInfoList = new List<AssetInfoItem>();
-			foreach (var item in evt.infoList)
+			if (left < right)
 			{
-				List<Vector2> coordinatList = new List<Vector2>();
-				Debug.LogError("长度" + item.boundary.coordinates[0].Count);
-				for (int i = 0; i < item.boundary.coordinates[0].Count; i++)
+				float x = dataArray[left].distance;//基准数， 把比它小或者等于它的 放在它的左边，然后把比它大的放在它的右边
+
+				int i = left;
+
+				int j = right;//用来做循环的标志位
+
+				while (true && i < j)//当i==j的时候，说明我们找到了一个中间位置，这个中间位置就是基准数应该所在的位置 
+
 				{
-					Vector2 vector2;
-					vector2.x = item.boundary.coordinates[0][i][0];
-					vector2.y = item.boundary.coordinates[0][i][1];
-					coordinatList.Add(vector2);
+
+					//从后往前比较(从右向左比较) 找一个比x小（或者=）的数字，放在我们的坑里 坑位于i的位置
+
+					while (true && i < j)
+					{
+
+						if (dataArray[j].distance <= x) //找到了一个比基准数 小于或者等于的数子，应该把它放在x的左边
+
+						{
+
+							dataArray[i] = dataArray[j];
+
+							break;
+
+						}
+						else
+						{
+							j--;//向左移动 到下一个数字，然后做比较
+						}
+					}
+
+					//从前往后（从左向右）找一个比x大的数字，放在我们的坑里面 现在的坑位于j的位置
+
+					while (true && i < j)
+					{
+
+						if (dataArray[i].distance > x)
+						{
+							dataArray[j] = dataArray[i];
+
+							break;
+						}
+						else
+						{
+							i++;
+						}
+					}
 				}
-				//           foreach (var i in coordinatList)
-				//           {
-				//Debug.LogError("转换的经纬度"+i.x+i.y);
-				//           }
-				if (AssetDownloader.Instance.IsPointInPolygon(/*new Vector2(AmapLocation.Instance.Longitude, AmapLocation.Instance.Latitude)*/new Vector2(104.067768f, 30.552795f), coordinatList))
-				{
-					inAreaInfoList.Add(item);
-				}
+
+				//跳出循环 现在i==j i是中间位置
+
+				dataArray[i].distance = x;// left -i- right
+
+				QuickSort(dataArray, left, i - 1);
+
+				QuickSort(dataArray, i + 1, right);
+
 			}
-			evt1 = inAreaInfoList;
-			RetrieveDataAndUpdate();
-		}
+        }
+
+    }
+	/// <summary>
+	/// 包装了位置信息的
+	/// </summary>
+    public class AssestInfoBack 
+	{
+		public AssetInfoItem infoItem;
+		public float distance;//距离定位的距离
 
 	}
 
 
-	// Class containing the data associated with an item
-	public class AssestInfoItemModel
+
+
+    // Class containing the data associated with an item
+    public class AssestInfoItemModel
 	{
 
 		public AssetInfoItem assetInfoItemModel;
 		public bool isDownLoadIng;//是否正在下载中
-		public HttpDownLoad loader;
+		public HttpDownLoad loader=null;
 		public FloatReactiveProperty progress = new FloatReactiveProperty();
 		public bool isComplete;//是否下载好 
 		public bool isNeedDown = false;
@@ -386,5 +463,6 @@ namespace zoomgame
 			base.UnmarkForRebuild();
 		}
 		*/
+
 	}
 }

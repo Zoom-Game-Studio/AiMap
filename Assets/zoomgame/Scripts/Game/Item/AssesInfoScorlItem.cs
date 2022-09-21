@@ -17,6 +17,8 @@ public class AssesInfoScorlItem : MonoBehaviour
 {
     public Text info;
     public Button btn;
+    public Image maskImg;
+    public Mask mask;
     private AssetInfoItem itemInfo;
     public AudioClip clip;
     [Header("灰色材质")]
@@ -43,14 +45,14 @@ public class AssesInfoScorlItem : MonoBehaviour
         //btn = transform.GetComponentInChildren<Button>();
         downPart.gameObject.SetActive(false);
         btn.onClick.AddListener(OnClickBtn);
-        MessageBroker.Default.Receive<DownloadEvent>().Subscribe(OnDownload).AddTo(this);
+        //MessageBroker.Default.Receive<DownloadEvent>().Subscribe(OnDownload).AddTo(this);
         //progress.Subscribe(v =>
         //{
-        //    if (progressSlider != null&&isNeedDown)
+        //    if (progressSlider != null&& BasicGridAssestScorlPanel.ins.Data[count].isNeedDown)
         //    {
         //        Debug.LogWarning("场景下载进度" + progress + "||" + v);
         //        progressSlider.fillAmount = progress;
-        //        progressText.text = (progressSlider.fillAmount * 100).ToString("f0")+"%";
+        //        progressText.text = (progressSlider.fillAmount * 100).ToString("f0") + "%";
         //        if (progress >= 1)
         //        {
         //            downPart.gameObject.SetActive(false);
@@ -76,8 +78,8 @@ public class AssesInfoScorlItem : MonoBehaviour
         //});
     }
   
-    private void Update()
-    {
+    //private void Update()
+    //{
         //if (!isInit)
         //{
         //    return;
@@ -86,7 +88,21 @@ public class AssesInfoScorlItem : MonoBehaviour
         //{
         //    Debug.LogWarning("测试1" + loader.progress);
         //    progress.Value = loader.progress;
-          
+
+        //}
+        //if (loader!=null && BasicGridAssestScorlPanel.ins.Data[count].isDownLoadIng)
+        //{
+        //    Debug.LogWarning("测试1" + loader.progress);
+        //    progress.Value = loader.progress;
+        //}
+        //    if (progress.Value >= 1)
+        //    {
+
+        //        MainScenProcessController.Instance.GetTouchPanel().transform.GetComponent<UIBaseControllerPanel>().SetAssest(nameTo, spriteTo);
+        //        MainScenProcessController.Instance.onClickShowTouchPanel();
+
+        //    }
+
         //}
         //else
         //{
@@ -113,16 +129,23 @@ public class AssesInfoScorlItem : MonoBehaviour
         //    }
         //    Debug.Log("测试2"+ isDownLoading.ToString() + "||" + isNeedDown.ToString() + "|"+ loader == null);
         //}
-    }
-    [Button]
+   // }
+   
     void OnClickBtn()
     {
+
+
+
+       // BasicGridAssestScorlPanel.ins.Data[count].loader = this.loader;
         Debug.LogWarning("点击下载"+ BasicGridAssestScorlPanel.ins.Data[count].isComplete);
         //Debug.LogWarning("点击了"+isDownLoading+"||"+isNeedDown+"|"+loader==null);
         isDownLoading = true;
         BasicGridAssestScorlPanel.ins.Data[count].isDownLoadIng = true;
         
-        AssetDownloader.Instance.AddToDownloadList(itemInfo);
+        AssetDownloader.Instance.AddToDownloadList(itemInfo,(loaderTo)=> {
+            this.loader = loaderTo;
+            BasicGridAssestScorlPanel.ins.Data[count].loader = loaderTo;
+        });
         AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
         if (BasicGridAssestScorlPanel.ins.Data[count].isComplete)
         {
@@ -138,10 +161,10 @@ public class AssesInfoScorlItem : MonoBehaviour
     {
         while (!BasicGridAssestScorlPanel.ins.Data[count].isComplete)
         {
-            Debug.LogError("dokjakfjofjoafhuoahf");
+            //Debug.LogError("点击赋值进度条");
             if (progressSlider != null && BasicGridAssestScorlPanel.ins.Data[count].isNeedDown)
             {
-                Debug.LogWarning("测试" + loader.progress);
+                //Debug.LogWarning("测试" + loader.progress);
                 progress.Value = loader.progress;
                 progressSlider.fillAmount = progress.Value;
                 progressText.text = (progressSlider.fillAmount * 100).ToString("f0") + "%";
@@ -179,8 +202,8 @@ public class AssesInfoScorlItem : MonoBehaviour
         //Debug.LogError("进行初始化");
        this.isDownLoading = isDownLoading;
         count = count1;
-        Debug.LogWarning("序号"+count);
-        
+        Debug.LogWarning("序号"+count+isDownLoading);
+        downPart.gameObject.SetActive(isDownLoading);
         itemInfo = evtInfo;
         //info.text = $"{evtInfo.place}：{evtInfo.name}，{evtInfo.description}";
         info.text = evtInfo.name;
@@ -228,31 +251,75 @@ public class AssesInfoScorlItem : MonoBehaviour
         BasicGridAssestScorlPanel.ins.Data[count].isNeedDown = isNeedDown;
         BasicGridAssestScorlPanel.ins.Data[count].isComplete = !isNeedDown;
         BasicGridAssestScorlPanel.ins.Data[count].nameTitle = evtInfo.name;
+        if (BasicGridAssestScorlPanel.ins.Data[count].isDownLoadIng)
+        {
+            StartCoroutine(test2());
+        }
         isInit = true;
+
+    }
+    IEnumerator test2()
+    {
+        while (!BasicGridAssestScorlPanel.ins.Data[count].isComplete)
+        {
+            //Debug.LogError("滑动赋值进度条");
+            if (progressSlider != null && BasicGridAssestScorlPanel.ins.Data[count].isNeedDown)
+            {
+                //Debug.LogWarning("测试" + loader.progress);
+                progress.Value = BasicGridAssestScorlPanel.ins.Data[count].loader.progress;
+                progressSlider.fillAmount = progress.Value;
+                progressText.text = (progressSlider.fillAmount * 100).ToString("f0") + "%";
+                if (progress.Value >= 1)
+                {
+                    downPart.gameObject.SetActive(false);
+                    SetImageColor(true, null);
+                    isNeedDown = false;
+                    BasicGridAssestScorlPanel.ins.Data[count].isDownLoadIng = false;
+                    BasicGridAssestScorlPanel.ins.Data[count].isComplete = true;
+
+                }
+                else
+                {
+                    downPart.gameObject.SetActive(true);
+                    SetImageColor(false, null);
+                }
+
+            }
+            if (progress.Value >= 1)
+            {
+
+                MainScenProcessController.Instance.GetTouchPanel().transform.GetComponent<UIBaseControllerPanel>().SetAssest(nameTo, spriteTo);
+                MainScenProcessController.Instance.onClickShowTouchPanel();
+
+            }
+            yield return null;
+        }
+
 
     }
     public void SetLoader(HttpDownLoad loader, FloatReactiveProperty progress)
     {
-        if (loader!=null)
+        return;
+        if (loader != null)
         {
-            // Debug.LogWarning("loader不为空");
+             Debug.LogWarning("loader不为空"+loader.progress);
             
-           this. loader= BasicGridAssestScorlPanel.ins.Data[count].loader;
+           this. loader= loader;
         }
         else
         {
-           // Debug.LogWarning("loader为空");
-            BasicGridAssestScorlPanel.ins.Data[count].progress = this.progress;
+            Debug.LogWarning("loader为空" + loader.progress);
+            BasicGridAssestScorlPanel.ins.Data[count].loader =this. loader;
         }
-        if (progress != null)
-        {
-            this.progress = BasicGridAssestScorlPanel.ins.Data[count].progress;
-        }
-        else
-        {
+        //if (progress != null)
+        //{
+        //    this.progress = progress;
+        //}
+        //else
+        //{
            
-            BasicGridAssestScorlPanel.ins.Data[count].progress = this.progress;
-        }
+        //    BasicGridAssestScorlPanel.ins.Data[count].progress = this.progress;
+        //}
        // StartCoroutine(IESetProcess());
         
     }
@@ -266,20 +333,29 @@ public class AssesInfoScorlItem : MonoBehaviour
         {
             if (isComplete)
             {
-                //btn.transform.GetComponent<Image>().material = null;
-                btn.transform.GetComponent<Image>().color = Color.white;
+                downPart.gameObject.SetActive(false);
+                btn.transform.GetComponent<Image>().material = null;
+                mask.enabled = true;
+               // maskImg.material = null;
+               // btn.transform.GetComponent<Image>().color = Color.white;
             }
             else
             {
-
-                //btn.transform.GetComponent<Image>().material = grayMat;
-                btn.transform.GetComponent<Image>().color = new Color(0.299f, 0.587f, 0.114f, 0.5f);
+                //downPart.gameObject.SetActive(true);
+                btn.transform.GetComponent<Image>().material = grayMat;
+                mask.enabled = false;
+                //maskImg.material = grayMat;
+                // btn.transform.GetComponent<Image>().color = new Color(0.299f, 0.587f, 0.114f, 0.5f);
 
             }
         }
         else
         {
-            btn.transform.GetComponent<Image>().color = Color.white;
+            downPart.gameObject.SetActive(false);
+            btn.transform.GetComponent<Image>().material = null;
+            mask.enabled = true;
+            //maskImg.material = null;
+            //  btn.transform.GetComponent<Image>().color = Color.white;
         }
        
         

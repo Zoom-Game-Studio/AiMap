@@ -73,7 +73,7 @@ namespace Waku.Module
             }
 
             //读取本地资源列表
-            ClientList = LoadListFromPath(nameof(ClientList), path);
+            ClientList = LoadListFromPath(nameof(ClientList), path);Debug.LogWarning("读取本地");
             DownloadList = new  ();
             doneList = new ();
             RequestSeverList();
@@ -228,7 +228,7 @@ namespace Waku.Module
         /// </summary>
         /// <param name="serverItemInfo"></param>
         /// <param name="callback"></param>
-        public void AddToDownloadList(AssetInfoItem serverItemInfo)
+        public void AddToDownloadList(AssetInfoItem serverItemInfo,Action<HttpDownLoad> actLoader=null)
         {
             buildTarget = serverItemInfo;
             var hasInDownloadList = DownloadList.Find(e=>  e.id.Equals(serverItemInfo.id));
@@ -270,14 +270,14 @@ namespace Waku.Module
                         DownloadList.Remove(find);
                     }
                     doneList.Enqueue(item);
-                });
+                },actLoader);
             }
         }
 
         /// <summary>
         /// zip保存的路径为fullpath + info.id + file.name;
         /// </summary>
-        void StartDownLoad(AssetInfoItem info , Action callback = null)
+        void StartDownLoad(AssetInfoItem info , Action callback = null, Action<HttpDownLoad> actLoader = null)
         {
             var file = info.package.files[0];
             Debug.Log("开始下载:" + file.link);
@@ -305,6 +305,7 @@ namespace Waku.Module
                 SaveClientList();
                 callback?.Invoke();
             });
+            actLoader?.Invoke(loader);
             MessageBroker.Default.Publish(new DownloadEvent()
             {
                 resLoader = loader,

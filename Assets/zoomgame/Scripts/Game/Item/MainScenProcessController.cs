@@ -27,10 +27,10 @@ public class MainScenProcessController : MonoBehaviour,ISingleton
     /// </summary>
     public void onClickShowTouchPanel()
     {
-        if (assestScrollView.gameObject.activeInHierarchy)
-        {
-            assestScrollView.gameObject.SetActive(false);
-        }
+        //if (assestScrollView.gameObject.activeInHierarchy)
+        //{
+        //    assestScrollView.gameObject.SetActive(false);
+        //}
         if (!touchPanel.gameObject.activeInHierarchy)
         {
             touchPanel.gameObject.SetActive(true);
@@ -43,10 +43,10 @@ public class MainScenProcessController : MonoBehaviour,ISingleton
     /// </summary>
     public void onClickShowAssestPanel()
     {
-        if (!assestScrollView.gameObject.activeInHierarchy)
-        {
-            assestScrollView.gameObject.SetActive(true);
-        }
+        //if (!assestScrollView.gameObject.activeInHierarchy)
+        //{
+        //    assestScrollView.gameObject.SetActive(true);
+        //}
         if (touchPanel.gameObject.activeInHierarchy)
         {
             touchPanel.gameObject.SetActive(false);

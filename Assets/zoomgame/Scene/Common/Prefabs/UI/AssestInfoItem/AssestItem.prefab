@@ -94,11 +94,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 3657699136957785988}
   btn: {fileID: 3657699136247560886}
+  maskImg: {fileID: 8966480444235868369}
+  mask: {fileID: 6335066185944373027}
   clip: {fileID: 8300000, guid: a93843f1c48a91d48992ba11913b007c, type: 3}
   grayMat: {fileID: 2100000, guid: b98997ac1fe67454c9e1f97a46f162e1, type: 2}
   progressSlider: {fileID: 7207058799653989087}
   progressText: {fileID: 7207058800655244498}
   downPart: {fileID: 7207058800080854307}
+  spriteTo: {fileID: 0}
+  nameTo: 
 --- !u!1 &3657699136247560880
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,10 +137,10 @@ RectTransform:
   m_Father: {fileID: 5803415682246575109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000019073486}
-  m_SizeDelta: {x: 766.008, y: 314.249}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3657699136247560884
 CanvasRenderer:
@@ -256,8 +260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1885.9629, y: 1242.8049}
-  m_SizeDelta: {x: 860.275, y: 472.949}
+  m_AnchoredPosition: {x: 1885.9629, y: 1293.4426}
+  m_SizeDelta: {x: 860.275, y: 574.2246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3657699136449725408
 CanvasRenderer:
@@ -283,7 +287,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: 860.275
-  m_PreferredHeight: 472.949
+  m_PreferredHeight: 574.2246
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -426,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.015686275, g: 0.023529414, b: 0.08235294, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -580,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -649,7 +653,7 @@ GameObject:
   - component: {fileID: 5803415682246575109}
   - component: {fileID: 8427504067290755770}
   - component: {fileID: 8966480444235868369}
-  - component: {fileID: 1233200862269973882}
+  - component: {fileID: 6335066185944373027}
   m_Layer: 5
   m_Name: MaskImage
   m_TagString: Untagged
@@ -675,8 +679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 41.046}
-  m_SizeDelta: {x: 766.008, y: 314.249}
+  m_AnchoredPosition: {x: 0, y: 54.150894}
+  m_SizeDelta: {x: 737.2595, y: 371.9358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8427504067290755770
 CanvasRenderer:
@@ -698,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 9096f746426aedc43bbe644547d99edb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -716,7 +720,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1233200862269973882
+--- !u!114 &6335066185944373027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
